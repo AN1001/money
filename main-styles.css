@@ -1,0 +1,9 @@
+:root{
+    	--soft-white: #aaa;
+	    --soft-black: #222;
+}
+
+body{
+	background-color: rgb(71, 73, 72);
+	font-family: "noto sans jp";
+}
