@@ -16,3 +16,23 @@ body{
     width: 80%;
     max-width: 400px;
 }
+
+#btnSelec{
+    margin: 18px;
+    padding-top: 8px;
+    padding-bottom: 7px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid rgb(245,238,224);
+}
+
+.loginScreenBtn{
+    background: rgb(235,116,92);
+    border: none;
+    font-size: 1.3em;
+    border-radius: 0.3em;
+    color: rgb(251,237,226);
+    padding-left: 25px;
+    padding-right: 25px; 
+    margin: auto;
+}
