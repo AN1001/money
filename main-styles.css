@@ -46,10 +46,30 @@ html, body{
     flex-direction: column;
 }
 
+input:focus {
+outline: none ! important;
+}
+
 #Iusername, #Ipassword{
     width: 95%;
-    border: 2px solid rgb(247,233,220);
+    background: none;
+    border: none;
     border-radius: 0.25em;
     align-self: center; 
-    height: 30px;
+    height: 30px; 
+    padding-left: 13px;
+}
+
+fieldset{
+    height: 50px;
+    padding: 0px;
+    padding: none;
+    border: 2px solid rgb(247,233,220);
+    border-radius: 0.25em;
+    background: white;
+}
+
+legend{
+    margin-left: 10px;
+    color: rgb(227, 213, 200);
 }
