@@ -58,6 +58,10 @@ html, body{
     flex-direction: column;
 }
 
+#signup{
+    display: none;
+}
+
 input:focus {
     outline: none ! important;
 }
