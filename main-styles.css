@@ -10,12 +10,12 @@ html, body{
 }
 
 #authScreen{
-    background: rgb(255,251,247);
-    border-radius: 0.6em;
-    margin: 100px auto;
+	background: rgb(255,251,247);
+	border-radius: 0.6em;
+	margin: 100px auto;
     
-    width: 80%;
-    max-width: 300px;
+	width: 80%;
+	max-width: 300px;
 }
 
 #btnSelec{
@@ -29,6 +29,7 @@ html, body{
 }
 
 #Ilogin, #Isignup{
+    -webkit-appearance: none;
     background: rgb(235,116,92);
     border: 1px solid rgb(209,139,123);
     font-size: 1.3em;
