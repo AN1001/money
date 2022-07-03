@@ -19,9 +19,10 @@ html, body{
 }
 
 #btnSelec{
-    margin: 18px;
-    padding-top: 8px;
-    padding-bottom: 7px;
+    margin: 6px;
+    padding-top: 18px;
+    padding-bottom: 17px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     border-bottom: 2px solid rgb(245,238,224);
