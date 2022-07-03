@@ -78,6 +78,8 @@ fieldset{
     border: 2px solid rgb(247,233,220);
     border-radius: 0.25em;
     background: white;
+    margin-left: 18px;
+    margin-right: 18px;
 }
 
 legend{
