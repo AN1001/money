@@ -1,11 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
 :root{
 	--soft-white: #aaa;
 	--soft-black: #222;
 }
 
-body{
+html, body{
 	background-color: rgb(247,233,220);
-	font-family: "noto sans jp";
+	font-family: "DM Sans", sans-serif;
 }
 
 #authScreen{
