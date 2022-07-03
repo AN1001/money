@@ -40,3 +40,16 @@ html, body{
 .loginScreenBtn:hover{
     border: 1px dashed;
 }
+
+#login{
+    display: flex;
+    flex-direction: column;
+}
+
+#Iusername, #Ipassword{
+    width: 95%;
+    border: 2px solid rgb(247,233,220);
+    border-radius: 0.25em;
+    align-self: center; 
+    height: 30px;
+}
