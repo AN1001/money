@@ -43,6 +43,7 @@ html, body{
     border: 1px solid rgb(209,139,123);
     font-size: 1.3em;
     border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
     color: rgb(251,237,226);
     padding: 5px 25px 7px 25px;
     margin: auto;
@@ -58,7 +59,7 @@ html, body{
 }
 
 input:focus {
-outline: none ! important;
+    outline: none ! important;
 }
 
 #Iusername, #Ipassword{
