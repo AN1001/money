@@ -29,10 +29,14 @@ html, body{
 
 .loginScreenBtn{
     background: rgb(235,116,92);
-    border: none;
+    border: 1px solid rgb(209,139,123);
     font-size: 1.3em;
     border-radius: 0.3em;
     color: rgb(251,237,226);
     padding: 5px 25px 7px 25px;
     margin: auto;
+}
+
+.loginScreenBtn:hover{
+    border: 1px dashed;
 }
