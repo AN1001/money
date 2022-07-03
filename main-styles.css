@@ -62,7 +62,7 @@ input:focus {
     outline: none ! important;
 }
 
-#Iusername, #Ipassword{
+#Iusername, #Ipassword, #Iconfpassword{
     width: 95%;
     background: none;
     border: none;
