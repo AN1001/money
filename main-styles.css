@@ -81,6 +81,7 @@ fieldset{
     background: white;
     margin-left: 18px;
     margin-right: 18px;
+    -moz-margin-bottom: 25px;
 }
 
 legend{
