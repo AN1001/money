@@ -1,7 +1,7 @@
-const loginScreen = getElementById("login")
-const signupScreen = getElementById("signup")
-const loginScreenBtn = getElementById("loginBtn")
-const signupScreenBtn = getElementById("signupBtn")
+const loginScreen = document.getElementById("login")
+const signupScreen = document.getElementById("signup")
+const loginScreenBtn = document.getElementById("loginBtn")
+const signupScreenBtn = document.getElementById("signupBtn")
 
 loginScreenBtn.onclick = function(){
   loginScreen.style.display = "";
