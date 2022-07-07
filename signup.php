@@ -12,7 +12,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   function noPwdMatch($password,$confpassword) {
     $result = false;
-    if($password != $confpassword){$result = true}
+    if($password != $confpassword){$result = true;}
     return $result;
   }
   
