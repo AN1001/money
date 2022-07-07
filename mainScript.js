@@ -20,7 +20,7 @@ signupScreenBtn.onclick = function(){
 };
 
 var errorType = (window.location.href+"?none").split("?")[1];
-if (errorType != "none"):
+if (errorType != "none"){
   var errorReigon = '';
   errorType = errorType.slice(6);
   errorReigon = errorType.slice(0,2);
@@ -36,5 +36,4 @@ if (errorType != "none"):
     if errorReigon == "LI" {loginError.textContent = "Error username already in use";
                            } else {signupError.textContent = "Error username already in use";}
   }
-  
-  
+}
