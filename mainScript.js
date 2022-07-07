@@ -25,15 +25,21 @@ if (errorType != "none"){
   errorType = errorType.slice(6);
   errorReigon = errorType.slice(0,2);
   errorType = errorType.slice(3);
-  console.log(errorType, errorReigon);
+
   if (errorType == "emptyinput") {
     if (errorReigon == "LI") {loginError.textContent = "Error not all fields filled in";
-                           } else {signupError.textContent = "Error not all fields filled in";}
+                              loginError.style.display = "";
+                           } else {signupError.textContent = "Error not all fields filled in";
+                                  signupError.style.display = "";}
   } else if (errorType == "nopwdmatch") {
     if (errorReigon == "LI") {loginError.textContent = "Error passwords do not match";
-                           } else {signupError.textContent = "Error passwords do not match";}
+                              loginError.style.display = "";
+                           } else {signupError.textContent = "Error passwords do not match";
+                                  signupError.style.display = "";}
   } else if (errorType == "uidtaken") {
     if (errorReigon == "LI") {loginError.textContent = "Error username already in use";
-                           } else {signupError.textContent = "Error username already in use";}
+                              loginError.style.display = "";
+                           } else {signupError.textContent = "Error username already in use";
+                                  signupError.style.display = "";}
   }
 }
