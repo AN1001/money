@@ -18,3 +18,6 @@ signupScreenBtn.onclick = function(){
   loginScreen.style.display = "none";
   signupScreen.style.display = "";
 };
+
+var errorType = (window.location.href).split("?")[1]
+console.log(errorType)
