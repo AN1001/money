@@ -29,16 +29,22 @@ if (errorType != "none"){
   if (errorType == "emptyinput") {
     if (errorReigon == "LI") {loginError.textContent = "Error not all fields filled in";
                               loginError.style.display = "";
+                              loginScreen.style.display = "";
+                              signupScreen.style.display = "none";
                            } else {signupError.textContent = "Error not all fields filled in";
                                   signupError.style.display = "";}
   } else if (errorType == "nopwdmatch") {
     if (errorReigon == "LI") {loginError.textContent = "Error passwords do not match";
                               loginError.style.display = "";
+                              loginScreen.style.display = "";
+                              signupScreen.style.display = "none";
                            } else {signupError.textContent = "Error incorrect password";
                                   signupError.style.display = "";}
   } else if (errorType == "uidtaken") {
     if (errorReigon == "LI") {loginError.textContent = "Error username already in use";
                               loginError.style.display = "";
+                              loginScreen.style.display = "";
+                              signupScreen.style.display = "none";
                            } else {signupError.textContent = "Error username incorrect";
                                   signupError.style.display = "";}
   }
