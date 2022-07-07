@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST["submit"] && $_POST['Iusername'] !== "" && $_POST['Ipassword'] !== "" && $_POST['Iconfpassword'] !== "")) {
+if(isset($_POST["submit"] && $_POST['Iusername'] !== "")) {
   echo "It works";
 }
 else {
