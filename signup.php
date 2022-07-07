@@ -15,7 +15,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     return false;
   }
   
-  function (uidExists($conn, $username) {
+  function uidExists($conn, $username) {
     $result;
     return false;
   }
