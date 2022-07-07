@@ -19,5 +19,5 @@ signupScreenBtn.onclick = function(){
   signupScreen.style.display = "";
 };
 
-var errorType = (window.location.href).split("?")[1]
+var errorType = (window.location.href+"?none").split("?")[1]
 console.log(errorType)
