@@ -4,5 +4,6 @@ $conn = pg_connect(getenv("postgres://famzfecldkdbgu:0ed5a04607d1f3e5009c30f8f7e
 
 if (!$conn) {
   $DATABASE_URL = getenv("DATABASE_URL");
+  echo $DATABASE_URL;
   die("it seems like------error");
 }
