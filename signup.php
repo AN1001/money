@@ -11,8 +11,9 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   
   function noPwdMatch($password,$confpassword) {
-    $result;
-    return false;
+    $result = false;
+    if($password != $confpassword){$result = true}
+    return $result;
   }
   
   function uidExists($conn, $username) {
