@@ -8,9 +8,36 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   require_once 'dbh.php';
   
-  exit();
+  
+  
+  function noPwdMatch($password,$confpassword) {
+    $result;
+    return false
+  }
+  
+  function (uidExists($conn, $username) {
+    $result;
+    return false
+  }
+  
+  function createUser($conn, $username, $password) {
+    echo "somehow we got here";
+    $a;
+  }   
+            
+  if (noPwdMatch($password,$confpassword) !== false) {
+    header("location: main.html?error=su-nopwdmatch");
+    exit();
+  }
+  if (uidExists($conn, $username) !== false) {
+    header("location: main.html?error=su-uidtaken");
+    exit();
+  }
+  
+  createUser($conn, $username, $password);
+  
 }
 else {
-  header("location: main.html?error=SU-emptyinput");
+  header("location: main.html?error=su-emptyinput");
   exit();
 }
