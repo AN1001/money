@@ -12,12 +12,12 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   function noPwdMatch($password,$confpassword) {
     $result;
-    return false
+    return false;
   }
   
   function (uidExists($conn, $username) {
     $result;
-    return false
+    return false;
   }
   
   function createUser($conn, $username, $password) {
