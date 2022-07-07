@@ -32,7 +32,7 @@ if (errorType != "none"){
   } else if (errorType == "nopwdmatch") {
     if (errorReigon == "LI") {loginError.textContent = "Error passwords do not match";
                            } else {signupError.textContent = "Error passwords do not match";}
-  } else (if errorType == "uidtaken") {
+  } else if (errorType == "uidtaken") {
     if (errorReigon == "LI") {loginError.textContent = "Error username already in use";
                            } else {signupError.textContent = "Error username already in use";}
   }
