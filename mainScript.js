@@ -48,7 +48,7 @@ if (errorType != "none"){
                            } else {signupError.textContent = "Error username already in use";
                                   signupError.style.display = "";}
   } else if (errorType == "uidinvalid") {
-    signupError.textContent = "Error username cannot involve special characters, only alphanumeric characters";
+    signupError.textContent = "Error username cannot involve special characters, only alphanumeric characters A-Z 0-9";
     signupError.style.display = "";
   }
 }
