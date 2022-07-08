@@ -53,7 +53,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     exit();
   }
   
-  $sql = "SELECT * FROM userinfo WHERE username LIKE '$username';";
+  $sql = "SELECT * FROM userinfo WHERE username LIKE 'ArnavN';";
   $dbresult = pg_query($conn, $sql);
   echo "123 '$username' ";
   echo $dbresult;
