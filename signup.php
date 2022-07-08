@@ -6,7 +6,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   $password = $_POST["Ipassword"];
   $confpassword = $_POST["Iconfpassword"];
   
-  //require_once 'dbh.php';
+  require_once 'dbh.php';
   
   
   
@@ -16,6 +16,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     return $result;
   }
   
+  
   function uidInvalid($username) {
     $result = false;
     if (!preg_match("/^\w*$/", $username)) {
@@ -24,16 +25,23 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     return $result;
   }
   
+  
   function uidExists($conn, $username) {
     $result;
-    return false;
+    $sql = "SELECT * FROM userinfo WHERE username LIKE '$username';";
+    $dbresult = pg_query($conn, $sql);
+    echo $dbresult;
+    
+    return $result;
   }
+  
   
   function createUser($conn, $username, $password) {
     echo "somehow we got here";
     $a;
   }   
-            
+        
+  
   if (noPwdMatch($password,$confpassword) !== false) {
     header("location: main.html?error=su-nopwdmatch");
     exit();
