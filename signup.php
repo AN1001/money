@@ -31,7 +31,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     $sql = "SELECT * FROM userinfo WHERE username = '$username';";
     echo $sql;
     $dbresult = pg_query($conn, $sql);
-    $inputUsername = pg_fetch_row($dbresult)
+    $inputUsername = pg_fetch_row($dbresult);
     echo $inputUsername[0];
     
     return $result;
