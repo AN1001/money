@@ -41,8 +41,9 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   
   function createUser($conn, $username, $password) {
-    echo "somehow we got here";
-    $a;
+    echo "user created!";
+    $accountCreate = "INSERT INTO userinfo (username, password, graphdata) VALUES ('$username', '$password', '[]')";
+    pg_query($conn, $accountCreate);
   }   
         
   
