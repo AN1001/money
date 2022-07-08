@@ -16,6 +16,11 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     return $result;
   }
   
+  function uidInvalid($username) {
+    $result;
+    return false;
+  }
+  
   function uidExists($conn, $username) {
     $result;
     return false;
@@ -32,6 +37,10 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   }
   if (uidExists($conn, $username) !== false) {
     header("location: main.html?error=su-uidtaken");
+    exit();
+  }
+  if (uidInvalid($username) !== false) {
+    header("location: main.html?error=su-uidinvalid");
     exit();
   }
   
