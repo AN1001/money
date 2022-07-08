@@ -33,7 +33,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     $dbresult = pg_query($conn, $sql);
     $dbUsername = pg_fetch_row($dbresult)[0];
 
-    if(dbUsername !== ''){
+    if(dbUsername !== null){
       $result = true;
       echo "the truth";
     }
