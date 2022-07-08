@@ -55,6 +55,8 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   $sql = "SELECT * FROM userinfo WHERE username LIKE '$username';";
   $dbresult = pg_query($conn, $sql);
+  echo "123"
+  echo $dbresult
   header("location: main.html?$dbresult");
   //createUser($conn, $username, $password);
   
