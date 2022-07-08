@@ -53,7 +53,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     exit();
   }
   
-  $sql = 'SELECT * FROM "userinfo";';
+  $sql = 'SELECT * FROM "usrinfo";';
   $db2result = pg_query($conn, $sql);
   if (!$db2result){
     echo "something went wrong";
