@@ -18,6 +18,9 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   function uidInvalid($username) {
     $result;
+    if (!preg_match("/^\w*$/"), $username) {
+      $result = true;
+    }
     return false;
   }
   
