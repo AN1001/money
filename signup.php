@@ -54,7 +54,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   }
   
   $sql = "SELECT * FROM userinfo;";
-  $dbresult = pg_query($conn, $sql);
+  $db2result = pg_query($conn, $sql);
   if (!$db2result){
     echo "something went wrong";
   } 
