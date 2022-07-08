@@ -5,10 +5,9 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   $username = $_POST["Iusername"];
   $password = $_POST["Ipassword"];
   $confpassword = $_POST["Iconfpassword"];
+
   
-  echo $username;
   require_once 'dbh.php';
-  
   
   
   function noPwdMatch($password,$confpassword) {
@@ -56,7 +55,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   $sql = "SELECT * FROM userinfo WHERE username LIKE '$username';";
   $dbresult = pg_query($conn, $sql);
-  echo "123";
+  echo "123 '$username' ";
   echo $dbresult;
   header("location: main.html?$dbresult");
   //createUser($conn, $username, $password);
