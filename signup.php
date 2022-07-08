@@ -57,7 +57,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   $dbresult = pg_query($conn, $sql);
   echo "123 '$username' ";
   echo $dbresult;
-  header("location: main.html?$dbresult");
+  echo pg_last_error($conn);
   //createUser($conn, $username, $password);
   
 }
