@@ -1,5 +1,6 @@
 <?php
 
+echo getenv("DATABASE_URL");
 $conn = pg_connect(getenv("DATABASE_URL"));
 
 if (!$conn) {
