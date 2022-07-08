@@ -32,7 +32,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     echo $sql;
     $dbresult = pg_query($conn, $sql);
     $inputUsername = pg_fetch_result($dbresult, 1, 0);
-    echo $inputUsername
+    echo $inputUsername;
     
     return $result;
   }
