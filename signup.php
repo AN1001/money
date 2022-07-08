@@ -29,15 +29,11 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   function uidExists($conn, $username) {
     $result = false;
     $sql = "SELECT * FROM userinfo WHERE username = '$username';";
-    echo $sql;
     $dbresult = pg_query($conn, $sql);
     $dbUsername = pg_fetch_row($dbresult)[0];
 
-    echo ($dbUsername);
-    echo ($username);
     if($dbUsername == $username){
       $result = true;
-      echo "the truth";
     }
     
     return $result;
