@@ -20,19 +20,14 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     $logInSqlUsername = "SELECT * FROM userinfo WHERE username = '$username';";
     $dbresultUsername = pg_query($conn, $logInSqlUsername);
     $dbUsername = pg_fetch_row($dbresultUsername)[0];
-    echo $dbUsername;
-    echo $username;
     
     $logInSqlPassword = "SELECT * FROM userinfo WHERE password = '$password';";
     $dbresultPassword = pg_query($conn, $logInSqlPassword);
     $dbPassword = pg_fetch_row($dbresultPassword)[1];
-    echo $dbPassword;
-    echo $password;
 
     if($dbUsername == $username && $dbPassword == $password){
-      echo "test 112";
       $logInSqlGraphs = "SELECT graphdata FROM userinfo WHERE password = '$password';";
-      $dbresultGraphs = pg_query($conn, $sql);
+      $dbresultGraphs = pg_query($conn, $logInSqlGraphs);
       $dbGraphData = pg_fetch_row($dbresultGraphs)[2];
       echo $dbGraphData;
       echo "username match and password match";
