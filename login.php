@@ -18,10 +18,12 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     $logInSqlUsername = "SELECT * FROM userinfo WHERE username = '$username';";
     $dbresultUsername = pg_query($conn, $logInSqlUsername);
     $dbUsername = pg_fetch_row($dbresultUsername)[0];
+    echo $dbUsername;
     
     $logInSqlPassword = "SELECT * FROM userinfo WHERE password = '$password';";
     $dbresultPassword = pg_query($conn, $logInSqlPassword);
-    $dbpassword = pg_fetch_row($dbresultPassword)[1];
+    $dbPassword = pg_fetch_row($dbresultPassword)[1];
+    echo $dbPassword;
 
     if($dbUsername == $username && $dbPassword == $password){
       $logInSqlGraphs = "SELECT graphdata FROM userinfo WHERE password = '$password';";
