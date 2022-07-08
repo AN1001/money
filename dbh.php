@@ -1,10 +1,10 @@
 <?php
 
 $host = getenv("PGHOST");
-echo $host
-echo "host=$host"
+echo $host;
+echo "host=$host";
 $conn = pg_connect(getenv("DATABASE_URL"));
-echo $conn
+echo $conn;
 
 if (!$conn) {
   $DATABASE_URL = getenv("DATABASE_URL");
