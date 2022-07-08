@@ -53,14 +53,17 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     exit();
   }
   
-  $sql = 'SELECT password FROM "userinfo";';
+  $sql = 'SELECT username,password FROM "userinfo";';
   $db2result = pg_query($conn, $sql);
   if (!$db2result){
     echo "something went wrong";
   } 
   
   echo "123 '$username' ";
-  echo $db2result;
+  while ($row = pg_fetch_row($db2result)) {
+    echo "username: $row[0]  password: $row[1]";
+    echo "<br />\n";
+  }
   echo pg_last_error($conn);
   //createUser($conn, $username, $password);
 
