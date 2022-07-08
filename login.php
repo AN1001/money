@@ -2,6 +2,8 @@
 
 if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipassword'])) {
   
+  $username = $_POST["Iusername"];
+  $password = $_POST["Ipassword"];
   include_once 'dbh.php';
   
   function incorrectPwd($password,$confpassword) {
