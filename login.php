@@ -8,11 +8,28 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   function incorrectPwd($password,$confpassword) {
     $result = false;
+
+    $logInSqlPassword = "SELECT * FROM userinfo WHERE password = '$password';";
+    $dbresultPassword = pg_query($conn, $logInSqlPassword);
+    $dbPassword = pg_fetch_row($dbresultPassword)[1];
+
+    if($dbpassword != $password){
+      $result = true;
+    }
     return $result;
   }
   
   function incorrectUid($conn, $username) {
     $result = false;
+
+    $logInSqlUsername = "SELECT * FROM userinfo WHERE username = '$username';";
+    $dbresultUsername = pg_query($conn, $logInSqlUsername);
+    $dbUsername = pg_fetch_row($dbresultUsername)[0];
+
+    if($dbUsername != $username){
+      $result = true;
+    }
+
     return $result;
   }
   
