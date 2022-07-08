@@ -30,8 +30,8 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     $result = false;
     $sql = "SELECT * FROM userinfo WHERE username = '$username';";
     echo $sql;
-    print_r($sql);
     $dbresult = pg_query($conn, $sql);
+    print_r($dbresult);
     
     return $result;
   }
