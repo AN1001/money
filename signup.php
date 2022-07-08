@@ -61,7 +61,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
 
   
   
-else {
+} else {
   header("location: main.html?error=su-emptyinput");
   exit();
 }
