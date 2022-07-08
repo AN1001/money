@@ -28,7 +28,10 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   function uidExists($conn, $username) {
     $result = false;
-
+    $sql = "SELECT * FROM userinfo WHERE username = '$username';";
+    echo $sql;
+    print_r($sql);
+    $dbresult = pg_query($conn, $sql);
     
     return $result;
   }
@@ -53,25 +56,11 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     exit();
   }
   
-  $sql = 'SELECT username,password FROM "userinfo";';
-  $db2result = pg_query($conn, $sql);
-  if (!$db2result){
-    echo "something went wrong";
-  } 
-  
-  echo "123 '$username' ";
-  while ($row = pg_fetch_row($db2result)) {
-    echo "username: $row[0]  password: $row[1]";
-    echo "<br />\n";
-  }
   echo pg_last_error($conn);
-  //createUser($conn, $username, $password);
+  createUser($conn, $username, $password);
 
-  $arr = pg_fetch_all($db2result);
-
-  print_r($arr);
   
-}
+  
 else {
   header("location: main.html?error=su-emptyinput");
   exit();
