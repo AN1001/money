@@ -54,10 +54,13 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   }
   
   $sql = "SELECT * FROM userinfo WHERE username LIKE 'ArnavN';";
-  $dbresult = pgy_query($conn, $sql);
+  $dbresult = pg_query($conn, $sql);
+  if (!$dbresult){
+    echo "something went wrong";
+  } 
   echo "123 '$username' ";
   echo $dbresult;
-  echo pgy_last_error($conn);
+  echo pg_last_error($conn);
   //createUser($conn, $username, $password);
   
 }
