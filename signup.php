@@ -28,9 +28,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   function uidExists($conn, $username) {
     $result;
-    $sql = "SELECT * FROM userinfo WHERE username LIKE '$username';";
-    $dbresult = pg_query($conn, $sql);
-    echo $dbresult;
+
     
     return $result;
   }
@@ -55,6 +53,9 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     exit();
   }
   
+  $sql = "SELECT * FROM userinfo WHERE username LIKE '$username';";
+  $dbresult = pg_query($conn, $sql);
+  echo $dbresult;
   createUser($conn, $username, $password);
   
 }
