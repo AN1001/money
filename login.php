@@ -2,6 +2,7 @@
 
 if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipassword'])) {
   
+  include_once 'dbh.php';
   
   function incorrectPwd($password,$confpassword) {
     $result = false;
@@ -14,11 +15,23 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   }
   
   function logIn($conn, $username, $password) {
-    echo "login with credentials";
-    $a;
-  }   
-            
-  
+    $logInSqlUsername = "SELECT * FROM userinfo WHERE username = '$username';";
+    $dbresultUsername = pg_query($conn, $logInSqlUsername);
+    $dbUsername = pg_fetch_row($dbresultUsername)[0];
+    
+    $logInSqlPassword = "SELECT * FROM userinfo WHERE password = '$password';";
+    $dbresultPassword = pg_query($conn, $logInSqlPassword);
+    $dbpassword = pg_fetch_row($dbresultPassword)[1];
+
+    if($dbUsername == $username && $dbPassword == $password){
+      $logInSqlGraphs = "SELECT graphdata FROM userinfo WHERE password = '$password';";
+      $dbresultGraphs = pg_query($conn, $sql);
+      $dbGraphData = pg_fetch_row($dbresultGraphs)[2];
+      echo $dbGraphData;
+      echo "username match and password match";
+    }
+    
+   }   
   
   if (incorrectPwd($conn, $password) !== false) {
     header("location: main.html?error=LI-nopwdmatch");
