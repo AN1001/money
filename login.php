@@ -30,6 +30,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     echo $password;
 
     if($dbUsername == $username && $dbPassword == $password){
+      echo "test 112"
       $logInSqlGraphs = "SELECT graphdata FROM userinfo WHERE password = '$password';";
       $dbresultGraphs = pg_query($conn, $sql);
       $dbGraphData = pg_fetch_row($dbresultGraphs)[2];
