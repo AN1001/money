@@ -6,7 +6,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   $password = $_POST["Ipassword"];
   $confpassword = $_POST["Iconfpassword"];
   
-  echo '{$username}-end';
+  echo $username;
   require_once 'dbh.php';
   
   
