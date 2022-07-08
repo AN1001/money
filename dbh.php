@@ -1,11 +1,8 @@
 <?php
 
-$du = getenv("DATABASE_URL");
-echo $du;
-$du = "abc$du"
-echo $du
-$conn = pg_connect($du);
-echo $conn;
+echo getenv("DATABASE_URL");
+$conn = pg_connect(getenv("DATABASE_URL"));
+
 
 if (!$conn) {
   $DATABASE_URL = getenv("DATABASE_URL");
