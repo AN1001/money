@@ -37,6 +37,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     echo $username;
     if($dbUsename == $username){
       $result = true;
+      echo "the truth"
     }
     
     return $result;
