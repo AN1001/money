@@ -84,6 +84,7 @@ function setCookie(cname, cvalue) {
 function getCookie(cname) {
   let name = cname + "=";
   let ca = document.cookie.split(';');
+  console.log(ca)
   for(let i = 0; i < ca.length; i++) {
     let c = ca[i];
     while (c.charAt(0) == ' ') {
