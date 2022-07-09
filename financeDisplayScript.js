@@ -1,2 +1,2 @@
-    const graphData = '<?=$dbGraphData?>';
+    const graphData = <?php echo $dbGraphData ?>;
     console.log(graphData); 
