@@ -1,1 +1,1 @@
-console.log(graphDataRaw); 
+console.log(js_variable_name); 
