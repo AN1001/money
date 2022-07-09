@@ -2,19 +2,21 @@
 
 if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipassword'])) {
   
-  $username = $_POST["Iusername"];
-  $password = $_POST["Ipassword"];
+  //$username = $_POST["Iusername"];
+  //$password = $_POST["Ipassword"];
   include_once 'dbh.php';
   
   $logInSqlPassword = "SELECT * FROM userinfo WHERE password = '$password';";
   $dbresultPassword = pg_query($conn, $logInSqlPassword);
-  $dbPassword = pg_fetch_row($dbresultPassword)[1];
+  //$dbPassword = pg_fetch_row($dbresultPassword)[1];
   $dbPassword = "1234";
+  $password = "1234";
   
   $logInSqlUsername = "SELECT * FROM userinfo WHERE username = '$username';";
   $dbresultUsername = pg_query($conn, $logInSqlUsername);
-  $dbUsername = pg_fetch_row($dbresultUsername)[0];
+  //$dbUsername = pg_fetch_row($dbresultUsername)[0];
   $dbUsername = "ArnavN";
+  $username = "ArnavN";
   
   function incorrectPwd($password,$confpassword) {
     
