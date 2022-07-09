@@ -44,13 +44,17 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     
    }   
   
-  if (incorrectPwd($conn, $password) !== false) {
-    header("location: main.html?error=LI-nopwdmatch");
-    exit();
-  }
   if (incorrectUid($conn, $username) !== false) {
-    header("location: main.html?error=LI-uidtaken");
-    exit();
+    echo $dbUsername;
+    echo $username;
+    //header("location: main.html?error=LI-uidtaken");
+    //exit();
+  }
+  if (incorrectPwd($conn, $password) !== false) {
+    echo $dbPassword;
+    echo $password;
+    //header("location: main.html?error=LI-nopwdmatch");
+    //exit();
   }
   
   logIn($conn, $username, $password);
