@@ -8,21 +8,15 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   $logInSqlPassword = "SELECT * FROM userinfo WHERE password = '$password';";
   $dbresultPassword = pg_query($conn, $logInSqlPassword);
-  //$dbPassword = pg_fetch_row($dbresultPassword)[1];
-  $dbPassword = "1234";
-  $password = "1234";
+  $dbPassword = pg_fetch_row($dbresultPassword)[1];
   
   $logInSqlUsername = "SELECT * FROM userinfo WHERE username = '$username';";
   $dbresultUsername = pg_query($conn, $logInSqlUsername);
-  //$dbUsername = pg_fetch_row($dbresultUsername)[0];
-  $dbUsername = "ArnavN";
-  $username = "ArnavN";
+  $dbUsername = pg_fetch_row($dbresultUsername)[0];
   
-  function incorrectPwd($password,$confpassword) {
-    
+  function incorrectPwd($password,$dbPassword) {
     $result = false;
     if(!($dbPassword === $password)){
-      echo !($dbpassword===$password);
       echo "ks";
       $result = true;
     }
@@ -30,10 +24,9 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     return $result;
   }
   
-  function incorrectUid($conn, $username) {
+  function incorrectUid($username, $dbUsername) {
     $result = false;
     if(!($dbUsername === $username)){
-      echo !($dbUsername===$username);
       echo "kt";
       $result = true;
     }
@@ -53,15 +46,13 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     
    }
   
-  if (incorrectUid($conn, $username) !== false) {
-    echo ($dbUsername === $username);
-    //header("location: main.html?error=LI-uidtaken");
-    //exit();
+  if (incorrectUid($username, $dbUsername) !== false) {
+    header("location: main.html?error=LI-uidtaken");
+    exit();
   }
-  if (incorrectPwd($conn, $password) !== false) {
-    echo ($dbPassword === $password);
-    //header("location: main.html?error=LI-nopwdmatch");
-    //exit();
+  if (incorrectPwd($password, $dbPassword) !== false) {
+    header("location: main.html?error=LI-nopwdmatch");
+    exit();
   }
   
   logIn($conn, $username, $password);
