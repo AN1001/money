@@ -18,7 +18,7 @@ loginScreenBtn.onclick = function(){
 };
 
 signupScreenBtn.onclick = function(){
-  value = getCookie('username')
+  value = getCookie('username');
   console.log(value);
   loginScreen.style.display = "none";
   signupScreen.style.display = "";
@@ -64,7 +64,6 @@ if (errorType != "none"){
 }
 
 function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
+  const value = document.cookie;
+  return value.split("=")[1];
 }
