@@ -31,7 +31,7 @@ loginBtn.onclick = function(){
 
 var errorType = (window.location.href+"?none").split("?")[1];
 if (errorType != "none"){
-  displayCookieValue('uidCorrect');
+  getCookie('uidCorrect');
   var errorReigon = '';
   errorType = errorType.slice(6);
   errorReigon = errorType.slice(0,2);
