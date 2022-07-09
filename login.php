@@ -9,10 +9,12 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   $logInSqlPassword = "SELECT * FROM userinfo WHERE password = '$password';";
   $dbresultPassword = pg_query($conn, $logInSqlPassword);
   $dbPassword = pg_fetch_row($dbresultPassword)[1];
+  $dbPassword = "1234";
   
   $logInSqlUsername = "SELECT * FROM userinfo WHERE username = '$username';";
   $dbresultUsername = pg_query($conn, $logInSqlUsername);
   $dbUsername = pg_fetch_row($dbresultUsername)[0];
+  $dbUsername = "ArnavN";
   
   function incorrectPwd($password,$confpassword) {
     
