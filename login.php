@@ -13,6 +13,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   $logInSqlUsername = "SELECT * FROM userinfo WHERE username = '$username';";
   $dbresultUsername = pg_query($conn, $logInSqlUsername);
   $dbUsername = pg_fetch_row($dbresultUsername)[0];
+  echo $dbUsername,$dbPassword;
   
   function incorrectPwd($password,$dbPassword) {
     $result = false;
