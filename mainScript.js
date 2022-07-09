@@ -72,8 +72,7 @@ function setCookie(name, id) {
 }
 
 function displayCookieValue(name) {
-    var value = getCookie(name);
-    console.log("Cookie name: "+ name + ", value " + value);
+    console.log(document.cookie);
 
 }
 
