@@ -9,39 +9,28 @@ loginError.style.display = "none";
 const signupError = document.getElementById("SU-EB");
 signupError.style.display = "none";
 
-setCookie("a","abcd");
-var x = getCookie("a");
-console.log(x);
-console.log(document.cookie);
-
 loginScreen.style.display = "none";
 loginScreenBtn.onclick = function(){
   var value = document.getElementsByClassName("loginUsername")[0].value;
-  console.log(value);
-  setCookie('uidCorrect',value);
+  document.cookie = "username="+value;
   loginScreen.style.display = "";
   signupScreen.style.display = "none";
 };
 
 signupScreenBtn.onclick = function(){
-  var value = document.getElementsByClassName("loginUsername")[0].value;
-  var x = getCookie('uidCorrect');
-  console.log(x);
+  value = getCookie('username')
   console.log(value);
   loginScreen.style.display = "none";
   signupScreen.style.display = "";
 };
 
 loginBtn.onclick = function(){
-  var value = document.getElementsByClassName("loginUsername")[0].value;
-  console.log(value)
-  setCookie('uidCorrect',value);
+
 };
 
 
 var errorType = (window.location.href+"?none").split("?")[1];
 if (errorType != "none"){
-  getCookie('uidCorrect');
   var errorReigon = '';
   errorType = errorType.slice(6);
   errorReigon = errorType.slice(0,2);
@@ -74,27 +63,8 @@ if (errorType != "none"){
   }
 }
 
-function setCookie(cname, cvalue) {
-  const d = new Date();
-  d.setTime(d.getTime() + (60));
-  let expires = "expires="+d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
 }
-
-function getCookie(cname) {
-  let name = cname + "=";
-  let ca = document.cookie.split(';');
-  console.log(ca)
-  for(let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  console.log("cookie not found");
-  return "";
-}
-
