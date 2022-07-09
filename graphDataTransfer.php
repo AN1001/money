@@ -1,7 +1,4 @@
 <?php
-session_start();
-$dbGraphData = $_SESSION['graphData'];
-?>
-<script type="text/javascript">
-    var graphDataRaw = "<?php echo $dbGraphData; ?>";
-</script>
+$php_variable = 'string';
+?>			
+<script> js_variable_name = "<?php echo $php_variable; ?>";</script>
