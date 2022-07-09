@@ -39,20 +39,18 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
       $dbresultGraphs = pg_query($conn, $logInSqlGraphs);
       $dbGraphData = pg_fetch_row($dbresultGraphs)[2];
       echo $dbGraphData;
-      echo "username match and password match";
+      echo "username match - password match";
     }
     
-   }   
+   }
   
   if (incorrectUid($conn, $username) !== false) {
-    echo $dbUsername;
-    echo $username;
+    echo ($dbUsername == $username);
     //header("location: main.html?error=LI-uidtaken");
     //exit();
   }
   if (incorrectPwd($conn, $password) !== false) {
-    echo $dbPassword;
-    echo $password;
+    echo ($dbPassword == $password);
     //header("location: main.html?error=LI-nopwdmatch");
     //exit();
   }
