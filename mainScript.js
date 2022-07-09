@@ -12,6 +12,7 @@ signupError.style.display = "none";
 setCookie("a","abcd")
 var x = getCookie("a")
 console.log(x)
+console.log(document.cookie)
 
 loginScreen.style.display = "none";
 loginScreenBtn.onclick = function(){
