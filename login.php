@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipassword'])) {
   
   $username = $_POST["Iusername"];
@@ -43,6 +45,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
       echo $dbGraphData;
       echo "user logged in";
       
+      $_SESSION['graphData'] = $dbGraphData;
       header("location: financeDisplay.html?$dbGraphData");
       exit();
     }
