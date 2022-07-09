@@ -17,8 +17,8 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   function incorrectPwd($password,$confpassword) {
     
     $result = false;
-    if(!($dbpassword==$password)){
-      echo !($dbpassword==$password);
+    if(!($dbpassword===$password)){
+      echo !($dbpassword===$password);
       echo "ks";
       $result = true;
     }
@@ -28,8 +28,8 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   function incorrectUid($conn, $username) {
     $result = false;
-    if(!($dbUsername==$username)){
-      echo !($dbUsername==$username);
+    if(!($dbUsername===$username)){
+      echo !($dbUsername===$username);
       echo "kt";
       $result = true;
     }
@@ -50,12 +50,12 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
    }
   
   if (incorrectUid($conn, $username) !== false) {
-    echo ($dbUsername == $username);
+    echo ($dbUsername === $username);
     //header("location: main.html?error=LI-uidtaken");
     //exit();
   }
   if (incorrectPwd($conn, $password) !== false) {
-    echo ($dbPassword == $password);
+    echo ($dbPassword === $password);
     //header("location: main.html?error=LI-nopwdmatch");
     //exit();
   }
