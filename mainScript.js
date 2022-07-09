@@ -12,6 +12,7 @@ signupError.style.display = "none";
 loginScreen.style.display = "none";
 loginScreenBtn.onclick = function(){
   var value = document.getElementsByClassName("loginUsername")[0];
+  console.log(value);
   setCookie('uidCorrect',value);
   loginScreen.style.display = "";
   signupScreen.style.display = "none";
@@ -19,7 +20,8 @@ loginScreenBtn.onclick = function(){
 
 signupScreenBtn.onclick = function(){
   var x = getCookie('uidCorrect');
-  console.log(x)
+  console.log(x);
+  console.log(value);
   loginScreen.style.display = "none";
   signupScreen.style.display = "";
 };
