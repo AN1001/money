@@ -11,21 +11,18 @@ signupError.style.display = "none";
 
 loginScreen.style.display = "none";
 loginScreenBtn.onclick = function(){
-  var value = document.getElementsByClassName("loginUsername")[0].value;
-  document.cookie = "username="+value;
   loginScreen.style.display = "";
   signupScreen.style.display = "none";
 };
 
 signupScreenBtn.onclick = function(){
-  value = getCookie('username');
-  console.log(value);
   loginScreen.style.display = "none";
   signupScreen.style.display = "";
 };
 
 loginBtn.onclick = function(){
-
+  var value = document.getElementsByClassName("loginUsername")[0].value;
+  document.cookie = "username="+value;
 };
 
 
@@ -44,6 +41,8 @@ if (errorType != "none"){
                            } else {signupError.textContent = "Error not all fields filled in";
                                   signupError.style.display = "";}
   } else if (errorType == "nopwdmatch") {
+    var olduid = getCookie('username');
+    document.getElementsByClassName("loginUsername")[0].value = olduid;
     if (errorReigon == "LI") {loginError.textContent = "Error incorrect password";
                               loginError.style.display = "";
                               loginScreen.style.display = "";
