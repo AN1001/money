@@ -18,7 +18,8 @@ loginScreenBtn.onclick = function(){
 };
 
 signupScreenBtn.onclick = function(){
-  getCookie('uidCorrect');
+  var x = getCookie('uidCorrect');
+  console.log(x)
   loginScreen.style.display = "none";
   signupScreen.style.display = "";
 };
