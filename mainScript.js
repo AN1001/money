@@ -16,7 +16,7 @@ console.log(document.cookie);
 
 loginScreen.style.display = "none";
 loginScreenBtn.onclick = function(){
-  var value = document.getElementsByClassName("loginUsername")[0];
+  var value = document.getElementsByClassName("loginUsername")[0].value;
   console.log(value);
   setCookie('uidCorrect',value);
   loginScreen.style.display = "";
@@ -24,6 +24,7 @@ loginScreenBtn.onclick = function(){
 };
 
 signupScreenBtn.onclick = function(){
+  var value = document.getElementsByClassName("loginUsername")[0].value;
   var x = getCookie('uidCorrect');
   console.log(x);
   console.log(value);
@@ -32,7 +33,7 @@ signupScreenBtn.onclick = function(){
 };
 
 loginBtn.onclick = function(){
-  var value = document.getElementsByClassName("loginUsername")[0];
+  var value = document.getElementsByClassName("loginUsername")[0].value;
   console.log(value)
   setCookie('uidCorrect',value);
 };
