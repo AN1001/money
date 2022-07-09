@@ -9,10 +9,10 @@ loginError.style.display = "none";
 const signupError = document.getElementById("SU-EB");
 signupError.style.display = "none";
 
-setCookie("a","abcd")
-var x = getCookie("a")
-console.log(x)
-console.log(document.cookie)
+setCookie("a","abcd");
+var x = getCookie("a");
+console.log(x);
+console.log(document.cookie);
 
 loginScreen.style.display = "none";
 loginScreenBtn.onclick = function(){
@@ -92,6 +92,7 @@ function getCookie(cname) {
       return c.substring(name.length, c.length);
     }
   }
+  console.log("cookie not found");
   return "";
 }
 
