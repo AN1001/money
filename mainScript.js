@@ -16,6 +16,7 @@ loginScreenBtn.onclick = function(){
 };
 
 signupScreenBtn.onclick = function(){
+  console.log(document.getElementsByClassName("loginUsername")[0].value)
   loginScreen.style.display = "none";
   signupScreen.style.display = "";
 };
