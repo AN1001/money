@@ -9,6 +9,10 @@ loginError.style.display = "none";
 const signupError = document.getElementById("SU-EB");
 signupError.style.display = "none";
 
+setCookie("a","abcd")
+var x = getCookie("a")
+console.log(x)
+
 loginScreen.style.display = "none";
 loginScreenBtn.onclick = function(){
   var value = document.getElementsByClassName("loginUsername")[0];
@@ -28,6 +32,7 @@ signupScreenBtn.onclick = function(){
 
 loginBtn.onclick = function(){
   var value = document.getElementsByClassName("loginUsername")[0];
+  console.log(value)
   setCookie('uidCorrect',value);
 };
 
