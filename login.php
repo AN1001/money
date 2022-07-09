@@ -16,6 +16,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   echo $dbUsername,$dbPassword;
   
   function incorrectPwd($password,$dbPassword) {
+    echo $password, $dbPassword;
     $result = false;
     if(!($dbPassword === $password)){
       echo "ks";
@@ -26,6 +27,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   }
   
   function incorrectUid($username, $dbUsername) {
+    echo $username,$dbUsername;
     $result = false;
     if(!($dbUsername === $username)){
       echo "kt";
@@ -35,7 +37,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     return $result;
   }
   
-  function logIn($conn, $username, $password) {
+  function logIn($conn, $username, $password, $dbUsername, $dbPassword) {
     echo "at least we got here";
     if($dbUsername == $username && $dbPassword == $password){
       $logInSqlGraphs = "SELECT graphdata FROM userinfo WHERE password = '$password';";
@@ -56,7 +58,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     exit();
   }
   
-  logIn($conn, $username, $password);
+  logIn($conn, $username, $password, $dbUsername, $dbPassword);
   
 }
 else {
