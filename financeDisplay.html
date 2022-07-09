@@ -12,8 +12,15 @@
   
 
   
-<?php include 'financeData.php';?>  
-<script>const graphData = <?php echo $dbGraphData ?>; console.log(graphData); </script>
+<?php
+session_start();
+$dbGraphData = $_SESSION['graphData'];
+?>
+<script type="text/javascript">
+  const graphData = <?php echo $dbGraphData ?>; console.log(graphData); 
+</script>
+
+  
 <script src="financeDisplayScript.js"></script>
 
 </body>
