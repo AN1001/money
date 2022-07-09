@@ -14,6 +14,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   $dbresultUsername = pg_query($conn, $logInSqlUsername);
   $dbUsername = pg_fetch_row($dbresultUsername)[0];
   echo $dbUsername,$dbPassword;
+  echo "running";
   
   function incorrectPwd($password,$dbPassword) {
     echo $password, $dbPassword;
