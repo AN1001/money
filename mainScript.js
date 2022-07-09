@@ -11,6 +11,8 @@ signupError.style.display = "none";
 
 loginScreen.style.display = "none";
 loginScreenBtn.onclick = function(){
+  var value = document.getElementsByClassName("loginUsername")[0];
+  setCookie('uidCorrect',value);
   loginScreen.style.display = "";
   signupScreen.style.display = "none";
 };
