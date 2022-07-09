@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipassword'])) {
   
   $username = $_POST["Iusername"];
@@ -41,7 +43,11 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
       $dbGraphData = pg_fetch_row($dbresultGraphs)[0];
       echo pg_last_error($conn);
       echo $dbGraphData;
-      echo "username match - password match";
+      echo "user logged in";
+      
+      $_SESSION['graphData'] = $dbGraphData;
+      header("location: financeDisplay.html");
+      exit();
     }
     
    }
