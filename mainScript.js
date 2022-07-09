@@ -22,12 +22,12 @@ signupScreenBtn.onclick = function(){
 
 loginBtn.onclick = function(){
   setCookie('uidCorrect','Iusername');
-  displayCookieValue('uidCorrect');
 };
 
 
 var errorType = (window.location.href+"?none").split("?")[1];
 if (errorType != "none"){
+  displayCookieValue('uidCorrect');
   var errorReigon = '';
   errorType = errorType.slice(6);
   errorReigon = errorType.slice(0,2);
