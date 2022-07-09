@@ -21,6 +21,7 @@ signupScreenBtn.onclick = function(){
 };
 
 loginBtn.onclick = function(){
+  console.log(document.getElementsByClassName("loginUsername")[0].value)
   setCookie('uidCorrect','Iusername');
 };
 
