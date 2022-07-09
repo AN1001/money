@@ -1,3 +1,4 @@
+const loginBtn = document.getElementById("Ilogin");
 const loginScreen = document.getElementById("login");
 const signupScreen = document.getElementById("signup");
 const loginScreenBtn = document.getElementById("loginBtn");
@@ -18,6 +19,12 @@ signupScreenBtn.onclick = function(){
   loginScreen.style.display = "none";
   signupScreen.style.display = "";
 };
+
+loginBtn.onclick = function(){
+  setCookie('uidCorrect','Iusername');
+  displayCookieValue('uidCorrect');
+};
+
 
 var errorType = (window.location.href+"?none").split("?")[1];
 if (errorType != "none"){
@@ -51,4 +58,27 @@ if (errorType != "none"){
     signupError.textContent = "Error username cannot involve special characters, only alphanumeric characters A-Z 1-9";
     signupError.style.display = "";
   }
+}
+
+var today = new Date();
+var expiry = new Date(today.getTime() + 60);
+
+function setCookie(name, id) {
+    var element = document.getElementById(id);
+    var elementValue = escape(element.value);
+
+    document.cookie = name + "=" + elementValue + "; path=/; expires=" + expiry.toGMTString();
+    console.log(document.cookie);
+}
+
+function displayCookieValue(name) {
+    var value = getCookie(name);
+    console.log("Cookie name: "+ name + ", value " + value);
+
+}
+
+function getCookie(name) {
+    var re = new RegExp(name + "=([^;]+)");
+    var value = re.exec(document.cookie);
+    return (value != null) ? unescape(value[1]) : null;
 }
