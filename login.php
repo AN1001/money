@@ -17,7 +17,8 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   function incorrectPwd($password,$confpassword) {
     
     $result = false;
-    if(!$dbpassword){
+    if(!isset($dbpassword)){
+      echo "incorpassword";
       $result = true;
     }
     
@@ -26,7 +27,8 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   function incorrectUid($conn, $username) {
     $result = false;
-    if(!$dbUsername){
+    if(!isset($dbUsername)){
+      echo "incorusername";
       $result = true;
     }
 
