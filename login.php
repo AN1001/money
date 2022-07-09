@@ -13,11 +13,8 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   $logInSqlUsername = "SELECT * FROM userinfo WHERE username = '$username';";
   $dbresultUsername = pg_query($conn, $logInSqlUsername);
   $dbUsername = pg_fetch_row($dbresultUsername)[0];
-  echo $dbUsername,$dbPassword;
-  echo "running";
   
   function incorrectPwd($password,$dbPassword) {
-    echo $password, $dbPassword;
     $result = false;
     if(!($dbPassword === $password)){
       echo "ks";
@@ -28,7 +25,6 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   }
   
   function incorrectUid($username, $dbUsername) {
-    echo $username,$dbUsername;
     $result = false;
     if(!($dbUsername === $username)){
       echo "kt";
@@ -39,7 +35,6 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   }
   
   function logIn($conn, $username, $password, $dbUsername, $dbPassword) {
-    echo "at least we got here";
     if($dbUsername == $username && $dbPassword == $password){
       $logInSqlGraphs = "SELECT graphdata FROM userinfo WHERE password = '$password';";
       $dbresultGraphs = pg_query($conn, $logInSqlGraphs);
