@@ -16,14 +16,14 @@ loginScreenBtn.onclick = function(){
 };
 
 signupScreenBtn.onclick = function(){
-  console.log(document.getElementsByClassName("loginUsername")[0].value)
+  displayCookieValue('uidCorrect');
   loginScreen.style.display = "none";
   signupScreen.style.display = "";
 };
 
 loginBtn.onclick = function(){
-  console.log(document.getElementsByClassName("loginUsername")[0].value)
-  setCookie('uidCorrect','Iusername');
+  var value = document.getElementsByClassName("loginUsername")[0];
+  setCookie('uidCorrect',value);
 };
 
 
@@ -65,17 +65,14 @@ if (errorType != "none"){
 var today = new Date();
 var expiry = new Date(today.getTime() + 60);
 
-function setCookie(name, id) {
-    var element = document.getElementById(id);
-    var elementValue = escape(element.value);
-
+function setCookie(name, value) {
+    var elementValue = value+"%";
     document.cookie = name + "=" + elementValue + "; path=/; expires=" + expiry.toGMTString();
     console.log(document.cookie);
 }
 
 function displayCookieValue(name) {
     console.log(document.cookie);
-
 }
 
 function getCookie(name) {
