@@ -3,10 +3,7 @@
   <link rel="stylesheet" href="financeDisplay-styles.css">
   
 <head>
-<?php
-$php_variable = 'string'; //Define our PHP variable. You can of course get the value of this variable however you need.
-?>			
-<script> js_variable_name = "<?php echo $php_variable; ?>";</script>
+<?php include 'graphDataTransfer.php';?>
 <title>Your Finances</title>
 </head>
   
@@ -16,7 +13,6 @@ $php_variable = 'string'; //Define our PHP variable. You can of course get the v
 
   
 
-<?php include 'graphDataTransfer.php';?>
 <script src="financeDisplayScript.js"></script>
 
 </body>
