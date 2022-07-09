@@ -36,9 +36,10 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   function logIn($conn, $username, $password, $dbUsername, $dbPassword) {
     if($dbUsername == $username && $dbPassword == $password){
-      $logInSqlGraphs = "SELECT graphdata FROM userinfo WHERE password = '$password';";
+      $logInSqlGraphs = "SELECT graphdata FROM userinfo WHERE password = '$password' AND username = '$username';";
       $dbresultGraphs = pg_query($conn, $logInSqlGraphs);
       $dbGraphData = pg_fetch_row($dbresultGraphs)[2];
+      echo pg_last_error($conn);
       echo $dbGraphData;
       echo "username match - password match";
     }
