@@ -29,14 +29,18 @@ html, body{
     	height: 90px;
 	background-color: #eb765d;
 	background-image: url(accentPhoto.png);
-	background-size: 7em;
+	background-size: 5em;
 	background-repeat: no-repeat;
-	background-position: 250px;
+	background-position: 285px;
 	padding: 5px;
 	border-radius: 1em;
 	margin-bottom: 15px;
 	width: auto;
+	
+	animation-name: initlogo;
+  	animation-duration: 2s;
 }
+
 
 .mainGraphElement{
     	height: calc(100% - 120px);
@@ -44,4 +48,15 @@ html, body{
 	background-color: #fffcf7;
 	border-radius: 1em;
     	width: auto;
+}
+
+@keyframes initlogo{
+	from{
+	 background-size: 7em;
+	 background-position: 255px;
+	}
+	to{
+	 background-size: 5em;
+	 background-position: 280px;
+  	}
 }
