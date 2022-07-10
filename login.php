@@ -41,8 +41,10 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
       $dbGraphData = pg_fetch_row($dbresultGraphs)[0];
       echo pg_last_error($conn);
       echo $dbGraphData;
+      echo gettype($dbGraphData)
       echo "user logged in";
       setcookie("graphData=" . $dbGraphData);
+      echo "usoggn";
       
       header("location: financeDisplay.html?$dbGraphData");
       exit();
