@@ -28,6 +28,7 @@ html, body{
 .topBar{
     	height: 90px;
 	background-color: #eb765d;
+	background-image: url(accentPhoto.png);
 	padding: 5px;
 	border-radius: 1em;
 	margin-bottom: 15px;
