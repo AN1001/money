@@ -45,7 +45,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
       setcookie("graphData", $dbGraphData, time()+300, '/');
       echo "user logged in";
 
-      header("location: financeDisplay.html?$dbGraphData");
+      header("location: financeDisplay.html");
       exit();
     }
     
