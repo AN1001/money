@@ -1,8 +1,7 @@
 const graphDataRaw = getCookie("graphData");
-console.log(graphDataRaw);
-
-
-
+const graphData = eval(graphDataRaw);
+console.log(graphData);
+console.log(graphData[1]);
 
 function getCookie(name) {
   const value = document.cookie;
