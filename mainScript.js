@@ -68,7 +68,7 @@ function getCookie(name) {
   
   for(let i = 0; i < cookies.length; i++) {
     if (cookies[i].split(name+"=") !== cookies[i]){
-      return cookies[i].split(name+"=")[1];
+      return decodeURIComponent(cookies[i].split(name+"=")[1]);
     }
   }
 }
