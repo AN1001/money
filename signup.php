@@ -63,7 +63,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
   
   echo pg_last_error($conn);
   createUser($conn, $username, $password);
-
+  header("location: financeDisplay.html");
   
   
 } else {
