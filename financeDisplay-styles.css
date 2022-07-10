@@ -29,6 +29,9 @@ html, body{
     	height: 90px;
 	background-color: #eb765d;
 	background-image: url(accentPhoto.png);
+	background-size: 7em;
+	background-repeat: no-repeat;
+	background-position: 250px;
 	padding: 5px;
 	border-radius: 1em;
 	margin-bottom: 15px;
