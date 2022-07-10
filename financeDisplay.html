@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<?php
-  echo "session start";
-  session_start();
-  $dbGraphData = $_SESSION['graphData'];
-  echo "session stored";
-  setcookie("graphData", $dbGraphData, time()+300, '/');
-  echo "cookie set";
-?>
 <html>
   <link rel="stylesheet" href="financeDisplay-styles.css">
   
