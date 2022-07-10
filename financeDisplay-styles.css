@@ -50,6 +50,29 @@ html, body{
     	width: auto;
 }
 
+#textHandler{
+	color: #f7ebdf;
+	line-height: 1.5em;
+	
+	padding-left: 20px;
+	padding-top: 17px; 
+	height: calc(98% - 17px);
+}
+
+#fineText{
+	font-size: 0.75em;
+	 
+}
+
+#popoutText{
+	font-size: 1.6em; 
+	font-weight: 600;
+}
+
+
+
+/*  Animations  */
+
 @keyframes initlogo{
 	from{
 	 background-size: 7em;
