@@ -4,11 +4,11 @@ const temp = document.getElementById("temp1");
 const appendZone = document.getElementById("allGraphs");
 
 var clon = temp.content.cloneNode(true);
-document.appendZone.appendChild(clon);
+appendZone.appendChild(clon);
 var clon = temp.content.cloneNode(true);
-document.appendZone.appendChild(clon);
+appendZone.appendChild(clon);
 var clon = temp.content.cloneNode(true);
-document.appendZone.appendChild(clon);
+appendZone.appendChild(clon);
 
 function getCookie(name) {
   const value = document.cookie;
