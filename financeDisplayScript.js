@@ -1,7 +1,11 @@
 const graphDataRaw = getCookie("graphData");
 const graphData = eval(graphDataRaw);
-console.log(graphData);
-console.log(graphData[1]);
+const temp = document.getElementsByTagName("template")[0];
+
+var clon = temp.content.cloneNode(true);
+document.body.appendChild(clon);
+document.body.appendChild(clon);
+document.body.appendChild(clon);
 
 function getCookie(name) {
   const value = document.cookie;
