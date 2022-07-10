@@ -64,5 +64,12 @@ if (errorType != "none"){
 
 function getCookie(name) {
   const value = document.cookie;
-  return value.split("=")[1];
+  var cookies = value.split(";");
+  
+  for(let i = 6; i < cookies.length; i++) {
+    if (cookies[i].split(name+"=") !== cookies[i]){
+      console.log(cookies[i].split(name+"=")); 
+      return cookies[i].split(name+"=");
+    }
+  }
 }
