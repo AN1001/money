@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+  <?php
+    session_start();
+    $dbGraphData = $_SESSION['graphData'];
+    setcookie("graphData", $dbGraphData, time()+300, '/');
+  ?>
   <link rel="stylesheet" href="financeDisplay-styles.css">
   
 <head>
