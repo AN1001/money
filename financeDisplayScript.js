@@ -1,6 +1,6 @@
 const graphDataRaw = getCookie("graphData");
 const graphData = eval(graphDataRaw);
-const temp = document.getElementsByTagName("template")[0];
+const temp = document.getElementById("temp1");
 
 var clon = temp.content.cloneNode(true);
 document.body.appendChild(clon);
