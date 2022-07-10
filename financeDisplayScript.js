@@ -1,5 +1,5 @@
 const graphDataRaw = getCookie("graphData");
-
+console.log(graphDataRaw);
 
 
 
