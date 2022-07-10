@@ -44,6 +44,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
     echo "user created!";
     $accountCreate = "INSERT INTO userinfo (username, password, graphdata) VALUES ('$username', '$password', '[]')";
     pg_query($conn, $accountCreate);
+    setcookie("graphData", "[]", time()+300, '/');
   }   
         
   
