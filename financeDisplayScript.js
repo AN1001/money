@@ -1,11 +1,14 @@
 const graphDataRaw = getCookie("graphData");
 const graphData = eval(graphDataRaw);
 const temp = document.getElementById("temp1");
+const appendZone = document.getElementById("allGraphs");
 
 var clon = temp.content.cloneNode(true);
-document.body.appendChild(clon);
-document.body.appendChild(clon);
-document.body.appendChild(clon);
+document.appendZone.appendChild(clon);
+var clon = temp.content.cloneNode(true);
+document.appendZone.appendChild(clon);
+var clon = temp.content.cloneNode(true);
+document.appendZone.appendChild(clon);
 
 function getCookie(name) {
   const value = document.cookie;
