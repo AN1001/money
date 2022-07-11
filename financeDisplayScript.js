@@ -3,12 +3,18 @@ const graphData = eval(graphDataRaw);
 const temp = document.getElementById("temp1");
 const appendZone = document.getElementById("allGraphs");
 
-var clon = temp.content.cloneNode(true);
-appendZone.appendChild(clon);
-var clon = temp.content.cloneNode(true);
-appendZone.appendChild(clon);
-var clon = temp.content.cloneNode(true);
-appendZone.appendChild(clon);
+for(let i = 0; i < graphData.length; i++){
+  var currentGraphData = graphData[i];
+  var graphToAppend = temp.content.cloneNode(true);
+  graphToAppend.document.getElementById("fineText").textContent = currentGraphData[0];
+  
+  appendZone.appendChild(graphToAppend);
+}
+
+
+
+
+
 
 function getCookie(name) {
   const value = document.cookie;
