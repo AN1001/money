@@ -1,10 +1,10 @@
 const graphDataRaw = getCookie("graphData");
-const graphData = eval(graphDataRaw);
+const graphDataFiltered = eval(graphDataRaw);
 const temp = document.getElementById("temp1");
 const appendZone = document.getElementById("allGraphs");
 
 for(let i = 0; i < graphData.length; i++){
-  var currentGraphData = graphData[i];
+  var currentGraphData = graphDataFiltered[i];
   console.log(currentGraphData);
   var graphDataSum = (currentGraphData.splice(2).map(TakeSecondElement)).reduce(add, 0);
   var graphDataAvg = graphDataSum/(currentGraphData.length - 2);
