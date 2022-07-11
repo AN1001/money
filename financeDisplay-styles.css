@@ -80,9 +80,8 @@ html, body{
 }
 
 #MAINGRAPHAREA{
-	background: lightblue;
 	width: auto;
-	height: 180px;
+	height: 205px;
 	margin: 15px 15px 0 15px;
 	padding-bottom: 15px;
 	border-bottom: 2px solid rgba(238,233,227,255);
