@@ -71,6 +71,60 @@ html, body{
 }
 
 
+#graphDurationDisplay{
+	color: #4a4037;
+	font-size: 1.35em;
+	font-weight: 600;
+	margin-top: 15px;
+	margin-left: 15px; 
+}
+
+#MAINGRAPHAREA{
+	background: lightblue;
+	width: auto;
+	height: 180px;
+	margin: 15px 15px 0 15px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid rgba(238,233,227,255);
+}
+
+#barDetails{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+	padding: 0 15px 0 15px;
+}
+
+#barDetailsLeft{
+	display: flex;
+	flex-direction: column;
+}
+
+#barDetailsRight{
+	flex-direction: column;
+	padding-top: 20px;
+	
+	color: 	#bab7b1;;
+	text-align: right; 
+	font-size: 0.8em;
+	line-height: 18px;
+	display: flex;
+}
+
+#barTotal{
+	font-size: 0.75em;
+	color: #bab7b1;
+}
+
+#barTotalValue{
+	font-size: 2.2em;
+	color: #4a4037;
+}
+
+#percentChange{
+	color: #4a4037;
+	font-size: 1.2em;
+}
 
 /*  Animations  */
 
