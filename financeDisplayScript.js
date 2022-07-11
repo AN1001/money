@@ -41,5 +41,5 @@ function getCookie(name) {
       return decodeURIComponent(cookies[i].split(name+"=")[1]);
     }
    }
-  return "NOT FOUND";
+  return "NOT_FOUND";
 }
