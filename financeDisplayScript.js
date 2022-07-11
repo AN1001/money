@@ -7,7 +7,7 @@ const appendZone = document.getElementById("allGraphs");
 for(let i = 0; i < graphData.length; i++){
   var currentGraphData = graphData[i];
   var graphToAppend = temp.content.cloneNode(true);
-  graphToAppend.document.getElementById("fineText").textContent = currentGraphData[0];
+  graphToAppend.getElementById("fineText").textContent = currentGraphData[0];
   
   appendZone.appendChild(graphToAppend);
 }
