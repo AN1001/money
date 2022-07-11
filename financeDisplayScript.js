@@ -1,8 +1,12 @@
 const graphDataRaw = getCookie("graphData");
-var graphDataFiltered = eval(graphDataRaw);
-console.log(graphDataFiltered);
+const graphDataFiltered = eval(graphDataRaw);
 const temp = document.getElementById("temp1");
 const appendZone = document.getElementById("allGraphs");
+
+var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'GBP',
+});
 
 for(let i = 0; i < graphDataFiltered.length; i++){
   var currentGraphData = graphDataFiltered[i];
@@ -13,9 +17,9 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   
   graphToAppend.getElementById("graphDurationDisplay").textContent = "Spending - last "+ (currentGraphData.length - 2) +" sessions";
   graphToAppend.getElementById("fineText").textContent = currentGraphData[0];
-  graphToAppend.getElementById("popoutText").textContent = "$"+graphDataSum;
+  graphToAppend.getElementById("popoutText").textContent = formatter.format(graphDataSum);
   graphToAppend.getElementById("barTotal").textContent = "Total for "+currentGraphData[2][0];
-  graphToAppend.getElementById("barTotalValue").textContent = "$"+currentGraphData[2][1];
+  graphToAppend.getElementById("barTotalValue").textContent = formatter.format(currentGraphData[2][1]);
   graphToAppend.getElementById("percentChange").textContent = Math.round(percChange * 100) / 100+"%";
   
   appendZone.appendChild(graphToAppend);
