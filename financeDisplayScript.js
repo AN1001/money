@@ -1,5 +1,6 @@
 const graphDataRaw = getCookie("graphData");
 const graphData = eval(graphDataRaw);
+console.log(graphData);
 const temp = document.getElementById("temp1");
 const appendZone = document.getElementById("allGraphs");
 
