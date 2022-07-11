@@ -24,6 +24,9 @@ html, body{
     	display: block;
     	margin: 10px;
 	margin-bottom: 50px; 
+	
+	animation-name: initlogo;
+  	animation-duration: 2s;
 }
 
 .topBar{
@@ -127,13 +130,11 @@ html, body{
 
 /*  Animations  */
 
-@keyframes initlogo{
+@keyframes fadeIn{
 	from{
-	 background-size: 7em;
-	 background-position: 255px;
+	 opacity: 0%;
 	}
 	to{
-	 background-size: 5em;
-	 background-position: 280px;
+    	  opacity: 100%;
   	}
 }
