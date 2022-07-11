@@ -11,7 +11,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   var percChange = (currentGraphData[2][1]/graphDataAvg)*100-100;
   var graphToAppend = temp.content.cloneNode(true);
   
-  graphToAppend.getElementById("graphDurationDisplay").textContent = "Spending - last"+ currentGraphData.length - 2 +"sessions";
+  graphToAppend.getElementById("graphDurationDisplay").textContent = "Spending - last"+ (currentGraphData.length - 2) +"sessions";
   graphToAppend.getElementById("fineText").textContent = currentGraphData[0];
   graphToAppend.getElementById("popoutText").textContent = "$"+graphDataSum;
   graphToAppend.getElementById("barTotal").textContent = "Total for "+currentGraphData[2][0];
