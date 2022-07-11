@@ -1,12 +1,12 @@
 const graphDataRaw = getCookie("graphData");
 var graphDataFiltered = eval(graphDataRaw);
+console.log(graphDataFiltered);
 const temp = document.getElementById("temp1");
 const appendZone = document.getElementById("allGraphs");
 
 for(let i = 0; i < graphDataFiltered.length; i++){
   var currentGraphData = graphDataFiltered[i];
-  console.log(currentGraphData);
-  var graphDataSum = (currentGraphData.splice(2).map(TakeSecondElement)).reduce(add, 0);
+  var graphDataSum = (currentGraphData.slice(2).map(TakeSecondElement)).reduce(add, 0);
   var graphDataAvg = graphDataSum/(currentGraphData.length - 2);
   var percChange = (currentGraphData[2][1]/graphDataAvg)*100-100;
   var graphToAppend = temp.content.cloneNode(true);
