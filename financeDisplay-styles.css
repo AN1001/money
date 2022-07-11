@@ -25,7 +25,7 @@ html, body{
     	margin: 10px;
 	margin-bottom: 50px; 
 	
-	animation-name: initlogo;
+	animation-name: fadeIn;
   	animation-duration: 2s;
 }
 
@@ -40,9 +40,6 @@ html, body{
 	border-radius: 1em;
 	margin-bottom: 15px;
 	width: auto;
-	
-	animation-name: initlogo;
-  	animation-duration: 2s;
 }
 
 
