@@ -3,7 +3,7 @@ const graphDataFiltered = eval(graphDataRaw);
 const temp = document.getElementById("temp1");
 const appendZone = document.getElementById("allGraphs");
 
-for(let i = 0; i < graphData.length; i++){
+for(let i = 0; i < graphDataFiltered.length; i++){
   var currentGraphData = graphDataFiltered[i];
   console.log(currentGraphData);
   var graphDataSum = (currentGraphData.splice(2).map(TakeSecondElement)).reduce(add, 0);
