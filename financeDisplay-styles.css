@@ -23,6 +23,7 @@ html, body{
 	max-width: 385px;
     	display: block;
     	margin: 10px;
+	margin-bottom: 50px; 
 }
 
 .topBar{
