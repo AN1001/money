@@ -1,11 +1,11 @@
 const graphDataRaw = getCookie("graphData");
 const graphData = eval(graphDataRaw);
-console.log(graphData);
 const temp = document.getElementById("temp1");
 const appendZone = document.getElementById("allGraphs");
 
 for(let i = 0; i < graphData.length; i++){
   var currentGraphData = graphData[i];
+  console.log(currentGraphData);
   var graphDataSum = (currentGraphData.splice(2).map(TakeSecondElement)).reduce(add, 0);
   var graphDataAvg = graphDataSum/(currentGraphData.length - 2);
   var percChange = (currentGraphData[2][1]/graphDataAvg)*100-100;
