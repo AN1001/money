@@ -12,7 +12,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   var currentGraphData = graphDataFiltered[i];
   var graphDataSum = (currentGraphData.slice(2).map(TakeSecondElement)).reduce(add, 0);
   var graphDataAvg = graphDataSum/(currentGraphData.length - 2);
-  var percChange = (currentGraphData[2][1]/graphDataAvg)*100-100;
+  var percChange = Math.round((currentGraphData[2][1]/graphDataAvg)*10000-10000)/100;
   var graphToAppend = temp.content.cloneNode(true);
   
   graphToAppend.getElementById("graphDurationDisplay").textContent = "Spending - last "+ (currentGraphData.length - 2) +" sessions";
@@ -20,15 +20,18 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   graphToAppend.getElementById("popoutText").textContent = formatter.format(graphDataSum);
   graphToAppend.getElementById("barTotal").textContent = "Total for "+currentGraphData[2][0];
   graphToAppend.getElementById("barTotalValue").textContent = formatter.format(currentGraphData[2][1]);
-  graphToAppend.getElementById("percentChange").textContent = Math.round(percChange * 100) / 100+"%";
+  graphToAppend.getElementById("percentChange").textContent = (percChange<0?"":"+") + percChange +"%";
   
   var MAINGRAPHAREA = graphToAppend.getElementById("MAINGRAPHAREA");
+  var mainGraphElement = graphToAppend.getElementById("mainGraphElement");
   var barsData = getRawGraphData(currentGraphData);
   var numBars = barsData.length-1;
   var barWidth = barsData.shift();
   var graphName = currentGraphData[0];
   
-  barsData.forEach(function(value,i){return createBar(value,MAINGRAPHAREA,barWidth,i,numBars);})
+  mainGraphElement.id = graphName;
+  
+  barsData.forEach(function(value,i){return createBar(value,MAINGRAPHAREA,barWidth,i,numBars,graphToAppend,graphDataAvg);})
   
   
   appendZone.appendChild(graphToAppend);
@@ -37,7 +40,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
 
 
 
-function createBar(arr,createTo,widthConst,index,numberBars){
+function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
   var barHolder = document.createElement("div");
   var bar = document.createElement("div");
   var barName =  document.createElement("p");
@@ -59,9 +62,23 @@ function createBar(arr,createTo,widthConst,index,numberBars){
     barName.textContent = arr[0].slice(0, 3);
   }
   
+  barHolder.addEventListener("click",updateBarData(barHolder,parentEl,arr,graphAvg))
+  
   barHolder.appendChild(bar);
   barHolder.appendChild(barName);
   createTo.appendChild(barHolder);
+}
+
+function updateBarData(self,parentEl,selfData,graphAvg){
+  let percentChange = Math.round((selfData[1]/graphAvg)*10000-10000)/100;
+  let barTotal = parentEl.getElementById("barTotal");
+  let barTotalValue = parentEl.getElementById("barTotalValue");
+  let percChangeDisplay = parentEl.getElementById("percentChange");
+  
+  percentChange.textContent = (percentChange<0?"":"+") + percentChange +"%";
+  barTotal.textContent = "Total for "+selfData[0];
+  barTotalValue.textContent = formatter.format(selfData[1]);
+  self.style.background = "#76b5bc";
 }
 
 function getRawGraphData(arr,pixelsPerPound){
