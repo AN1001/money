@@ -33,10 +33,12 @@ for(let i = 0; i < graphDataFiltered.length; i++){
 
 
 function createBar(arr,createTo,widthConst){
-  var bar = createTo.createElement("div");
+  var bar = document.createElement("div");
   bar.style.width = widthConst+"px";
   bar.style.height = arr[2]+"px";
   bar.classList.add("graphBar");
+  
+  createTo.appendChild(bar);
 }
 
 function getRawGraphData(arr,pixelsPerPound){
