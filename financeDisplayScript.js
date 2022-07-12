@@ -65,7 +65,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
   
   bar.addEventListener('click', function onClick(event) {
     event.target.style.backgroundColor = "#76b5bc";
-  }
+  });
   
   barHolder.appendChild(bar);
   barHolder.appendChild(barName);
