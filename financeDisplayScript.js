@@ -37,15 +37,18 @@ for(let i = 0; i < graphDataFiltered.length; i++){
 
 
 
-function createBar(arr,createTo,widthConst,index,noBars){
+function createBar(arr,createTo,widthConst,index,numberBars){
   var barHolder = document.createElement("div");
   var bar = document.createElement("div");
   var barName =  document.createElement("p");
-  if(noBars < 6){
+  
+  if(numberBars < 6){
     barName.textContent = arr[0].slice(0, 5);
   } else {
     barName.textContent = arr[0].slice(0, 3);
   }
+  
+  barHolder.classList.add("barHolder");
   bar.style.width = widthConst+"px";
   bar.style.height = arr[2]+"px";
   bar.classList.add("graphBar");
