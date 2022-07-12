@@ -18,7 +18,7 @@ html, body{
 }
 
 .graphHolder{
-    	height: 500px;
+    	height: 520px;
     	min-width: 385px;
 	max-width: 385px;
     	display: block;
@@ -77,7 +77,7 @@ html, body{
 	font-weight: 600;
 	margin-top: 15px;
 	margin-left: 15px; 
-	margin-bottom: 25px;
+	margin-bottom: 45px;
 }
 
 #MAINGRAPHAREA{
