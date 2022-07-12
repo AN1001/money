@@ -139,6 +139,24 @@ html, body{
 	animation-duration: 3s;
 }
 
+.barHolder{
+	margin: 5px;
+	margin-bottom: 0px;
+}
+
+.graphBar{
+	background: #eb765d;
+	border-radius: 0.5em;
+	animation-name: fadeIn;
+	animation-duration: 3s;
+}
+
+p{
+	margin: 0;
+	text-align: center;
+	color: #bab7b1;
+}
+
 /*  Animations  */
 
 @keyframes fadeIn{
