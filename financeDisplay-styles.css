@@ -134,6 +134,7 @@ html, body{
 	margin: 10px;
 	background: #eb765d;
 	border-radius: 0.5em;
+	animation-name: fadeIn;
 }
 
 /*  Animations  */
