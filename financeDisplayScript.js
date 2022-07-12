@@ -71,6 +71,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
 }
 
 function updateBarData(){
+  console.log("this",this)
   this.style.background = "#76b5bc";
 }
 
