@@ -71,7 +71,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
     graphDataFiltered.forEach(function(internalList){
     internalList.slice(2).forEach(function(internalList2){
       internalList2[3].style.background = "blue";
-      if(internalList2[3] == self)
+      if(internalList2[3] === self)
         var parentEl = document.getElementById(internalList[0]);
       	var selfData = internalList2;
         console.log("success")
