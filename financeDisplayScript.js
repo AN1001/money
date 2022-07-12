@@ -74,10 +74,14 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
       internalList2[3].style.background = "#eb765d";
       if(internalList2[0] === selfName){
         var parentEl = document.getElementById(internalList[0]);
+        console.log(parentEl);
       	var selfData = internalList2;
+        console.log(selfData);
+        var x = 10;
         }
       })
     })
+    console.log(x);
     let percentChange = selfData[4];
     let barTotal = parentEl.getElementById("barTotal");
     let barTotalValue = parentEl.getElementById("barTotalValue");
