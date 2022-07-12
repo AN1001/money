@@ -70,7 +70,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
   createTo.appendChild(barHolder);
 }
 
-function updateBarData(this){
+function updateBarData(){
   this.style.background = "#76b5bc";
 }
 
