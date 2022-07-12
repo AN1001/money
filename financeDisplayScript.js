@@ -24,7 +24,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   
   var MAINGRAPHAREA = graphToAppend.getElementById("MAINGRAPHAREA");
   var barsData = getRawGraphData(currentGraphData);
-  var numBars = barsData.length;
+  var numBars = barsData.length-1;
   var barWidth = barsData.shift();
   var graphName = currentGraphData[0];
   
@@ -42,17 +42,19 @@ function createBar(arr,createTo,widthConst,index,numberBars){
   var bar = document.createElement("div");
   var barName =  document.createElement("p");
   
-  if(numberBars < 6){
+  if(numberBars <= 3){
+    barName.textContent = arr[0].slice(0, 8);
+  } else if(numberBars <= 6){
     barName.textContent = arr[0].slice(0, 5);
   } else {
     barName.textContent = arr[0].slice(0, 3);
   }
   
   barHolder.classList.add("barHolder");
+  barHolder.id = name+"@"+index;
   bar.style.width = widthConst+"px";
   bar.style.height = arr[2]+"px";
   bar.classList.add("graphBar");
-  bar.id = name+"@"+index;
   
   barHolder.appendChild(bar);
   barHolder.appendChild(barName);
