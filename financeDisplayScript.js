@@ -51,9 +51,9 @@ function getRawGraphData(arr,pixelsPerPound){
   let arrData = arr.slice(2).map(TakeSecondElement);
   var pixelsPerPound = 195/(0.95*Math.max(...arrData));
   if(arrData.length <= 8){
-    const width = Math.floor((345-(arrData.length-1)*10)/arrData.length);
+    var width = Math.floor((345-(arrData.length-1)*10)/arrData.length);
   } else {
-    const width = Math.floor((345-(8-1)*10)/8);
+    var width = Math.floor((345-(8-1)*10)/8);
   }
   return newArr = [width, ...(arr.slice(2).map(function(x){ return calcHeight(x,pixelsPerPound); }))];
 }
