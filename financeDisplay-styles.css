@@ -135,6 +135,7 @@ html, body{
 	background: #eb765d;
 	border-radius: 0.5em;
 	animation-name: fadeIn;
+	animation-delay: 2s;
 }
 
 /*  Animations  */
