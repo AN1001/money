@@ -25,18 +25,21 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   var MAINGRAPHAREA = graphToAppend.getElementById("MAINGRAPHAREA");
   var barsData = getRawGraphData(currentGraphData);
   var barWidth = barsData.shift();
-  barsData.forEach(function(currentElement){return createBar(currentElement,MAINGRAPHAREA,barWidth);})
+  var graphName = currentGraphData[0];
+  
+  barsData.forEach(function(value,i){return createBar(value,MAINGRAPHAREA,barWidth,i,graphName);})
   
   
   appendZone.appendChild(graphToAppend);
 }
 
 
-function createBar(arr,createTo,widthConst){
+function createBar(arr,createTo,widthConst,index,name){
   var bar = document.createElement("div");
   bar.style.width = widthConst+"px";
   bar.style.height = arr[2]+"px";
   bar.classList.add("graphBar");
+  bar.id = name+"@"+index;
   
   createTo.appendChild(bar);
 }
