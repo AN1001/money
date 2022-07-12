@@ -52,7 +52,7 @@ function createBar(arr,createTo,widthConst,index,numberBars){
     barName.textContent = arr[0].slice(0, 8);
   } else if(numberBars <= 6){
     barName.textContent = arr[0].slice(0, 5);
-  } else if(numberBars >= 8 && index>8){
+  } else if(numberBars >= 8 && index>=8){
     barHolder.style.display = "none";
     barName.textContent = arr[0].slice(0, 3);
   }else {
