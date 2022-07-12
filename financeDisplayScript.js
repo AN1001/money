@@ -36,7 +36,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
 
 function createBar(arr,createTo,widthConst,index,name){
   var bar = document.createElement("div");
-  bar.style.["animation-duration"] =  (index*0.25)+"s";
+  bar.style.animationDuration =  (index*0.25)+"s";
   bar.style.width = widthConst+"px";
   bar.style.height = arr[2]+"px";
   bar.classList.add("graphBar");
