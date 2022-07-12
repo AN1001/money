@@ -87,7 +87,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
     let barTotalValue = parentEl.querySelector("#barTotalValue");
     let percChangeDisplay = parentEl.querySelector("#percentChange");
   
-    percChangeDisplay.textContent = percChangeFormatted;
+    percChangeDisplay.textContent = "regexboi";
     barTotal.textContent = "Total for "+selfData[0];
     barTotalValue.textContent = formatter.format(selfData[1]);
     
