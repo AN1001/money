@@ -50,6 +50,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
   bar.classList.add("graphBar");
   
   if(index==0){
+    bar.style.backgroundColor = "#76b5bc";
     barHolder.style.marginLeft = '0';
   }
   
@@ -86,7 +87,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
     let barTotalValue = parentEl.querySelector("#barTotalValue");
     let percChangeDisplay = parentEl.querySelector("#percentChange");
   
-    percentChange.textContent = percChangeFormatted;
+    percChangeDisplay.textContent = percChangeFormatted;
     barTotal.textContent = "Total for "+selfData[0];
     barTotalValue.textContent = formatter.format(selfData[1]);
     
