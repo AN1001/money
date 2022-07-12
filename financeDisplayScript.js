@@ -80,7 +80,6 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
         }
       })
     })
-    console.log(x);
     let percentChange = selfData[4];
     let barTotal = parentEl.getElementById("barTotal");
     let barTotalValue = parentEl.getElementById("barTotalValue");
