@@ -32,13 +32,15 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   
   mainGraphElement.id = graphName;
   
-  barsData.forEach(function(value,i){return createBar(value,MAINGRAPHAREA,barWidth,i,numBars,graphToAppend,graphDataAvg,percChangeFormatted);})
+  barsData.forEach(function(value,i){return createBar(value,MAINGRAPHAREA,barWidth,i,numBars,graphToAppend,graphDataAvg);})
   console.log(barsData)
   
   appendZone.appendChild(graphToAppend);
 }
 
-function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,percChangeFormatted){
+function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
+  var percChangeLocal = Math.round((arr[1]/graphDataAvg)*10000-10000)/100;
+  var percChangeFormattedLocal = (percChange<0?"":"+") + percChange +"%";
   var barHolder = document.createElement("div");
   var bar = document.createElement("div");
   var barName =  document.createElement("p");
@@ -87,7 +89,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
     let barTotalValue = parentEl.querySelector("#barTotalValue");
     let percChangeDisplay = parentEl.querySelector("#percentChange");
   
-    percChangeDisplay.textContent = "regexboi";
+    percChangeDisplay.textContent = percChangeFormatted;
     barTotal.textContent = "Total for "+selfData[0];
     barTotalValue.textContent = formatter.format(selfData[1]);
     
@@ -95,7 +97,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
   });
   
   arr.push(bar)
-  arr.push(percChangeFormatted)
+  arr.push(percChangeFormattedLocal)
   barHolder.appendChild(bar);
   barHolder.appendChild(barName);
   createTo.appendChild(barHolder);
