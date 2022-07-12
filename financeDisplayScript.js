@@ -38,7 +38,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
 
 
 function createBar(arr,createTo,widthConst,index,noBars){
-  var barHolder document.createElement("div");
+  var barHolder = document.createElement("div");
   var bar = document.createElement("div");
   var barName =  document.createElement("p");
   if(noBars < 6){
