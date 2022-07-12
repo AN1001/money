@@ -22,12 +22,25 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   graphToAppend.getElementById("barTotalValue").textContent = formatter.format(currentGraphData[2][1]);
   graphToAppend.getElementById("percentChange").textContent = Math.round(percChange * 100) / 100+"%";
   
+  getRawGraphData(currentGraphData);
   appendZone.appendChild(graphToAppend);
 }
 
 
 
 
+function getRawGraphData(arr){
+  let arrData = arr.slice(2).map(TakeSecondElement);
+  const pixelsPerPound = 209/(0.95*Math.max(...arrData));
+  
+  const width = Math.floor((345-(arrData.length-1)*10)/arrData.length);
+  console.log(width,pixelsPerPound);
+  
+  let newArr = [width, ...(arr.slice(2).map(calcHeight))];
+  
+  console.log([width, newArr]);
+  return [width, newArr];
+}
 
 function TakeSecondElement(arr) {
   return arr[1];
@@ -35,6 +48,15 @@ function TakeSecondElement(arr) {
 function add(accumulator, a) {
   return accumulator + a;
 }
+
+function calcHeight(rawData){
+   if(rawData[1]*pixelsPerPound >= 5){
+   		(rawData.push(Math.ceil(rawData[1]*pixelsPerPound)));
+   } else {
+     rawData.push(10);
+   }
+   return rawData;
+ }
 
 function getCookie(name) {
   const value = (document.cookie).replace(/\s+/g, '');
