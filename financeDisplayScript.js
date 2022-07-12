@@ -74,6 +74,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
       if(internalList2[3] == self)
         var parentEl = document.getElementById(internalList[0]);
       	var selfData = internalList2;
+        console.log("success")
       })
     })
     let percentChange = selfData[4];
