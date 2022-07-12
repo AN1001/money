@@ -74,6 +74,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
 }
 
 function updateBarData(self,parentEl,selfData,graphAvg){
+  console.log("a click occured")
   let percentChange = Math.round((selfData[1]/graphAvg)*10000-10000)/100;
   let barTotal = parentEl.getElementById("barTotal");
   let barTotalValue = parentEl.getElementById("barTotalValue");
