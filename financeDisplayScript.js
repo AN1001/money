@@ -39,8 +39,8 @@ for(let i = 0; i < graphDataFiltered.length; i++){
 }
 
 function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
-  var percChangeLocal = Math.round((arr[1]/graphDataAvg)*10000-10000)/100;
-  var percChangeFormattedLocal = (percChange<0?"":"+") + percChange +"%";
+  var percChangeLocal = Math.round((arr[1]/graphAvg)*10000-10000)/100;
+  var percChangeFormattedLocal = (percChangeLocal<0?"":"+") + percChangeLocal +"%";
   var barHolder = document.createElement("div");
   var bar = document.createElement("div");
   var barName =  document.createElement("p");
@@ -70,17 +70,22 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
   bar.addEventListener('click', function onClick(event) {
     let self = event.target;
     let selfName = self.id.split("@")[0]
+    var graphTypeData = '';
     var parentEl = '';
     var selfData = '';
     
     graphDataFiltered.forEach(function(internalList){
     internalList.slice(2).forEach(function(internalList2){
-      internalList2[3].style.background = "#eb765d";
       if(internalList2[0] === selfName){
         parentEl = document.getElementById(internalList[0]);
       	selfData = internalList2;
+        graphTypeData = internalList.slice(2);
         }
       })
+    })
+    
+    graphTypeData.forEach(function(elem){
+      elem[3].style.background = "#eb765d";
     })
     
     self.style.backgroundColor = "#76b5bc";
@@ -96,7 +101,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
     
   });
   
-  arr.push(bar)
+  arr.push(bar);
   arr.push(percChangeFormattedLocal)
   barHolder.appendChild(bar);
   barHolder.appendChild(barName);
