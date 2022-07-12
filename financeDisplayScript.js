@@ -47,6 +47,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
   
   barHolder.classList.add("barHolder");
   barHolder.id = name+"@"+index;
+  bar.id = "GRAPHBAR";
   bar.style.width = widthConst+"px";
   bar.style.height = arr[2]+"px";
   bar.classList.add("graphBar");
