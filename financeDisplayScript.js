@@ -43,7 +43,7 @@ function createBar(arr,createTo,widthConst){
 
 function getRawGraphData(arr,pixelsPerPound){
   let arrData = arr.slice(2).map(TakeSecondElement);
-  var pixelsPerPound = 209/(0.95*Math.max(...arrData));
+  var pixelsPerPound = 195/(0.95*Math.max(...arrData));
   const width = Math.floor((345-(arrData.length-1)*10)/arrData.length);
   return newArr = [width, ...(arr.slice(2).map(function(x){ return calcHeight(x,pixelsPerPound); }))];
 }
