@@ -44,7 +44,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
   var barName =  document.createElement("p");
   
   barHolder.classList.add("barHolder");
-  bar.id = name+"@"+index;
+  bar.id = arr[0]+"@"+index;
   bar.style.width = widthConst+"px";
   bar.style.height = arr[2]+"px";
   bar.classList.add("graphBar");
@@ -66,15 +66,16 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
   
   bar.addEventListener('click', function onClick(event) {
     let self = event.target;
+    let selfName = self.id.split("@")[0]
     self.style.backgroundColor = "#76b5bc";
     
     graphDataFiltered.forEach(function(internalList){
     internalList.slice(2).forEach(function(internalList2){
-      internalList2[3].style.background = "blue";
-      if(internalList2[3] === self)
+      internalList2[3].style.background = "#eb765d";
+      if(internalList2[0] === selfName){
         var parentEl = document.getElementById(internalList[0]);
       	var selfData = internalList2;
-        console.log("success")
+        }
       })
     })
     let percentChange = selfData[4];
