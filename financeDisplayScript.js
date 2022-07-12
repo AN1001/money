@@ -67,14 +67,14 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
     barName.textContent = arr[0].slice(0, 3);
   }
   
-  barHolder.addEventListener.onclick = updateBarData(barHolder,parentEl,arr,graphAvg);
+  barHolder.addEventListener.onclick = updateBarData(barHolder,parentEl,arr,graphAvg,bar);
   
   barHolder.appendChild(bar);
   barHolder.appendChild(barName);
   createTo.appendChild(barHolder);
 }
 
-function updateBarData(self,parentEl,selfData,graphAvg){
+function updateBarData(self,parentEl,selfData,graphAvg,GRAPHBAR){
   console.log("a click occured");
   let percentChange = Math.round((selfData[1]/graphAvg)*10000-10000)/100;
   let barTotal = parentEl.getElementById("barTotal");
@@ -84,7 +84,7 @@ function updateBarData(self,parentEl,selfData,graphAvg){
   percentChange.textContent = (percentChange<0?"":"+") + percentChange +"%";
   barTotal.textContent = "Total for "+selfData[0];
   barTotalValue.textContent = formatter.format(selfData[1]);
-  self.getElementById("GRAPHBAR").background = "#76b5bc";
+  GRAPHBAR.background = "#76b5bc";
 }
 
 function getRawGraphData(arr,pixelsPerPound){
