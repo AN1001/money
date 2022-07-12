@@ -44,7 +44,7 @@ html, body{
 
 
 .mainGraphElement{
-    	height: calc(100% - 120px);
+    	height: calc(100% - 110px);
 	padding: 5px;
 	background-color: #fffcf7;
 	border-radius: 1em;
