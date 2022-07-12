@@ -36,7 +36,7 @@ function getRawGraphData(arr,pixelsPerPound){
   const width = Math.floor((345-(arrData.length-1)*10)/arrData.length);
   console.log(width,pixelsPerPound);
   
-  let newArr = [width, ...(arr.slice(2).map(function(x){x,pixelsPerPound}))];
+  let newArr = [width, ...(arr.slice(2).map(function(x){ return calcHeight(x,pixelsPerPound) }))];
   
   console.log([width, newArr]);
   return [width, newArr];
