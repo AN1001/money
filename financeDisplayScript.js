@@ -42,19 +42,22 @@ function createBar(arr,createTo,widthConst,index,numberBars){
   var bar = document.createElement("div");
   var barName =  document.createElement("p");
   
-  if(numberBars <= 3){
-    barName.textContent = arr[0].slice(0, 8);
-  } else if(numberBars <= 6){
-    barName.textContent = arr[0].slice(0, 5);
-  } else {
-    barName.textContent = arr[0].slice(0, 3);
-  }
-  
   barHolder.classList.add("barHolder");
   barHolder.id = name+"@"+index;
   bar.style.width = widthConst+"px";
   bar.style.height = arr[2]+"px";
   bar.classList.add("graphBar");
+  
+  if(numberBars <= 3){
+    barName.textContent = arr[0].slice(0, 8);
+  } else if(numberBars <= 6){
+    barName.textContent = arr[0].slice(0, 5);
+  } else if(numberBars >= 8 && index>8){
+    barHolder.style.display = "none";
+    barName.textContent = arr[0].slice(0, 3);
+  }else {
+    barName.textContent = arr[0].slice(0, 3);
+  }
   
   barHolder.appendChild(bar);
   barHolder.appendChild(barName);
