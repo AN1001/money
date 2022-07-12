@@ -38,6 +38,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
 
 
 function createBar(arr,createTo,widthConst,index,noBars){
+  var barHolder document.createElement("div");
   var bar = document.createElement("div");
   var barName =  document.createElement("p");
   if(noBars < 5){
@@ -50,8 +51,9 @@ function createBar(arr,createTo,widthConst,index,noBars){
   bar.classList.add("graphBar");
   bar.id = name+"@"+index;
   
-  bar.appendChild(barName);
-  createTo.appendChild(bar);
+  barHolder.appendChild(bar);
+  barHolder.appendChild(barName);
+  createTo.appendChild(barHolder);
 }
 
 function getRawGraphData(arr,pixelsPerPound){
