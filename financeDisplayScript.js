@@ -69,7 +69,6 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
     let selfName = self.id.split("@")[0]
     var parentEl = '';
     var selfData = '';
-    self.style.backgroundColor = "#76b5bc";
     
     graphDataFiltered.forEach(function(internalList){
     internalList.slice(2).forEach(function(internalList2){
@@ -80,12 +79,14 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
         }
       })
     })
+    
+    self.style.backgroundColor = "#76b5bc";
     let percentChange = selfData[4];
     let barTotal = parentEl.querySelector("#barTotal");
     let barTotalValue = parentEl.querySelector("#barTotalValue");
     let percChangeDisplay = parentEl.querySelector("#percentChange");
   
-    percentChange.textContent = percentChange;
+    percentChange.textContent = percChangeFormatted;
     barTotal.textContent = "Total for "+selfData[0];
     barTotalValue.textContent = formatter.format(selfData[1]);
     
