@@ -63,7 +63,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
     barName.textContent = arr[0].slice(0, 3);
   }
   
-  bar.addEventListener.onclick = function(){updateBarData()};
+  bar.onclick = function(){updateBarData()};
   
   barHolder.appendChild(bar);
   barHolder.appendChild(barName);
