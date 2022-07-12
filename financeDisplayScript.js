@@ -25,7 +25,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   var MAINGRAPHAREA = graphToAppend.getElementById("MAINGRAPHAREA");
   var barsData = getRawGraphData(currentGraphData);
   var barWidth = barsData.shift();
-  barsData.forEach(function(currentElement){return createBar(currentElement,graphToAppend,barWidth);})
+  barsData.forEach(function(currentElement){return createBar(currentElement,MAINGRAPHAREA,barWidth);})
   
   
   appendZone.appendChild(graphToAppend);
