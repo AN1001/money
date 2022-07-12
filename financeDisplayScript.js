@@ -67,17 +67,16 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
   bar.addEventListener('click', function onClick(event) {
     let self = event.target;
     let selfName = self.id.split("@")[0]
+    var parentEl = '';
+    var selfData = '';
     self.style.backgroundColor = "#76b5bc";
     
     graphDataFiltered.forEach(function(internalList){
     internalList.slice(2).forEach(function(internalList2){
       internalList2[3].style.background = "#eb765d";
       if(internalList2[0] === selfName){
-        var parentEl = document.getElementById(internalList[0]);
-        console.log(parentEl);
-      	var selfData = internalList2;
-        console.log(selfData);
-        var x = 10;
+        parentEl = document.getElementById(internalList[0]);
+      	selfData = internalList2;
         }
       })
     })
