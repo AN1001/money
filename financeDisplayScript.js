@@ -81,9 +81,9 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
       })
     })
     let percentChange = selfData[4];
-    let barTotal = parentEl.getElementById("barTotal");
-    let barTotalValue = parentEl.getElementById("barTotalValue");
-    let percChangeDisplay = parentEl.getElementById("percentChange");
+    let barTotal = parentEl.querySelector("#barTotal");
+    let barTotalValue = parentEl.querySelector("#barTotalValue");
+    let percChangeDisplay = parentEl.querySelector("#percentChange");
   
     percentChange.textContent = percentChange;
     barTotal.textContent = "Total for "+selfData[0];
