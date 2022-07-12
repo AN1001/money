@@ -51,6 +51,10 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
   bar.style.height = arr[2]+"px";
   bar.classList.add("graphBar");
   
+  if(index==0){
+    barHolder.style.marginLeft = '0';
+  }
+  
   if(numberBars <= 3){
     barName.textContent = arr[0].slice(0, 8);
   } else if(numberBars <= 6){
