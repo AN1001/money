@@ -32,7 +32,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   mainGraphElement.id = graphName;
   
   barsData.forEach(function(value,i){return createBar(value,MAINGRAPHAREA,barWidth,i,numBars,graphToAppend,graphDataAvg);})
-  
+  console.log(barsData)
   
   appendZone.appendChild(graphToAppend);
 }
@@ -64,9 +64,11 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
   }
   
   bar.addEventListener('click', function onClick(event) {
-    event.target.style.backgroundColor = "#76b5bc";
+    let self = event.target;
+    self.style.backgroundColor = "#76b5bc";
   });
   
+  arr.push(bar)
   barHolder.appendChild(bar);
   barHolder.appendChild(barName);
   createTo.appendChild(barHolder);
