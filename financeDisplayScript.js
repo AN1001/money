@@ -29,14 +29,14 @@ for(let i = 0; i < graphDataFiltered.length; i++){
 
 
 
-function getRawGraphData(arr){
+function getRawGraphData(arr,pixelsPerPound){
   let arrData = arr.slice(2).map(TakeSecondElement);
   const pixelsPerPound = 209/(0.95*Math.max(...arrData));
   
   const width = Math.floor((345-(arrData.length-1)*10)/arrData.length);
   console.log(width,pixelsPerPound);
   
-  let newArr = [width, ...(arr.slice(2).map(calcHeight))];
+  let newArr = [width, ...(arr.slice(2).map(function(x){x,pixelsPerPound}))];
   
   console.log([width, newArr]);
   return [width, newArr];
@@ -49,7 +49,7 @@ function add(accumulator, a) {
   return accumulator + a;
 }
 
-function calcHeight(rawData){
+function calcHeight(rawData,pixelsPerPound){
    if(rawData[1]*pixelsPerPound >= 5){
    		(rawData.push(Math.ceil(rawData[1]*pixelsPerPound)));
    } else {
