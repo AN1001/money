@@ -89,12 +89,12 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
     })
     
     self.style.backgroundColor = "#76b5bc";
-    let percentChange = selfData[4];
+    let percentChangeFormattedLocal = selfData[4];
     let barTotal = parentEl.querySelector("#barTotal");
     let barTotalValue = parentEl.querySelector("#barTotalValue");
     let percChangeDisplay = parentEl.querySelector("#percentChange");
   
-    percChangeDisplay.textContent = percChangeFormatted;
+    percChangeDisplay.textContent = percChangeFormattedLocal;
     barTotal.textContent = "Total for "+selfData[0];
     barTotalValue.textContent = formatter.format(selfData[1]);
     
