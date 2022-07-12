@@ -69,7 +69,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg,pe
     self.style.backgroundColor = "#76b5bc";
     
     graphDataFiltered.forEach(function(internalList){
-    intList.slice(2).forEach(function(internalList2){
+    internalList.slice(2).forEach(function(internalList2){
       internalList2[3].style.background = "blue";
       if(internalList2[3] == self)
         var parentEl = document.getElementById(internalList[0]);
