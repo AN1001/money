@@ -63,15 +63,13 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
     barName.textContent = arr[0].slice(0, 3);
   }
   
-  bar.onclick = function(){updateBarData()};
+  bar.addEventListener('click', function onClick(event) {
+    event.target.style.backgroundColor = "#76b5bc";
+  }
   
   barHolder.appendChild(bar);
   barHolder.appendChild(barName);
   createTo.appendChild(barHolder);
-}
-
-function updateBarData(){
-  this.style.background = "#76b5bc";
 }
 
 function getRawGraphData(arr,pixelsPerPound){
