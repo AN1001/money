@@ -41,7 +41,7 @@ function createBar(arr,createTo,widthConst,index,noBars){
   var barHolder document.createElement("div");
   var bar = document.createElement("div");
   var barName =  document.createElement("p");
-  if(noBars < 5){
+  if(noBars < 6){
     barName.textContent = arr[0].slice(0, 5);
   } else {
     barName.textContent = arr[0].slice(0, 3);
