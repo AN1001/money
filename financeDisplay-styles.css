@@ -125,6 +125,17 @@ html, body{
 	font-size: 1.2em;
 }
 
+#MAINGRAPHAREA{
+	display: flex;
+	align-items: flex-end;
+}
+
+.graphBar{
+	margin: 10px;
+	background: #eb765d;
+	border-radius: 0.5em;
+}
+
 /*  Animations  */
 
 @keyframes fadeIn{
