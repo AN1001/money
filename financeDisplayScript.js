@@ -27,17 +27,17 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   var barWidth = barsData.shift();
   var graphName = currentGraphData[0];
   
-  barsData.forEach(function(value,i){return createBar(value,MAINGRAPHAREA,barWidth,i,graphName);})
+  barsData.forEach(function(value,i){return createBar(value,MAINGRAPHAREA,barWidth,i);})
   
   
   appendZone.appendChild(graphToAppend);
 }
 
 
-function createBar(arr,createTo,widthConst,index,name){
+function createBar(arr,createTo,widthConst,index){
   var bar = document.createElement("div");
   var barName =  document.createElement("p");
-  barName.textContent = name.slice(0, 3);
+  barName.textContent = arr[0].slice(0, 3);
   bar.style.width = widthConst+"px";
   bar.style.height = arr[2]+"px";
   bar.classList.add("graphBar");
