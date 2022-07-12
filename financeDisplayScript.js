@@ -22,24 +22,28 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   graphToAppend.getElementById("barTotalValue").textContent = formatter.format(currentGraphData[2][1]);
   graphToAppend.getElementById("percentChange").textContent = Math.round(percChange * 100) / 100+"%";
   
-  getRawGraphData(currentGraphData);
+  var MAINGRAPHAREA = graphToAppend.getElementById("MAINGRAPHAREA");
+  var barsData = getRawGraphData(currentGraphData);
+  var barWidth = barsData.shift();
+  barsData.forEach(function(currentElement){return createBar(currentElement,graphToAppend,barWidth);})
+  
+  
   appendZone.appendChild(graphToAppend);
 }
 
 
-
+function createBar(arr,createTo,widthConst){
+  var bar = createTo.createElement("div");
+  bar.style.width = widthConst+"px";
+  bar.style.height = arr[2]+"px";
+  bar.classList.add("graphBar");
+}
 
 function getRawGraphData(arr,pixelsPerPound){
   let arrData = arr.slice(2).map(TakeSecondElement);
   var pixelsPerPound = 209/(0.95*Math.max(...arrData));
-  
   const width = Math.floor((345-(arrData.length-1)*10)/arrData.length);
-  console.log(width,pixelsPerPound);
-  
-  let newArr = [width, ...(arr.slice(2).map(function(x){ return calcHeight(x,pixelsPerPound); }))];
-  
-  console.log([width, newArr]);
-  return [width, newArr];
+  return newArr = [width, ...(arr.slice(2).map(function(x){ return calcHeight(x,pixelsPerPound); }))];
 }
 
 function TakeSecondElement(arr) {
