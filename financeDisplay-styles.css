@@ -93,7 +93,7 @@ html, body{
 	margin-bottom: 45px;
 }
 
-#btnLeft{
+.btnLeft{
 	display: none;
 	margin-left: 10px;
 	margin-right: 20px; 
@@ -107,7 +107,7 @@ html, body{
 	border: none;
 }
 
-#btnRight{
+.btnRight{
 	display: none;
 	margin-right: 20px;
 	width: 35px;
