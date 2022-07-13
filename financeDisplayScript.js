@@ -39,6 +39,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   if(numBars > 8){
     graphToAppend.getElementById("btnLeft").style.display = "block";
     graphToAppend.getElementById("btnRight").style.display = "block";
+    graphToAppend.getElementById("graphDurationDisplay").style.paddingRight = '0';
   }
   
   mainGraphElement.id = graphName;
