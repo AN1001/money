@@ -21,6 +21,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   var percChange = Math.round((currentGraphData[2][1]/graphDataAvg)*10000-10000)/100;
   var percChangeFormatted = (percChange<0?"":"+") + percChange +"%";
   var graphToAppend = temp.content.cloneNode(true);
+  var numBars = barsData.length-1;
   
   graphToAppend.getElementById("graphDurationDisplay").textContent = "Spending - last "+ (currentGraphData.length - 2) +" sessions";
   graphToAppend.getElementById("fineText").textContent = currentGraphData[0];
@@ -29,10 +30,14 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   graphToAppend.getElementById("barTotalValue").textContent = formatter.format(currentGraphData[2][1]);
   graphToAppend.getElementById("percentChange").textContent = percChangeFormatted;
   
+  if(numBars > 8){
+    graphToAppend.getElementById("btnLeft").style.display = "block";
+    graphToAppend.getElementById("btnRight").style.display = "block";
+  }
+  
   var MAINGRAPHAREA = graphToAppend.getElementById("MAINGRAPHAREA");
   var mainGraphElement = graphToAppend.getElementById("mainGraphElement");
   var barsData = getRawGraphData(currentGraphData);
-  var numBars = barsData.length-1;
   var barWidth = barsData.shift();
   var graphName = currentGraphData[0];
   
