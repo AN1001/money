@@ -76,9 +76,9 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 			if (currentIndex <= 8) {
 				barStates.forEach(function(state, index) {
 					if (index <= 8) {
-						state = "Displayed";
+						barStates[index] = "Displayed";
 					} else {
-						state = "Not Displayed";
+						barStates[index] = "NotDisplayed";
 					}
 				});
 			} else {
