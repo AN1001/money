@@ -19,7 +19,7 @@ html, body{
 
 .graphHolder{
     	height: 520px;
-    	min-width: 385px;
+      	min-width: 340px;
 	max-width: 385px;
     	display: block;
     	margin: 10px;
