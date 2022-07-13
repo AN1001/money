@@ -131,7 +131,7 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 
 			if(barStates.length > lastDisplayedIndex+1){
 				barStates.forEach(function(state, index) {
-					if (index > lastDisplayedIndex && index < maxIndex) {
+					if (index > lastDisplayedIndex && index <= maxIndex) {
 						barStates[index] = "Displayed";
 					} else {
 						barStates[index] = "NotDisplayed";
