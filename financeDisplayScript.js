@@ -2,8 +2,13 @@ const graphDataRaw = getCookie("graphData");
 const graphDataFiltered = eval(graphDataRaw);
 const temp = document.getElementById("temp1");
 const appendZone = document.getElementById("allGraphs");
-var CONTENTWIDTH = window.innerWidth-60;
 
+if(window.innerWidth-60 >= 345 ){
+  var CONTENTWIDTH = 345;
+} else {
+  var CONTENTWIDTH = window.innerWidth-60;
+}
+  
 var formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'GBP',
