@@ -18,15 +18,15 @@ html, body{
 }
 
 .graphHolder{
-    	height: 520px;
+	height: 520px;
 	width: 385px;
-    	display: block;
-    	margin: 10px;
+	display: block;
+	margin: 10px;
 	margin-bottom: 50px; 
 	flex-shrink: 0;
 	
 	animation-name: fadeIn;
-  	animation-duration: 2s;
+	animation-duration: 2s;
 }
 
 @media only screen and (max-width: 360px) {
@@ -36,7 +36,7 @@ html, body{
 }
 
 .topBar{
-    	height: 90px;
+	height: 90px;
 	background-color: #eb765d;
 	background-image: url(accentPhoto.png);
 	background-size: 5em;
@@ -50,11 +50,11 @@ html, body{
 
 
 .mainGraphElement{
-    	height: calc(100% - 110px);
+	height: calc(100% - 110px);
 	padding: 5px;
 	background-color: #fffcf7;
 	border-radius: 1em;
-    	width: auto;
+	width: auto;
 }
 
 #textHandler{
