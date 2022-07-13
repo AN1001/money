@@ -33,7 +33,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   mainGraphElement.id = graphName;
   
   appendZone.appendChild(graphToAppend);
-  var CONTENTWIDTH = parseInt(MAINGRAPHAREA.offsetHeight,10)-30;
+  var CONTENTWIDTH = parseInt(MAINGRAPHAREA.offsetWidth,10)-30;
   barsData.forEach(function(value,i){return createBar(value,MAINGRAPHAREA,barWidth,i,numBars,graphToAppend,graphDataAvg);})
 }
 
