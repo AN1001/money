@@ -85,9 +85,9 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 				barStates.forEach(function(state, index) {
 					var startIndex = currentIndex - 8;
 					if (index >= startIndex && index <= currentIndex) {
-						state = "Displayed";
+						barStates[index] = "Displayed";
 					} else {
-						state = "NotDisplayed";
+						barStates[index] = "NotDisplayed";
 					}
 				});
 			}
