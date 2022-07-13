@@ -3,6 +3,12 @@ const graphDataFiltered = eval(graphDataRaw);
 const temp = document.getElementById("temp1");
 const appendZone = document.getElementById("allGraphs");
 
+if(window.innerWidth <= 360){
+  var CONTENTWIDTH = 300;
+} else {
+  var CONTENTWIDTH = 345;
+}
+
 var formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'GBP',
@@ -33,7 +39,6 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   mainGraphElement.id = graphName;
   
   appendZone.appendChild(graphToAppend);
-  var CONTENTWIDTH = parseInt(MAINGRAPHAREA.offsetWidth,10);
   barsData.forEach(function(value,i){return createBar(value,MAINGRAPHAREA,barWidth,i,numBars,graphToAppend,graphDataAvg);})
 }
 
