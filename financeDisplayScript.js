@@ -86,7 +86,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
             state = "NotDisplayed";
           }
         }     
-      }
+      })
       
       for (var i = 0; i < children.length; i++) {
         var barToEdit = children[i];
