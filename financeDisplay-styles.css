@@ -18,7 +18,7 @@ html, body{
 }
 
 .graphHolder{
-	height: 520px;
+	height: 550px;
 	width: 385px;
 	display: block;
 	margin: 10px;
@@ -82,6 +82,7 @@ html, body{
 	font-size: 1.35em;
 	font-weight: 600;
 	margin-right: 15px; 
+	padding-right: 120px; 
 }
 
 #topMainBar{
