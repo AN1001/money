@@ -64,8 +64,10 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 				}
 			}
 
+			var notTaken = true;
 			barStates.forEach(function(state, index) {
-				if (state == "Displayed") {
+				if (state == "Displayed" && notTaken) {
+					notTaken = false;
 					currentIndex = index;
 				}
 			});
