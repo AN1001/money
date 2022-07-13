@@ -84,7 +84,7 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 			} else {
 				barStates.forEach(function(state, index) {
 					var startIndex = currentIndex - 8;
-					if (index >= startIndex && index <= currentIndex) {
+					if (index >= startIndex && index < currentIndex) {
 						barStates[index] = "Displayed";
 					} else {
 						barStates[index] = "NotDisplayed";
