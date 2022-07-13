@@ -24,7 +24,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   graphToAppend.getElementById("percentChange").textContent = percChangeFormatted;
   
   var MAINGRAPHAREA = graphToAppend.getElementById("MAINGRAPHAREA");
-  var CONTENTWIDTH = MAINGRAPHAREA.offsetHeight;
+  var CONTENTWIDTH = parseInt(MAINGRAPHAREA.offsetHeight,10)-30;
   var mainGraphElement = graphToAppend.getElementById("mainGraphElement");
   var barsData = getRawGraphData(currentGraphData);
   var numBars = barsData.length-1;
