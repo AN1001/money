@@ -24,6 +24,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   graphToAppend.getElementById("percentChange").textContent = percChangeFormatted;
   
   var MAINGRAPHAREA = graphToAppend.getElementById("MAINGRAPHAREA");
+  var CONTENTWIDTH = MAINGRAPHAREA.offsetHeight;
   var mainGraphElement = graphToAppend.getElementById("mainGraphElement");
   var barsData = getRawGraphData(currentGraphData);
   var numBars = barsData.length-1;
@@ -112,7 +113,7 @@ function getRawGraphData(arr,pixelsPerPound){
   let arrData = arr.slice(2).map(TakeSecondElement);
   var pixelsPerPound = 195/(0.95*Math.max(...arrData));
   if(arrData.length <= 8){
-    var width = Math.floor((345-(arrData.length-1)*10)/arrData.length);
+    var width = Math.floor((CONTENTWIDTH-(arrData.length-1)*10)/arrData.length);
   } else {
     var width = Math.floor((345-(8-1)*10)/8);
   }
