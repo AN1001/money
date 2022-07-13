@@ -113,7 +113,7 @@ function getRawGraphData(arr,pixelsPerPound){
   if(arrData.length <= 8){
     var width = Math.floor((CONTENTWIDTH-(arrData.length-1)*10)/arrData.length);
   } else {
-    var width = Math.floor((345-(8-1)*10)/8);
+    var width = Math.floor((CONTENTWIDTH-(8-1)*10)/8);
   }
   return newArr = [width, ...(arr.slice(2).map(function(x){ return calcHeight(x,pixelsPerPound); }))];
 }
