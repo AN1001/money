@@ -41,7 +41,7 @@ html, body{
 	background-image: url(accentPhoto.png);
 	background-size: 5em;
 	background-repeat: no-repeat;
-	background-position: 285px;
+	background-position: calc(100% - 20px);
 	padding: 5px;
 	border-radius: 1em;
 	margin-bottom: 15px;
