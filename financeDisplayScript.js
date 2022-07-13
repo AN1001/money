@@ -247,3 +247,28 @@ function getRawGraphData(arr, pixelsPerPound) {
 function TakeSecondElement(arr) {
 	return arr[1];
 }
+
+function add(accumulator, a) {
+	return accumulator + a;
+}
+
+function calcHeight(rawData, pixelsPerPound) {
+	if (rawData[1] * pixelsPerPound >= 5) {
+		(rawData.push(Math.ceil(rawData[1] * pixelsPerPound)));
+	} else {
+		rawData.push(10);
+	}
+	return rawData;
+}
+
+function getCookie(name) {
+	const value = (document.cookie).replace(/\s+/g, '');
+	var cookies = value.split(";");
+
+	for (let i = 0; i < cookies.length; i++) {
+		if (cookies[i].split("=")[0] == name) {
+			return decodeURIComponent(cookies[i].split(name + "=")[1]);
+		}
+	}
+	return "NOT_FOUND";
+}
