@@ -75,7 +75,7 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 
 			if (currentIndex <= 8) {
 				barStates.forEach(function(state, index) {
-					if (index <= 8) {
+					if (index < 8) {
 						barStates[index] = "Displayed";
 					} else {
 						barStates[index] = "NotDisplayed";
@@ -121,24 +121,24 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 				}
 			}
 
-			var started = false;
+			var lastDisplayedIndex = 0;
 			barStates.forEach(function(state, index) {
 				if (state == "Displayed") {
-					if (started == false) {
-						started = true;
-						barStates[index] = "NotDisplayed";
+					lastDisplayedIndex = index
+					maxIndex = lastDisplayedIndex+8;
+				} 
+			});
+
+			if(barStates.length > lastDisplayedIndex+1){
+				barStates.forEach(function(state, index) {
+					if (index > lastDisplayedIndex && index < maxIndex) {
+						barStates[index] = "Displayed";
 					} else {
 						barStates[index] = "NotDisplayed";
 					}
-				} else {
-					if (started && index < maxIndex) {
-						barStates[index] = "Displayed";
-						maxIndex = index + 7;
-					}
-				}
-			});
-
-
+				});
+			}
+				
 			for (var i = 0; i < children.length; i++) {
 				var barToEdit = children[i];
 				if (barStates[i] == "Displayed") {
