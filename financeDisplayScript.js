@@ -37,8 +37,40 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   var graphName = currentGraphData[0];
   
   if(numBars > 8){
-    graphToAppend.getElementById("btnLeft").style.display = "block";
-    graphToAppend.getElementById("btnRight").style.display = "block";
+    let btnL = graphToAppend.getElementById("btnLeft");
+    let btnR = graphToAppend.getElementById("btnRight");
+    
+    btnL.style.display = "block";
+    btnR.style.display = "block";
+    btnL.id = "btn-"+graphName;
+    btnR.id = "btn-"+graphName;
+    currentGraphData.push(btnL);
+    currentGraphData.push(btnR);
+    
+    btnL.addEventListener('click', function onClick(event) {
+      var self = event.target;
+      var parentGraph = document.getElementById(self.id.split("-")[1]);
+      var Graph = parentGraph.querySelector("#MAINGRAPHAREA");
+      var children = Graph.children;
+      for (var i = 0; i < children.length; i++) {
+        var barToEdit = children[i];
+        barToEdit.style.display = 'none';
+      }
+      
+    })
+    
+    btnR.addEventListener('click', function onClick(event) {
+      var self = event.target;
+      var parentGraph = document.getElementById(self.id.split("-")[1]);
+      var Graph = parentGraph.querySelector("#MAINGRAPHAREA");
+      var children = Graph.children;
+      for (var i = 0; i < children.length; i++) {
+        var barToEdit = children[i];
+        barToEdit.style.display = 'none';
+      }
+      
+    })
+    
     graphToAppend.getElementById("graphDurationDisplay").style.paddingRight = '0';
   }
   
@@ -56,6 +88,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
   var barName =  document.createElement("p");
   
   barHolder.classList.add("barHolder");
+  barHolder.id = "BAR"+index;
   bar.id = arr[0]+"@"+index;
   bar.style.width = widthConst+"px";
   bar.style.height = arr[2]+"px";
