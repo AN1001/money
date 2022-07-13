@@ -57,7 +57,7 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 			var children = Graph.children;
 			for (var i = 0; i < children.length; i++) {
 				var barToEdit = children[i];
-				if (barToEdit.style.display == '') {
+				if (barToEdit.style.display == '' || barToEdit.style.display == 'block') {
 					barStates.push("Displayed");
 				} else {
 					barStates.push("NotDisplayed");
@@ -112,7 +112,7 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 			var children = Graph.children;
 			for (var i = 0; i < children.length; i++) {
 				var barToEdit = children[i];
-				if (barToEdit.style.display == '') {
+				if (barToEdit.style.display == '' || barToEdit.style.display == 'block') {
 					barStates.push("Displayed");
 				} else {
 					barStates.push("NotDisplayed");
