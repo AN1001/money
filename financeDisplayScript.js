@@ -24,7 +24,6 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   graphToAppend.getElementById("percentChange").textContent = percChangeFormatted;
   
   var MAINGRAPHAREA = graphToAppend.getElementById("MAINGRAPHAREA");
-  var CONTENTWIDTH = parseInt(MAINGRAPHAREA.offsetHeight,10)-30;
   var mainGraphElement = graphToAppend.getElementById("mainGraphElement");
   var barsData = getRawGraphData(currentGraphData);
   var numBars = barsData.length-1;
@@ -33,10 +32,9 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   
   mainGraphElement.id = graphName;
   
-  barsData.forEach(function(value,i){return createBar(value,MAINGRAPHAREA,barWidth,i,numBars,graphToAppend,graphDataAvg);})
-  console.log(barsData)
-  
   appendZone.appendChild(graphToAppend);
+  var CONTENTWIDTH = parseInt(MAINGRAPHAREA.offsetHeight,10)-30;
+  barsData.forEach(function(value,i){return createBar(value,MAINGRAPHAREA,barWidth,i,numBars,graphToAppend,graphDataAvg);})
 }
 
 function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
@@ -70,7 +68,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
   
   bar.addEventListener('click', function onClick(event) {
     let self = event.target;
-    let selfName = self.id.split("@")[0]
+    let selfName = self.id.split("@")[0];
     var graphTypeData = '';
     var parentEl = '';
     var selfData = '';
@@ -103,7 +101,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
   });
   
   arr.push(bar);
-  arr.push(percChangeFormattedLocal)
+  arr.push(percChangeFormattedLocal);
   barHolder.appendChild(bar);
   barHolder.appendChild(barName);
   createTo.appendChild(barHolder);
