@@ -81,9 +81,54 @@ html, body{
 	color: #4a4037;
 	font-size: 1.35em;
 	font-weight: 600;
+	margin-right: 15px; 
+}
+
+#topMainBar{
+	background: ;
+	display: flex;
 	margin-top: 15px;
 	margin-left: 15px; 
 	margin-bottom: 45px;
+}
+
+#btnLeft{
+	margin-left: 10px;
+	margin-right: 20px; 
+	width: 35px;
+	height: 31px;
+	background: url("https://github.com/AN1001/money/blob/main/arrowLeft.png?raw=true");
+	border-radius: 30em;
+	background-size: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+}
+
+#btnRight{
+	margin-right: 20px;
+	width: 35px;
+	height: 31px;
+	background: url("https://github.com/AN1001/money/blob/main/arrowRight.png?raw=true");
+	border-radius: 30em;
+	background-size: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+}
+
+#btnLeft:active,#btnRight:active {
+	margin-right: 19.5px;
+	border: 2px solid black;
+}
+
+#MAINGRAPHAREA{
+	width: auto;
+	height: 205px;
+	margin: 15px 15px 0 15px;
+	padding-top: 7px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid rgba(238,233,227,255);
 }
 
 #MAINGRAPHAREA{
