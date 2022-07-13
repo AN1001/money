@@ -108,7 +108,7 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 			var parentGraph = document.getElementById(self.id.split("-")[1]);
 			var Graph = parentGraph.querySelector("#MAINGRAPHAREA");
 			var barStates = [];
-			var maxIndex = 10000000000;
+			var maxIndex = Infinity;
 			var children = Graph.children;
 			for (var i = 0; i < children.length; i++) {
 				var barToEdit = children[i];
@@ -208,7 +208,9 @@ function createBar(arr, createTo, widthConst, index, numberBars, parentEl, graph
 		});
 
 		graphTypeData.forEach(function(elem) {
-			elem[3].style.background = "#eb765d";
+			if(elem[3] != undefined){
+				elem[3].style.background = "#eb765d";
+			}
 		});
 
 		self.style.backgroundColor = "#76b5bc";
