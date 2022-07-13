@@ -52,24 +52,93 @@ for(let i = 0; i < graphDataFiltered.length; i++){
       var self = event.target;
       var parentGraph = document.getElementById(self.id.split("-")[1]);
       var Graph = parentGraph.querySelector("#MAINGRAPHAREA");
+      var barStates = [];
+      var currentIndex = 0;
       var children = Graph.children;
       for (var i = 0; i < children.length; i++) {
         var barToEdit = children[i];
-        barToEdit.style.display = 'none';
+        if(barToEdit.style.display == ''){
+          barStates.push("Displayed");
+        } else {
+          barStates.push("NotDisplayed");
+        }
       }
       
+      barStates.forEach(function(state,index){
+        if(state == "Displayed"){
+          currentIndex = index;
+        }
+        
+      if(currentIndex <= 8){
+        barStates.forEach(function(state,index){
+          if(index <= 8){
+            state = "Displayed";
+          } else {
+            state = "Not Displayed";
+          }
+        })
+      } else {
+        barStates.forEach(function(state,index){
+          var startIndex = currentIndex-8;
+          if(index >= startIndex && index <= currentIndex){
+            state = "Displayed";
+          } else {
+            state = "NotDisplayed";
+          }
+        }     
+      }
+      
+      for (var i = 0; i < children.length; i++) {
+        var barToEdit = children[i];
+        if(barStates[i] == "Displayed"){
+          barToEdit.style.display == 'block';
+        } else {
+          barToEdit.style.display == 'none';
+        }
+      }
+        
     })
     
     btnR.addEventListener('click', function onClick(event) {
       var self = event.target;
       var parentGraph = document.getElementById(self.id.split("-")[1]);
       var Graph = parentGraph.querySelector("#MAINGRAPHAREA");
+      var barStates = [];
+      var maxIndex = 10000000000;
       var children = Graph.children;
       for (var i = 0; i < children.length; i++) {
         var barToEdit = children[i];
-        barToEdit.style.display = 'none';
+        if(barToEdit.style.display == ''){
+          barStates.push("Displayed");
+        } else {
+          barStates.push("NotDisplayed");
+        }
       }
       
+      var started = false;
+      barStates.forEach(function(state,index){
+        if(state == "Displayed"){
+          if(started == false){
+            started = true;
+            barStates[index] = "NotDisplayed";
+          }
+        } else {
+          if(started && index<maxIndex){
+            barStates[index] = "Displayed"
+          } else {
+            maxIndex = index+8;
+          }
+        }
+      
+      for (var i = 0; i < children.length; i++) {
+        var barToEdit = children[i];
+        if(barStates[i] == "Displayed"){
+          barToEdit.style.display == 'block';
+        } else {
+          barToEdit.style.display == 'none';
+        }
+      }
+        
     })
     
     graphToAppend.getElementById("graphDurationDisplay").style.paddingRight = '0';
