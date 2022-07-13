@@ -93,11 +93,12 @@ html, body{
 }
 
 #btnLeft{
+	display: none;
 	margin-left: 10px;
 	margin-right: 20px; 
 	width: 35px;
 	height: 31px;
-	background: url("https://github.com/AN1001/money/blob/main/arrowLeft.png?raw=true");
+	background: url("arrowLeft.png");
 	border-radius: 30em;
 	background-size: 30px;
 	background-repeat: no-repeat;
@@ -106,10 +107,11 @@ html, body{
 }
 
 #btnRight{
+	display: none;
 	margin-right: 20px;
 	width: 35px;
 	height: 31px;
-	background: url("https://github.com/AN1001/money/blob/main/arrowRight.png?raw=true");
+	background: url("arrowRight.png");
 	border-radius: 30em;
 	background-size: 30px;
 	background-repeat: no-repeat;
