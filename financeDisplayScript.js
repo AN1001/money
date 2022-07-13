@@ -61,7 +61,7 @@ function createBar(arr,createTo,widthConst,index,numberBars,parentEl,graphAvg){
   }
   
   if(numberBars <= 3){
-    barName.textContent = arr[0].slice(0, 8);
+    barName.textContent = arr[0].slice(0, 9);
   } else if(numberBars <= 6){
     barName.textContent = arr[0].slice(0, 5);
   } else if(numberBars >= 8 && index>=8){
