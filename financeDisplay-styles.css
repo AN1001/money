@@ -19,14 +19,19 @@ html, body{
 
 .graphHolder{
     	height: 520px;
-      	min-width: 340px;
-	max-width: 385px;
+	width: 385px;
     	display: block;
     	margin: 10px;
 	margin-bottom: 50px; 
 	
 	animation-name: fadeIn;
   	animation-duration: 2s;
+}
+
+@media only screen and (max-width: 360px) {
+	.graphHolder{
+		width: 385px;
+	}
 }
 
 .topBar{
