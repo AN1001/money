@@ -125,12 +125,13 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 					if (started == false) {
 						started = true;
 						barStates[index] = "NotDisplayed";
+					} else {
+						barStates[index] = "NotDisplayed";
 					}
 				} else {
 					if (started && index < maxIndex) {
 						barStates[index] = "Displayed";
-					} else {
-						maxIndex = index + 8;
+						maxIndex = index + 7;
 					}
 				}
 			});
