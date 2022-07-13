@@ -36,11 +36,10 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   var barWidth = barsData.shift();
   var graphName = currentGraphData[0];
   
-  appendZone.appendChild(graphToAppend);
   
   if(numBars > 8){
-    let btnL = graphToAppend.getElementById("btnLeft");
-    let btnR = graphToAppend.getElementById("btnRight");
+    let btnL = graphToAppend.querySelector(".btnLeft");
+    let btnR = graphToAppend.querySelector(".btnRight");
     
     btnL.style.display = "block";
     btnR.style.display = "block";
@@ -77,6 +76,7 @@ for(let i = 0; i < graphDataFiltered.length; i++){
   }
   
   mainGraphElement.id = graphName;
+  appendZone.appendChild(graphToAppend);
   barsData.forEach(function(value,i){return createBar(value,MAINGRAPHAREA,barWidth,i,numBars,graphToAppend,graphDataAvg);})
 }
 
