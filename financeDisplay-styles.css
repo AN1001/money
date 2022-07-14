@@ -406,6 +406,13 @@ html, body{
 	background-size: 60px;
 }
 
+@media only screen and (max-width: 450px) {
+	#dataAddScreen{
+		margin-top: 20px;
+		justify-content: center;
+	}
+}
+
 p{
 	margin: 0;
 	text-align: center;
