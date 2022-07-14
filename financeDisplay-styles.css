@@ -380,11 +380,12 @@ html, body{
 }
 
 .deleteBtn{
-	background: red;
-	border: 2px solid pink;
+	background: #dd3947;
+	border: 3px solid #aa3939;
 	color: whitesmoke;
+	padding-bottom: 10px;
 	border-radius: 2em;
-	transform: translate(160px ,-275px);
+	transform: translate(160px ,-273px);
 	width: 25px;
 	height: 25px;
 }
