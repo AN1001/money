@@ -82,7 +82,7 @@ function createGraph(currentGraphData){
 		var year = currentGraphData[1].slice(11);
 	}
 	
-	graphToAppend.id = year;
+	graphToAppend.querySelector(".graphHolder").id = year;
 	
 	graphToAppend.getElementById("graphDurationDisplay").textContent = "Spending - during "+month;
 	graphToAppend.getElementById("fineText").textContent = currentGraphData[0];
