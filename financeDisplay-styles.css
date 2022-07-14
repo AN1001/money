@@ -376,6 +376,9 @@ html, body{
 		margin-top: 20px;
 		justify-content: center;
 	}
+	.deleteBtn{
+		transform: translate(160px ,-281px);
+	}
 }
 
 p{
