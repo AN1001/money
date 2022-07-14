@@ -1,11 +1,16 @@
 const graphDataRaw = getCookie("graphData");
 const graphDataFiltered = eval(graphDataRaw);
 const temp = document.getElementById("temp1");
+const homeBar = document.getElementById("homeBar");
 const appendZone = document.getElementById("allGraphs");
 const filterLeftBtn = document.querySelector(".YDbtnLeft");
 const filterRightBtn = document.querySelector(".YDbtnRight");
 const yearDisplay = document.getElementById("yearDisplay");
+const yearFilter = document.getElementById("yearFilter");
 const addDataBtn = document.getElementById("addDataBtn");
+const logOutBtn = document.getElementById("logOutBtn");
+const dataAddScreen = document.getElementById("dataAddScreen");
+var displayed = false;
 var currentYearDisplayed = 2022;
 var months = {
   JAN: 'January',
@@ -33,7 +38,19 @@ filterRightBtn.addEventListener("click",function(){
 });
 
 addDataBtn.addEventListener("click",function(){
-	alert("I have been pressed!");
+		displayed = true;
+		yearFilter.style.display = "none";
+		appendZone.style.display = "none";
+		dataAddScreen.stlye.display = "block";
+});
+
+logOutBtn.addEventListener("click",function(){
+	if(displayed){
+		displayed = false;
+		yearFilter.style.display = "";
+		appendZone.style.display = "";
+		dataAddScreen.stlye.display = "block";
+	}
 });
 
 if (window.innerWidth - 60 >= 345) {
@@ -85,7 +102,7 @@ function createGraph(currentGraphData){
 	
 	graphToAppend.querySelector(".graphHolder").id = year;
 	
-	graphToAppend.getElementById("graphDurationDisplay").textContent = "Spending - during "+month;
+	graphToAppend.getElementById("graphDurationDisplay").textContent = "Spending during "+month;
 	graphToAppend.getElementById("fineText").textContent = currentGraphData[0];
 	graphToAppend.getElementById("popoutText").textContent = formatter.format(graphDataSum);
 	graphToAppend.getElementById("barTotal").textContent = "Total for " + currentGraphData[2][0];
