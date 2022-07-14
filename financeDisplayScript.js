@@ -116,6 +116,7 @@ function createBabyGraphAdd(){
 	var mainGraphArea = newBabyGraph.querySelector(".babyGraph");
 	var mainGraphAreaText = newBabyGraph.querySelector(".babyGraphText");
 	
+	mainGraphArea.id = "addMainGraphArea";
 	deleteBtn.style.display = "none";
 	mainGraphAreaText.textContent = "Add Graph";
 	
