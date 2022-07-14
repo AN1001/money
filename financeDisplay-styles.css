@@ -352,6 +352,59 @@ html, body{
 	animation-duration: 3s;
 }
 
+#dataAddScreen{
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 15px;
+}
+
+.babyTopBar{
+	width: 180px;
+	height: 50px;
+	background: #eb765d;
+	border-radius: 0.75em;
+}
+
+.babyGraph{
+	width: 180px;
+	height: 180px;
+	margin-top: 10px;
+	border-radius: 0.75em;
+	background: #fffcf7;
+	margin-bottom: 3px;
+}
+
+.babyGraphText{
+	color: #b6b1ab;
+	text-align: center;
+}
+
+.deleteBtn{
+	background: red;
+	border: 2px solid pink;
+	color: whitesmoke;
+	border-radius: 2em;
+	transform: translate(160px ,-275px);
+	width: 25px;
+	height: 25px;
+}
+
+.babyGraph{
+	background-image: url("https://github.com/AN1001/money/blob/main/editIcon.png?raw=true");
+	background-repeat: no-repeat;
+	background-position: 66px center;
+	background-blend-mode: multiply;
+	background-size: 60px;
+}
+
+#addMainGraphArea{
+	background-image: url("https://github.com/AN1001/money/blob/main/plus.png?raw=true");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-blend-mode: multiply;
+	background-size: 60px;
+}
+
 p{
 	margin: 0;
 	text-align: center;
