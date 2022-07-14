@@ -52,7 +52,7 @@ html, body{
 	height: calc(100% - 25px); 
 	width: 250px;
 	border: 4px solid #eb765d;
-	border-radius: 1.2em;
+	border-radius: 0.9em;
 }
 
 .YDbtnLeft{
