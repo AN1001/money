@@ -65,6 +65,7 @@ function filterGraphs(year){
 			graphToEdit.style.display = "none";
 		}
 	}
+	yearDisplay.textContent = year;
 }
 
 function createGraph(currentGraphData){
