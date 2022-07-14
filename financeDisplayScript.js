@@ -2,6 +2,21 @@ const graphDataRaw = getCookie("graphData");
 const graphDataFiltered = eval(graphDataRaw);
 const temp = document.getElementById("temp1");
 const appendZone = document.getElementById("allGraphs");
+var months = {
+  JAN: 'January',
+  FEB: 'February',
+  MAR: 'March',
+  APR: 'April',
+  MAY: 'May',
+  JUN: 'June',
+  JUL: 'July',
+  AUG: 'August',
+  SEP: 'September',
+  OCT: 'October',
+  NOV: 'November',
+  DEC: 'December',
+}
+
 
 if (window.innerWidth - 60 >= 345) {
 	var CONTENTWIDTH = 345;
@@ -21,8 +36,13 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 	var percChange = Math.round((currentGraphData[2][1] / graphDataAvg) * 10000 - 10000) / 100;
 	var percChangeFormatted = (percChange < 0 ? "" : "+") + percChange + "%";
 	var graphToAppend = temp.content.cloneNode(true);
-
-	graphToAppend.getElementById("graphDurationDisplay").textContent = "Spending - last " + (currentGraphData.length - 2) + " sessions";
+	if(currentGraphData[1].length < 8){
+		var month = months[currentGraphData[1].slice(0,3)]+" "+currentGraphData[1].slice(3)
+	} else {
+		var month = months[currentGraphData[1].slice(0,3)]+" - "+months[currentGraphData[1].slice(8,11)]+" "+currentGraphData[1].slice(11)
+	}
+	
+	graphToAppend.getElementById("graphDurationDisplay").textContent = "Spending - during "+month;
 	graphToAppend.getElementById("fineText").textContent = currentGraphData[0];
 	graphToAppend.getElementById("popoutText").textContent = formatter.format(graphDataSum);
 	graphToAppend.getElementById("barTotal").textContent = "Total for " + currentGraphData[2][0];
