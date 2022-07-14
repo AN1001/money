@@ -39,7 +39,7 @@ html, body{
 	background-position: 4.5px center; 
 	border-radius: 1.2em;
 	margin: 10px;
-	margin-left: calc(100% - 100px);
+	margin-left: calc(100% - 96px);
 	height: 70px;
 	width: 70px;
 }
