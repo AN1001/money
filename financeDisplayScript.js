@@ -329,9 +329,11 @@ function getRawGraphData(arr, pixelsPerPound) {
 }
 
 function logOut() {
-  if(confirm("Are you sure you want to log out?")){
-  	window.location.replace("https://moneymoney.herokuapp.com/");
-  }
+	if(!displayed){
+		if(confirm("Are you sure you want to log out?")){
+			window.location.replace("https://moneymoney.herokuapp.com/");
+		}
+	}
 }
 
 function TakeSecondElement(arr) {
