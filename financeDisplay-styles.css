@@ -112,8 +112,62 @@ html, body{
 }
 
 @media only screen and (max-width: 360px) {
+	#homeBar{
+		height: 190px;
+		width: 335px;
+		margin: auto;
+	}
+
+	#logOutBtn{
+		margin-left: 41.5px;
+		margin-top: 100px;
+	}
+
+	#addDataBtn{
+		margin-left: 122.5px;
+		margin-top: 100px;
+	}
+
+	#yearFilter{
+		position:;
+		margin: auto;
+		margin-top: 20px;
+		height: 65px;
+  }
+	
 	.graphHolder{
 		width: 340px;
+	}
+}
+
+@media only screen and (max-width: 439px) {
+	#homeBar{
+		width: 380px;
+		margin: auto;
+	}
+
+  #addDataBtn{
+    margin-left: 302px;
+	}
+
+	#logOutBtn{
+		margin-left: 9px;
+	}	
+	
+	#yearFilter{
+		margin-top: 10px; 
+		height: 62.5px;
+		width: 200px;
+		margin-left: 87px;
+  }
+	
+	#yearDisplay{
+		font-size: 2em;
+		margin-top: 4.5px;
+	}
+	
+	.YDbtnRight{
+		margin-left: 135px;
 	}
 }
 
