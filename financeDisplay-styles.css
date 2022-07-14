@@ -86,9 +86,9 @@ html, body{
 	width: 115px;
 	height: 100%;
 	margin: auto;
-	text-align: center;
-	font-size: 2.5em;
-	padding-top: 6.5px;
+	margin-left: 88.5px;
+	font-size: 2.1em;
+	padding-top: 11px;
 }
 
 #allGraphs{
@@ -146,28 +146,33 @@ html, body{
 		margin: auto;
 	}
 
-  #addDataBtn{
-    margin-left: 302px;
+	#addDataBtn{
+    		margin-left: 302px;
 	}
 
 	#logOutBtn{
 		margin-left: 9px;
 	}	
 	
-	#yearFilter{
+		#yearFilter{
 		margin-top: 10px; 
 		height: 62.5px;
 		width: 200px;
 		margin-left: 87px;
-  }
+  	}
 	
 	#yearDisplay{
-		font-size: 2em;
-		margin-top: 4.5px;
+		font-size: 1.8em;
+		margin-top: 2px;
+		margin-left: 68.5px;
 	}
 	
 	.YDbtnRight{
-		margin-left: 135px;
+		margin-left: 137.5px;
+		margin-top:1px; 
+	}
+	.YDbtnLeft{
+		margin-top:1px; 
 	}
 }
 
