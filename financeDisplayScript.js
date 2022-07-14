@@ -1,6 +1,7 @@
 const graphDataRaw = getCookie("graphData");
 const graphDataFiltered = eval(graphDataRaw);
 const temp = document.getElementById("temp1");
+const babyTemp = document.getElementById("temp2");
 const homeBar = document.getElementById("homeBar");
 const appendZone = document.getElementById("allGraphs");
 const filterLeftBtn = document.querySelector(".YDbtnLeft");
@@ -12,6 +13,10 @@ const logOutBtn = document.getElementById("logOutBtn");
 var dataAddScreen = document.getElementById("dataAddScreen");
 var displayed = false;
 var currentYearDisplayed = 2022;
+var formatter = new Intl.NumberFormat('en-US', {
+	style: 'currency',
+	currency: 'GBP',
+});
 var months = {
   JAN: 'January',
   FEB: 'February',
@@ -59,16 +64,21 @@ if (window.innerWidth - 60 >= 345) {
 	var CONTENTWIDTH = 300;
 }
 
-var formatter = new Intl.NumberFormat('en-US', {
-	style: 'currency',
-	currency: 'GBP',
-});
-
 for (let i = 0; i < graphDataFiltered.length; i++) {
-	createGraph(graphDataFiltered[i])
+	createGraph(graphDataFiltered[i]);
 }
 
+for (let i = 0; i < graphDataFiltered.length; i++) {
+	createBabyGraph(graphDataFiltered[i]);
+}
+createBabyGraphAdd();
+
 filterGraphs(currentYearDisplayed);
+
+
+
+
+
 
 /* FUNCTIONS */
 
@@ -85,6 +95,32 @@ function filterGraphs(year){
 	yearDisplay.textContent = year;
 }
 
+function createBabyGraph(currentGraph){
+	var newBabyGraph = babyTemp.content.cloneNode(true);
+	var applyZone = document.getElementById("dataAddScreen");
+	var deleteBtn = newBabyGraph.querySelector(".deleteBtn");
+	var mainGraphArea = newBabyGraph.querySelector(".babyGraph");
+	var mainGraphAreaText = newBabyGraph.querySelector(".babyGraphText");
+	
+	deleteBtn.id = "deleteBtn-"+currentGraph[0];
+	mainGraphArea.id = "mainGraph-"+currentGraph[0];
+	mainGraphAreaText.textContent = currentGraph[0];
+	
+	applyZone.appendChild(newBabyGraph);
+}
+
+function createBabyGraphAdd(){
+	var newBabyGraph = babyTemp.content.cloneNode(true);
+	var applyZone = document.getElementById("dataAddScreen");
+	var deleteBtn = newBabyGraph.querySelector(".deleteBtn");
+	var mainGraphArea = newBabyGraph.querySelector(".babyGraph");
+	
+	deleteBtn.style.display = "none";
+	mainGraphAreaText.textContent = "Add Graph";
+	
+	applyZone.appendChild(newBabyGraph);
+}
+
 function createGraph(currentGraphData){
 	var graphDataSum = (currentGraphData.slice(2).map(TakeSecondElement)).reduce(add, 0);
 	var graphDataAvg = graphDataSum / (currentGraphData.length - 2);
@@ -96,7 +132,7 @@ function createGraph(currentGraphData){
 		var month = months[currentGraphData[1].slice(0,3)]+" "+currentGraphData[1].slice(3);
 		var year = currentGraphData[1].slice(3);
 	} else {
-		var month = months[currentGraphData[1].slice(0,3)]+" - "+months[currentGraphData[1].slice(8,11)]+" "+currentGraphData[1].slice(11)
+		var month = months[currentGraphData[1].slice(0,3)]+" - "+months[currentGraphData[1].slice(8,11)]+" "+currentGraphData[1].slice(11);
 		var year = currentGraphData[1].slice(11);
 	}
 	
