@@ -84,6 +84,7 @@ html, body{
 	font-weight: 600;
 	margin-right: 15px; 
 	padding-right: 120px; 
+	white-space: no-wrap;
 }
 
 #topMainBar{
@@ -95,9 +96,10 @@ html, body{
 }
 
 .btnLeft{
+	position: absolute;
 	display: none;
-	margin-left: 10px;
-	margin-right: 20px; 
+	margin-left: 260px;
+	margin-top: 5px;
 	width: 35px;
 	height: 31px;
 	background: url("arrowLeft.png");
@@ -109,8 +111,10 @@ html, body{
 }
 
 .btnRight{
+	position: absolute;
 	display: none;
-	margin-right: 20px;
+	margin-left: 300px;
+	margin-top: 5px;
 	width: 35px;
 	height: 31px;
 	background: url("arrowRight.png");
@@ -120,6 +124,7 @@ html, body{
 	background-position: center;
 	border: none;
 }
+
 
 #btnLeft:active,#btnRight:active {
 	margin-right: 19.5px;
