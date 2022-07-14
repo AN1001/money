@@ -111,7 +111,7 @@ html, body{
 	animation-duration: 2s;
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 401px) {
 	#homeBar{
 		height: 190px;
 		width: 335px;
@@ -140,7 +140,7 @@ html, body{
 	}
 }
 
-@media only screen and (max-width: 439px) {
+@media only screen and (min-width: 401px) and (max-width: 439px){
 	#homeBar{
 		width: 380px;
 		margin: auto;
