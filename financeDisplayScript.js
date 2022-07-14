@@ -41,7 +41,7 @@ addDataBtn.addEventListener("click",function(){
 		displayed = true;
 		yearFilter.style.display = "none";
 		appendZone.style.display = "none";
-		dataAddScreen.stlye.display = "block";
+		dataAddScreen.style.display = "block";
 });
 
 logOutBtn.addEventListener("click",function(){
@@ -49,7 +49,7 @@ logOutBtn.addEventListener("click",function(){
 		displayed = false;
 		yearFilter.style.display = "";
 		appendZone.style.display = "";
-		dataAddScreen.stlye.display = "block";
+		dataAddScreen.style.display = "block";
 	}
 });
 
