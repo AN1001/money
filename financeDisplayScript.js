@@ -30,7 +30,14 @@ var formatter = new Intl.NumberFormat('en-US', {
 });
 
 for (let i = 0; i < graphDataFiltered.length; i++) {
-	var currentGraphData = graphDataFiltered[i];
+	createGraph(graphDataFiltered[i])
+}
+
+
+
+/* FUNCTIONS */
+
+function createGraph(currentGraphData){
 	var graphDataSum = (currentGraphData.slice(2).map(TakeSecondElement)).reduce(add, 0);
 	var graphDataAvg = graphDataSum / (currentGraphData.length - 2);
 	var percChange = Math.round((currentGraphData[2][1] / graphDataAvg) * 10000 - 10000) / 100;
@@ -121,7 +128,7 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 				}
 			}
 
-        });
+        	});
         
         
 
@@ -174,14 +181,13 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 
 	}
 	
-		mainGraphElement.id = graphName;
-		appendZone.appendChild(graphToAppend);
-		barsData.forEach(function(value, i) {
-			return createBar(value, MAINGRAPHAREA, barWidth, i, numBars, graphToAppend, graphDataAvg);
-		});
-	}
-
-
+	mainGraphElement.id = graphName;
+	appendZone.appendChild(graphToAppend);
+	barsData.forEach(function(value, i) {
+		return createBar(value, MAINGRAPHAREA, barWidth, i, numBars, graphToAppend, graphDataAvg);
+	});
+}	
+	
 function createBar(arr, createTo, widthConst, index, numberBars, parentEl, graphAvg) {
 	var percChangeLocal = Math.round((arr[1] / graphAvg) * 10000 - 10000) / 100;
 	var percChangeFormattedLocal = (percChangeLocal < 0 ? "" : "+") + percChangeLocal + "%";
@@ -267,6 +273,12 @@ function getRawGraphData(arr, pixelsPerPound) {
 	return newArr = [width, ...(arr.slice(2).map(function(x) {
 		return calcHeight(x, pixelsPerPound);
 	}))];
+}
+
+function logOut() {
+  if(confirm("Are you sure you want to log out?")){
+  	window.location.replace("https://moneymoney.herokuapp.com/");
+  }
 }
 
 function TakeSecondElement(arr) {
