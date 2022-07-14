@@ -72,7 +72,7 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 	createBabyGraph(graphDataFiltered[i]);
 }
 createBabyGraphAdd();
-
+dataAddScreen.style.display = "";
 filterGraphs(currentYearDisplayed);
 
 
