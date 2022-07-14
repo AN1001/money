@@ -390,7 +390,7 @@ html, body{
 }
 
 .babyGraph{
-	background-image: url("https://github.com/AN1001/money/blob/main/editIcon.png?raw=true");
+	background-image: url(editIcon.png);
 	background-repeat: no-repeat;
 	background-position: 66px center;
 	background-blend-mode: multiply;
@@ -398,7 +398,7 @@ html, body{
 }
 
 #addMainGraphArea{
-	background-image: url("https://github.com/AN1001/money/blob/main/plus.png?raw=true");
+	background-image: url(plus.png);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-blend-mode: multiply;
