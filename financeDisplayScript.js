@@ -21,7 +21,7 @@ var months = {
 if (window.innerWidth - 60 >= 345) {
 	var CONTENTWIDTH = 345;
 } else {
-	var CONTENTWIDTH = window.innerWidth - 60;
+	var CONTENTWIDTH = 300;
 }
 
 var formatter = new Intl.NumberFormat('en-US', {
