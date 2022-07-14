@@ -79,7 +79,8 @@ html, body{
 
 #graphDurationDisplay{
 	color: #4a4037;
-	font-size: 1.35em;
+	width: 234.7px;
+	font-size: 1.1em;
 	font-weight: 600;
 	margin-right: 15px; 
 	padding-right: 120px; 
