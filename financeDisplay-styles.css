@@ -111,6 +111,36 @@ html, body{
 	animation-duration: 2s;
 }
 
+.btnLeft{
+	position: absolute;
+	display: none;
+	margin-left: 260px;
+	margin-top: 5px;
+	width: 35px;
+	height: 31px;
+	background: url("arrowLeft.png");
+	border-radius: 30em;
+	background-size: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+}
+
+.btnRight{
+	position: absolute;
+	display: none;
+	margin-left: 300px;
+	margin-top: 5px;
+	width: 35px;
+	height: 31px;
+	background: url("arrowRight.png");
+	border-radius: 30em;
+	background-size: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+}
+
 @media only screen and (max-width: 401px) {
 	#homeBar{
 		height: 190px;
@@ -137,6 +167,13 @@ html, body{
 	
 	.graphHolder{
 		width: 340px;
+	}
+	
+	.btnLeft{
+		margin-left: 235px;
+	}
+	.btnRight{
+		margin-left: 275px;
 	}
 }
 
@@ -234,37 +271,6 @@ html, body{
 	margin-left: 15px; 
 	margin-bottom: 45px;
 }
-
-.btnLeft{
-	position: absolute;
-	display: none;
-	margin-left: 260px;
-	margin-top: 5px;
-	width: 35px;
-	height: 31px;
-	background: url("arrowLeft.png");
-	border-radius: 30em;
-	background-size: 30px;
-	background-repeat: no-repeat;
-	background-position: center;
-	border: none;
-}
-
-.btnRight{
-	position: absolute;
-	display: none;
-	margin-left: 300px;
-	margin-top: 5px;
-	width: 35px;
-	height: 31px;
-	background: url("arrowRight.png");
-	border-radius: 30em;
-	background-size: 30px;
-	background-repeat: no-repeat;
-	background-position: center;
-	border: none;
-}
-
 
 #btnLeft:active,#btnRight:active {
 	margin-right: 19.5px;
