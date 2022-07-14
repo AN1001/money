@@ -18,6 +18,12 @@ html, body{
 	max-width: 300px;
 }
 
+@media not screen and (max-width: 800px) {
+    #authScreen{
+        margin: 150px auto;
+    }
+}
+
 #btnSelec{
     margin: 6px;
     padding-top: 18px;
