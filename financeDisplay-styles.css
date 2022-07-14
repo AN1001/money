@@ -47,9 +47,9 @@ html, body{
 #yearFilter{
 	margin:auto;
 	display: flex;
-	margin-top: 8.5px;
+	margin-top: 0px;
 	margin-bottom: 10px;
-	height: calc(100% - 25px); 
+	height: 62px; 
 	width: 250px;
 	border: 4px solid #eb765d;
 	border-radius: 0.9em;
@@ -57,7 +57,7 @@ html, body{
 
 .YDbtnLeft{
 	position: absolute;
-	margin-top: 2.5px;
+	margin-top: 1px;
 	width: 65px;
 	height: 61px;
 	background: url("arrowLeft.png");
@@ -70,8 +70,8 @@ html, body{
 
 .YDbtnRight{
 	position: absolute;
-	margin-top: 2.5px;
-	margin-left: 185px;
+	margin-top: 1px;
+	margin-left: 186px;
 	width: 65px;
 	height: 61px;
 	background: url("arrowRight.png");
@@ -86,7 +86,7 @@ html, body{
 	width: 115px;
 	height: 100%;
 	margin: auto;
-	margin-left: 88.5px;
+	margin-left: 87.5px;
 	font-size: 2.1em;
 	padding-top: 11px;
 }
@@ -159,24 +159,6 @@ html, body{
 		margin-left: 270px;
 		margin-top: 0;
 	}
-
-	#yearFilter{
-		transform: scale(0.8);
-		height: 62px;
-		margin-top: 0;
-  	}
-	
-	#yearDisplay{
-		margin-left: 87.5px;
-	}
-	
-	.YDbtnLeft{
-		margin-top: 1px;
-	}
-	.YDbtnRight{
-		margin-top: 1px;
-		margin-left: 186px;
-	}
 	
 	.btnLeft{
 		margin-left: 235px;
@@ -204,26 +186,6 @@ html, body{
 		margin-left: 9px;
 	}	
 	
-		#yearFilter{
-		margin-top: 10px; 
-		height: 62.5px;
-		width: 200px;
-		margin-left: 87px;
-  	}
-	
-	#yearDisplay{
-		font-size: 1.8em;
-		margin-top: 2px;
-		margin-left: 68.5px;
-	}
-	
-	.YDbtnRight{
-		margin-left: 137.5px;
-		margin-top:1px; 
-	}
-	.YDbtnLeft{
-		margin-top:1px; 
-	}
 }
 
 .topBar{
