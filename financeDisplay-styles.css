@@ -143,30 +143,35 @@ html, body{
 
 @media only screen and (max-width: 401px) {
 	#homeBar{
-		height: 190px;
-		width: 335px;
+		height: 70px;
+		width: 336px;
 		margin: auto;
 	}
 
 	#logOutBtn{
-		margin-left: 41.5px;
-		margin-top: 100px;
+		transform: scale(0.8);
+		margin-left: 0;
+		margin-top: 0;
 	}
 
 	#addDataBtn{
-		margin-left: 122.5px;
-		margin-top: 100px;
+		transform: scale(0.8);
+		margin-left: 266px;
+		margin-top: 0;
 	}
 
 	#yearFilter{
-		position:;
-		margin: auto;
-		margin-top: 20px;
-		height: 65px;
-  }
+		transform: scale(0.8);
+		height: 62px;
+		margin-top: 0;
+  	}
 	
-	.graphHolder{
-		width: 340px;
+	.YDbtnLeft{
+		margin-top: 1px;
+	}
+	.YDbtnRight{
+		margin-top: 1px;
+		margin-left: 186px;
 	}
 	
 	.btnLeft{
@@ -174,6 +179,10 @@ html, body{
 	}
 	.btnRight{
 		margin-left: 275px;
+	}
+	
+	.graphHolder{
+		width: 340px;
 	}
 }
 
