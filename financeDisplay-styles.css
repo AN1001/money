@@ -146,6 +146,7 @@ html, body{
 		height: 70px;
 		width: 340px;
 		margin: auto;
+		margin-bottom: 15px;
 	}
 
 	#logOutBtn{
@@ -176,6 +177,7 @@ html, body{
 	#homeBar{
 		width: 380px;
 		margin: auto;
+		margin-bottom: 15px;
 	}
 
 	#addDataBtn{
