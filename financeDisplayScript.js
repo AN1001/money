@@ -54,7 +54,7 @@ logOutBtn.addEventListener("click",function(){
 		displayed = false;
 		yearFilter.style.display = "";
 		appendZone.style.display = "";
-		dataAddScreen.style.display = "block";
+		dataAddScreen.style.display = "none";
 	}
 });
 
