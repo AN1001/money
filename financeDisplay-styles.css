@@ -144,7 +144,7 @@ html, body{
 @media only screen and (max-width: 401px) {
 	#homeBar{
 		height: 70px;
-		width: 336px;
+		width: 340px;
 		margin: auto;
 	}
 
@@ -156,7 +156,7 @@ html, body{
 
 	#addDataBtn{
 		transform: scale(0.8);
-		margin-left: 266px;
+		margin-left: 270px;
 		margin-top: 0;
 	}
 
@@ -165,6 +165,10 @@ html, body{
 		height: 62px;
 		margin-top: 0;
   	}
+	
+	#yearDisplay{
+		margin-left: 87.5px;
+	}
 	
 	.YDbtnLeft{
 		margin-top: 1px;
