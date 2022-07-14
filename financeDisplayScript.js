@@ -114,6 +114,7 @@ function createBabyGraphAdd(){
 	var applyZone = document.getElementById("dataAddScreen");
 	var deleteBtn = newBabyGraph.querySelector(".deleteBtn");
 	var mainGraphArea = newBabyGraph.querySelector(".babyGraph");
+	var mainGraphAreaText = newBabyGraph.querySelector(".babyGraphText");
 	
 	deleteBtn.style.display = "none";
 	mainGraphAreaText.textContent = "Add Graph";
