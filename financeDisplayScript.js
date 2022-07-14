@@ -2,6 +2,11 @@ const graphDataRaw = getCookie("graphData");
 const graphDataFiltered = eval(graphDataRaw);
 const temp = document.getElementById("temp1");
 const appendZone = document.getElementById("allGraphs");
+const filterLeftBtn = document.getElementById("YDbtnLeft");
+const filterRightBtn = document.getElementById("YDbtnRight");
+const yearDisplay = document.getElementById("yearDisplay");
+const addDataBtn = document.getElementById("addDataBtn");
+var currentYearDisplayed = 2022;
 var months = {
   JAN: 'January',
   FEB: 'February',
@@ -17,6 +22,19 @@ var months = {
   DEC: 'December',
 }
 
+filterLeftBtn.addEventListener("click",function(){
+	currentYearDisplayed--;
+	filterGraphs(currentYearDisplayed);
+});
+
+filterRightBtn.addEventListener("click",function(){
+	currentYearDisplayed++;
+	filterGraphs(currentYearDisplayed);
+});
+
+addDataBtn.addEventListener("click",function(){
+	alert("I have been pressed!");
+});
 
 if (window.innerWidth - 60 >= 345) {
 	var CONTENTWIDTH = 345;
@@ -33,9 +51,21 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 	createGraph(graphDataFiltered[i])
 }
 
-
+filterGraphs(currentYearDisplayed);
 
 /* FUNCTIONS */
+
+function filterGraphs(year){
+	var displayedGraphs = appendZone.children;
+	for (var i = 0; i < displayedGraphs.length; i++) {
+		var graphToEdit = displayedGraphs[i];
+		if (graphToEdit.id == year) {
+			graphToEdit.style.display = "";
+		} else {
+			graphToEdit.style.display = "none";
+		}
+	}
+}
 
 function createGraph(currentGraphData){
 	var graphDataSum = (currentGraphData.slice(2).map(TakeSecondElement)).reduce(add, 0);
@@ -43,11 +73,16 @@ function createGraph(currentGraphData){
 	var percChange = Math.round((currentGraphData[2][1] / graphDataAvg) * 10000 - 10000) / 100;
 	var percChangeFormatted = (percChange < 0 ? "" : "+") + percChange + "%";
 	var graphToAppend = temp.content.cloneNode(true);
+	
 	if(currentGraphData[1].length < 8){
-		var month = months[currentGraphData[1].slice(0,3)]+" "+currentGraphData[1].slice(3)
+		var month = months[currentGraphData[1].slice(0,3)]+" "+currentGraphData[1].slice(3);
+		var year = currentGraphData[1].slice(3);
 	} else {
 		var month = months[currentGraphData[1].slice(0,3)]+" - "+months[currentGraphData[1].slice(8,11)]+" "+currentGraphData[1].slice(11)
+		var year = currentGraphData[1].slice(11);
 	}
+	
+	graphToAppend.id = year;
 	
 	graphToAppend.getElementById("graphDurationDisplay").textContent = "Spending - during "+month;
 	graphToAppend.getElementById("fineText").textContent = currentGraphData[0];
