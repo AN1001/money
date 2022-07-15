@@ -351,6 +351,7 @@ html, body{
 	color: whitesmoke;
 	padding-bottom: 10px;
 	transform: translate(160px ,-286px);
+	-webkit-transform: translate(160px ,-281px);
 	width: 25px;
 	height: 25px;
 }
@@ -375,9 +376,6 @@ html, body{
 	#dataAddScreen{
 		margin-top: 20px;
 		justify-content: center;
-	}
-	.deleteBtn{
-		transform: translate(160px ,-281px);
 	}
 }
 
