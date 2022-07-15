@@ -154,7 +154,7 @@ function createBabyGraph(currentGraph){
 			}
 		})
 		
-		graphReference.forEach(function(bar){
+		graphReference.forEach(function(formNode){
 			formNode.querySelector(".barEditDetails").textContent = "Details for bar "+bar[0];
 			formNode.querySelector(".inputBarName").value = bar[0];
 			formNode.querySelector(".inputBarValue").value = bar[1];
