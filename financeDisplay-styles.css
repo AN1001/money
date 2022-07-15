@@ -338,6 +338,10 @@ html, body{
 	margin-bottom: 3px;
 }
 
+.babyGraphHolder{
+	margin-top: 10px;
+}
+
 .babyGraphText{
 	color: #b6b1ab;
 	text-align: center;
