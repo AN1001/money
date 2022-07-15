@@ -428,11 +428,12 @@ function getCookie(name) {
 }
 
 function setCookie(name,value,mins) {
+    var cleanValue = JSON.stringify(value)
     var expires = "";
     if (mins) {
         var date = new Date();
         date.setTime(date.getTime() + (mins*60*1000));
         expires = "; expires=" + date.toUTCString();
     }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    document.cookie = name + "=" + (cleanValue || "")  + expires + "; path=/";
 }
