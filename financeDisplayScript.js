@@ -102,7 +102,7 @@ function createBabyGraph(currentGraph){
 	var mainGraphArea = newBabyGraph.querySelector(".babyGraph");
 	var mainGraphAreaText = newBabyGraph.querySelector(".babyGraphText");
 	
-	deleteBtn.addEventListener(function(event){
+	deleteBtn.addEventListener("click",function(event){
 		let self = event.target;
 		let graphName = self.id.split("-")[1];
 		let mainGraph = document.querySelector("."+graphName+"-graphHolder");
