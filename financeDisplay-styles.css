@@ -566,7 +566,8 @@ legend{
 
 #confEditBtn{
 	margin: 15px auto 0 215px;
-	border: 2px solid #413428;
+	border: 3px double #413428;
+	background: #fffcf7;
 	width: 130px;
 	height: 40px;
 	font-size: 1.15em;
