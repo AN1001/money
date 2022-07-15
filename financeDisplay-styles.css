@@ -564,6 +564,15 @@ legend{
 	margin-top: 10px;
 }
 
+#confEditBtn{
+	margin: 15px auto 0 215px;
+	border: 2px solid #413428;
+	width: 130px;
+	height: 40px;
+	font-size: 1.15em;
+	border-radius: 0.4em;
+}
+
 p{
 	margin: 0;
 	text-align: center;
