@@ -393,6 +393,7 @@ function getRawGraphData(arr, pixelsPerPound) {
 function logOut() {
 	if(!displayed){
 		if(confirm("Are you sure you want to log out?")){
+			setCookie("graphData", "", -5);
 			window.location.replace("https://moneymoney.herokuapp.com/");
 		}
 	}
