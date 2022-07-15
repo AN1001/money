@@ -36,6 +36,21 @@ var months = {
   DEC: 'December',
 }
 
+var currentBtnsPressed = 0;
+document.querySelectorAll(".monthBtn").forEach(function(btn){
+	btn.addEventListener("click",function(event){
+		let self = event.target;
+		if(self.classList.contains("active")){
+			currentBtnsPressed--;
+			self.classList.remove("active");
+		} else if(currentBtnsPressed < 2){
+			self.classList.add("active");
+			currentBtnsPressed++;
+		}	
+	});
+})
+
+
 document.querySelectorAll(".yearBtn").forEach(function(yearBtn,index){
 	yearBtn.textContent = currentYearDisplayed-index;
 })
@@ -458,17 +473,6 @@ function calcHeight(rawData, pixelsPerPound) {
 		rawData.push(10);
 	}
 	return rawData;
-}
-
-var currentBtnsPressed = 0;
-function monthBtnPress(){
-	if(this.classList.contains("active")){
-		currentBtnsPressed--;
-		this.classList.remove("active");
-	} else if(currentBtnsPressed < 2){
-		this.classList.add("active");
-		currentBtnsPressed++;
-	}
 }
 
 function getCookie(name) {
