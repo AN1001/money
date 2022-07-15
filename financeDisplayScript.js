@@ -145,7 +145,9 @@ function createBabyGraph(currentGraph){
 		
 		graphReference.forEach(function(bar){
 			let formNode = inputTemp.content.cloneNode(true);
-			formNode.querySelector(".barEditDetails").textContent = "Details for bar "bar[0];
+			formNode.querySelector(".barEditDetails").textContent = "Details for bar "+bar[0];
+			formNode.querySelector(".inputBarName").textContent = bar[0];
+			formNode.querySelector(".inputBarValue").textContent = bar[1];
 			
 			changeGraphArea.appendChild(formNode);
 		})
