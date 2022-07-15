@@ -37,7 +37,7 @@ var months = {
 }
 
 document.querySelectorAll(".yearBtn").forEach(function(yearBtn,index){
-	yearBtn.textContent = currentYearDisplayed-(index+1);
+	yearBtn.textContent = currentYearDisplayed-index;
 })
 
 filterLeftBtn.addEventListener("click",function(){
