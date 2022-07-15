@@ -4,6 +4,16 @@
 	--soft-black: #222;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 html, body{
 	background-color: rgb(247,233,220);
 	font-family: "DM Sans", sans-serif;
