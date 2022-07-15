@@ -102,6 +102,23 @@ function createBabyGraph(currentGraph){
 	var mainGraphArea = newBabyGraph.querySelector(".babyGraph");
 	var mainGraphAreaText = newBabyGraph.querySelector(".babyGraphText");
 	
+	deleteBtn.addEventListener(function(event){
+		let self = event.target;
+		let graphName = self.id.split("-")[1];
+		let mainGraph = document.querySelector("."+graphName+"-graphHolder");
+		let babyGraph = self.parentElement;
+
+		if(confirm("Are you sure you want to delete the graph "+graphName+"?")){
+			babyGraph.remove();
+			mainGraph.remove();
+			graphDataFiltered.forEach(function(graph,i){
+				if(graph[0] == graphName){
+					graphDataFiltered.splice(i,1)
+				}
+			})
+		}
+	});
+	
 	deleteBtn.id = "deleteBtn-"+currentGraph[0];
 	mainGraphArea.id = "mainGraph-"+currentGraph[0];
 	mainGraphAreaText.textContent = currentGraph[0];
@@ -153,7 +170,8 @@ function createGraph(currentGraphData){
 	var numBars = barsData.length - 1;
 	var barWidth = barsData.shift();
 	var graphName = currentGraphData[0];
-
+	
+	graphToAppend.querySelector(".graphHolder").classList.add(graphName+"-graphHolder");
 
 	if (numBars > 8) {
 		let btnL = graphToAppend.querySelector(".btnLeft");
