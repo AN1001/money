@@ -559,6 +559,10 @@ legend{
 	border-radius: 0.4em;
 }
 
+.active{
+	background: #76b5bc; 
+}
+
 #inputGraphDuration{
 	display: flex;
 	margin-top: 10px;
