@@ -4,6 +4,10 @@
 	--soft-black: #222;
 }
 
+input{
+	padding-left: 10px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -424,7 +428,7 @@ html, body{
 }
 
 .inputBarName{
-	width: 145px;
+	width: 136px;
 	margin: 0 5px 0 5px;
 	border: 2px solid #413428;
 	border-radius: 0.4em;
@@ -432,7 +436,7 @@ html, body{
 }
 
 .inputBarValue{
-	width: 145px;
+	width: 136px;
 	margin: 0 5px 0 5px;
 	border: 2px solid #413428;
 	border-radius: 0.4em;
@@ -470,7 +474,7 @@ html, body{
 	
 	.inputs{
 		position: fixed;
-		margin-left: calc(100% - 370px);
+		margin-left: calc(100% - 385px);
 		height: 45px;
 	}
 	
