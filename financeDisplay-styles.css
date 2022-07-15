@@ -48,7 +48,7 @@ html, body{
 	margin:auto;
 	display: flex;
 	margin-top: 0px;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 	height: 62px; 
 	width: 250px;
 	border: 4px solid #eb765d;
@@ -252,6 +252,7 @@ html, body{
 	margin-right: 19.5px;
 	border: 2px solid black;
 }
+
 #MAINGRAPHAREA{
 	width: auto;
 	height: 205px;
