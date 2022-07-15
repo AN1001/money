@@ -429,7 +429,7 @@ function getCookie(name) {
 
 function setCookie(name,value,mins) {
     var expires = "";
-    if (days) {
+    if (mins) {
         var date = new Date();
         date.setTime(date.getTime() + (mins*60));
         expires = "; expires=" + date.toUTCString();
