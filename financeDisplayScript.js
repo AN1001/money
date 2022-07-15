@@ -115,6 +115,7 @@ function createBabyGraph(currentGraph){
 				if(graph[0] == graphName){
 					graphDataFiltered.splice(i,1)
 				}
+				setCookie("graphData", graphDataFiltered, 5);
 				let data = [getCookie("username"),graphDataFiltered];
 				fetch("updateTables.php", { method: "POST", body: data })
 			})
@@ -422,4 +423,11 @@ function getCookie(name) {
 		}
 	}
 	return "NOT_FOUND";
+}
+
+function setCookie(cname, cvalue, exmins) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exmins*60));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
