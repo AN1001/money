@@ -513,6 +513,10 @@ html, body{
 	height: 25px;
 }
 
+#barChartIconHolder{
+	background: url("barChartIcon.png");
+}
+
 fieldset{
 	padding: 2px 2px 2px 2.5px;
 	margin-top: 5px;
