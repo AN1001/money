@@ -596,6 +596,29 @@ legend{
 	}
 }
 
+@media only screen and (min-width: 800px) {
+	#confEditBtn{
+		  margin: 15px auto 0 calc(100% - 150px);
+		  transform: scale(1.3);
+	 }
+	 
+	#inputGraphNameParent{
+		margin: 20px calc(100% - 600px) 0 20px;
+	}
+	
+	#graphMetaData{
+		height: 130px;
+		width: calc(100% - 20px);
+		flex-flow: row;
+	}
+	
+	#inputGraphDuration{
+		width: 500px;
+		margin: auto;
+	}
+	
+}
+
 p{
 	margin: 0;
 	text-align: center;
