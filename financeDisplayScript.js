@@ -173,7 +173,7 @@ function createBabyGraph(currentGraph){
 			let formNode = inputTemp.content.cloneNode(true);
 			formNode.querySelector(".barEditDetails").textContent = "Details for bar "+bar[0];
 			formNode.querySelector(".inputBarName").value = bar[0];
-			formNode.querySelector(".inputBarValue").value = bar[1];
+			formNode.querySelector(".inputBarValue").value = (formatter.format(bar[1])).slice(1);
 			changeGraphArea.appendChild(formNode);
 		})
 		
