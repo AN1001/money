@@ -115,7 +115,10 @@ function createBabyGraph(currentGraph){
 				if(graph[0] == graphName){
 					graphDataFiltered.splice(i,1)
 				}
+				let data = [getCookie("username"),graphDataFiltered];
+				fetch("updateTables.php", { method: "POST", body: data })
 			})
+			
 		}
 	});
 	
