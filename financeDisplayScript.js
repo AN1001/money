@@ -79,6 +79,10 @@ logOutBtn.addEventListener("click",function(){
 		appendZone.style.display = "";
 		dataAddScreen.style.display = "none";
 		changeGraphDataParent.style.display = "none"
+		
+		changeGraphArea.forEach(function(barStats){
+			barStats.remove();
+		})
 	}
 });
 
@@ -159,14 +163,39 @@ function createBabyGraph(currentGraph){
 		let mainGraph = document.querySelector("."+graphName+"-graphHolder");
 		let babyGraph = self.parentElement;
 		let graphReference;
+		let graphReferenceRaw;
 		let indexOfGraph;
-		
+		var months;
+		var year;
 		
 		graphDataReference.forEach(function(graph,i){
 			if(graph[0] == graphName){
+				graphReferenceRaw = graph;
 				graphReference = graph.slice(2);
 				indexOfGraph = i;
 			}
+		})
+		
+		document.getElementById("inputGraphName").value = graphName;
+		if(graphReferenceRaw[1].length < 8){
+			months = [graphReferenceRaw[1].slice(0,3)];
+			year = graphReferenceRaw[1].slice(3);
+		} else {
+			months = [graphReferenceRaw[1].slice(0,3),graphReferenceRaw[1].slice(8,11)];
+			year = graphReferenceRaw[1].slice(11);
+		}
+		
+		document.querySelectorAll(".yearBtn").forEach(function(yearBtn){
+			if(yearBtn.id == year){
+				yearBtn.classList.add("active");
+			}
+		})
+		document.querySelectorAll(".monthBtn").forEach(function(monthBtn){
+			months.forEach(function(month){
+				if(monthBtn.id == month){
+					monthBtn.classList.add("active");
+				}
+			})
 		})
 		
 		graphReference.forEach(function(bar){
