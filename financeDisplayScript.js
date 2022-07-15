@@ -117,10 +117,10 @@ function createBabyGraph(currentGraph){
 					graphDataReference.splice(i,1);
 					graphDataFiltered.splice(i,1);
 				}
-				setCookie("graphData", graphDataReference, 5);
-				let data = [getCookie("username"),graphDataReference];
-				fetch("updateTables.php", { method: "POST", body: data })
 			})
+			setCookie("graphData", graphDataReference, 5);
+			let data = [getCookie("username"),graphDataReference];
+			fetch("updateTables.php", { method: "POST", body: data })
 			
 		}
 	});
