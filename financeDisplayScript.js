@@ -7,6 +7,7 @@ const inputTemp = document.getElementById("temp3");
 const homeBar = document.getElementById("homeBar");
 const appendZone = document.getElementById("allGraphs");
 const changeGraphArea = document.getElementById("changeGraphData"); 
+const changeGraphDataParent =  document.getElementById("changeGraphDataParent"); 
 const filterLeftBtn = document.querySelector(".YDbtnLeft");
 const filterRightBtn = document.querySelector(".YDbtnRight");
 const yearDisplay = document.getElementById("yearDisplay");
@@ -35,6 +36,10 @@ var months = {
   DEC: 'December',
 }
 
+document.querySelectorAll(".yearBtn").forEach(function(yearBtn,index){
+	yearBtn.textContent = currentYearDisplayed-(index+1);
+})
+
 filterLeftBtn.addEventListener("click",function(){
 	currentYearDisplayed--;
 	filterGraphs(currentYearDisplayed);
@@ -58,6 +63,7 @@ logOutBtn.addEventListener("click",function(){
 		yearFilter.style.display = "";
 		appendZone.style.display = "";
 		dataAddScreen.style.display = "none";
+		changeGraphDataParent.style.display = "none"
 	}
 });
 
@@ -75,7 +81,10 @@ for (let i = 0; i < graphDataFiltered.length; i++) {
 	createBabyGraph(graphDataFiltered[i]);
 }
 createBabyGraphAdd();
+
+changeGraphDataParent.style.display = "none";
 dataAddScreen.style.display = "none";
+
 filterGraphs(currentYearDisplayed);
 
 
@@ -128,6 +137,8 @@ function createBabyGraph(currentGraph){
 	});
 	
 	mainGraphArea.addEventListener("click",function(event){
+		changeGraphDataParent.style.display = "";
+		dataAddScreen.style.display = "none";
 		let self = event.target;
 		let graphName = self.id.split("-")[1];
 		let mainGraph = document.querySelector("."+graphName+"-graphHolder");
@@ -144,11 +155,9 @@ function createBabyGraph(currentGraph){
 		})
 		
 		graphReference.forEach(function(bar){
-			let formNode = inputTemp.content.cloneNode(true);
 			formNode.querySelector(".barEditDetails").textContent = "Details for bar "+bar[0];
 			formNode.querySelector(".inputBarName").value = bar[0];
 			formNode.querySelector(".inputBarValue").value = bar[1];
-			
 			changeGraphArea.appendChild(formNode);
 		})
 		
@@ -448,6 +457,17 @@ function calcHeight(rawData, pixelsPerPound) {
 		rawData.push(10);
 	}
 	return rawData;
+}
+
+var currentBtnsPressed = 0;
+function monthBtnPress(){
+	if(this.classList.contains("active")){
+		currentBtnsPressed--;
+		this.classList.remove("active");
+	} else if(currentBtnsPressed < 2){
+		this.classList.add("active");
+		currentBtnsPressed++;
+	}
 }
 
 function getCookie(name) {
