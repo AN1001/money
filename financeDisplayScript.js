@@ -3,8 +3,10 @@ const graphDataFiltered = eval(graphDataRaw);
 const graphDataReference = eval(graphDataRaw);
 const temp = document.getElementById("temp1");
 const babyTemp = document.getElementById("temp2");
+const inputTemp = document.getElementById("temp3");
 const homeBar = document.getElementById("homeBar");
 const appendZone = document.getElementById("allGraphs");
+const changeGraphArea = document.getElementById("changeGraphData"); 
 const filterLeftBtn = document.querySelector(".YDbtnLeft");
 const filterRightBtn = document.querySelector(".YDbtnRight");
 const yearDisplay = document.getElementById("yearDisplay");
@@ -123,6 +125,33 @@ function createBabyGraph(currentGraph){
 			fetch("updateTables.php", { method: "POST", body: data })
 			
 		}
+	});
+	
+	mainGraphArea.addEventListener("click",function(event){
+		let self = event.target;
+		let graphName = self.id.split("-")[1];
+		let mainGraph = document.querySelector("."+graphName+"-graphHolder");
+		let babyGraph = self.parentElement;
+		
+		graphDataReference.forEach(function(graph,i){
+			if(graph[0] == graphName){
+				var graphReference = graph.slice(2);
+				var indexOfGraph = i;
+			}
+		})
+		
+		graphReference.forEach(function(bar){
+			let formNode = inputTemp.content.cloneNode(true);
+			formNode.querySelector("barEditDetails").textContent = bar[0]+"=>";
+			
+			changeGraphArea.appendChild("formNode")
+		})
+		
+		
+		//setCookie("graphData", graphDataReference, 5);
+		//let data = [getCookie("username"),graphDataReference];
+		//fetch("updateTables.php", { method: "POST", body: data })
+		
 	});
 	
 	deleteBtn.id = "deleteBtn-"+currentGraph[0];
