@@ -1,5 +1,6 @@
 const graphDataRaw = getCookie("graphData");
 const graphDataFiltered = eval(graphDataRaw);
+const graphDataReference = eval(graphDataRaw);
 const temp = document.getElementById("temp1");
 const babyTemp = document.getElementById("temp2");
 const homeBar = document.getElementById("homeBar");
@@ -111,12 +112,13 @@ function createBabyGraph(currentGraph){
 		if(confirm("Are you sure you want to delete the graph "+graphName+"?")){
 			babyGraph.remove();
 			mainGraph.remove();
-			graphDataFiltered.forEach(function(graph,i){
+			graphDataReference.forEach(function(graph,i){
 				if(graph[0] == graphName){
-					graphDataFiltered.splice(i,1)
+					graphDataReference.splice(i,1);
+					graphDataFiltered.splice(i,1);
 				}
-				setCookie("graphData", graphDataFiltered, 0.005);
-				let data = [getCookie("username"),graphDataFiltered];
+				setCookie("graphData", graphDataReference, 5);
+				let data = [getCookie("username"),graphDataReference];
 				fetch("updateTables.php", { method: "POST", body: data })
 			})
 			
@@ -425,11 +427,11 @@ function getCookie(name) {
 	return "NOT_FOUND";
 }
 
-function setCookie(name,value,days) {
+function setCookie(name,value,mins) {
     var expires = "";
     if (days) {
         var date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
+        date.setTime(date.getTime() + (mins*60));
         expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
