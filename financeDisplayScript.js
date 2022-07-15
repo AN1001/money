@@ -132,11 +132,14 @@ function createBabyGraph(currentGraph){
 		let graphName = self.id.split("-")[1];
 		let mainGraph = document.querySelector("."+graphName+"-graphHolder");
 		let babyGraph = self.parentElement;
+		let graphReference;
+		let indexOfGraph;
+		
 		
 		graphDataReference.forEach(function(graph,i){
 			if(graph[0] == graphName){
-				var graphReference = graph.slice(2);
-				var indexOfGraph = i;
+				graphReference = graph.slice(2);
+				indexOfGraph = i;
 			}
 		})
 		
