@@ -404,12 +404,13 @@ function convertFormToList(){
 	graphChildrenArray.forEach(function(barStats){
 		let tempData = [];
 		tempData.push(barStats.querySelector(".inputBarName").value);
-		tempData.push(parseFloat(barStats.querySelector(".inputBarValue").value.replace(/^[a-zA-Z0-9.,]+$/,'')));
+		tempData.push(parseFloat(barStats.querySelector(".inputBarValue").value.split(1)));
 		totalGraphData.push(tempData);
 	})
 	
 	let totalGraphDataCopy = totalGraphData;
 	totalGraphDataCopy.toString().split(",");
+	console.log(totalGraphDataCopy);
 	if(totalGraphData.includes(undefined) || totalGraphData.includes("")){
 		errorFound = true;
 	}
