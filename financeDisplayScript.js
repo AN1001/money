@@ -94,7 +94,7 @@ editBtn.addEventListener("click",function(event){
 	//setCookie("graphData", graphDataReference, 5);
 	//let data = [getCookie("username"),graphDataReference];
 	//fetch("updateTables.php", { method: "POST", body: data })
-}
+});
 
 logOutBtn.addEventListener("click",function(){
 	if(displayed){
