@@ -298,7 +298,7 @@ function createBabyGraph(currentGraph){
 			let deleteBtn = formNode.getElementById("barDataDeleteBtn");
 			formNode.querySelector(".barEditDetails").textContent = "Details for bar "+bar[0];
 			formNode.querySelector(".inputBarName").value = bar[0];
-			formNode.querySelector(".inputBarValue").value = formatter.format(bar[1]).split(1);
+			formNode.querySelector(".inputBarValue").value = formatter.format(bar[1]).slice(1);
 			changeGraphArea.appendChild(formNode);
 			
 			deleteBtn.addEventListener("click",function(event){
