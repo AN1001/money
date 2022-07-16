@@ -106,6 +106,9 @@ logOutBtn.addEventListener("click",function(){
 		graphChildrenArray.forEach(function(barStats){
   			barStats.remove();
 		})
+		document.querySelectorAll(".yearBtn").forEach(function(yearBtn){
+			yearBtn.classList.remove("active");
+		})
 	}
 });
 
