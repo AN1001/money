@@ -234,7 +234,7 @@ function createBabyGraph(currentGraph){
 			if(btn.classList.contains("active")){
 				currentBtnsPressed++;
 			}
-		}
+		})
 		currentGraphDisplayed = graphName;
 		
 		graphReference.forEach(function(bar){
