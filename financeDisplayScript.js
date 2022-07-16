@@ -143,7 +143,7 @@ editBtn.addEventListener("click",function(event){
 		BABYGRAPH.remove();
 	})
 	
-	graphDataFiltered = graphDataReference;
+	const graphDataFiltered = graphDataReference;
 	for (let i = 0; i < graphDataFiltered.length; i++) {
 		createGraph(graphDataFiltered[i]);
 	}
@@ -426,7 +426,7 @@ function convertFormToList(){
 	graphChildrenArray.forEach(function(barStats){
 		let tempData = [];
 		tempData.push(barStats.querySelector(".inputBarName").value);
-		tempData.push(barStats.querySelector(".inputBarValue").value);
+		tempData.push(parseInt(barStats.querySelector(".inputBarValue").value));
 		totalGraphData.push(tempData);
 	})
 	return totalGraphData;
