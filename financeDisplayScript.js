@@ -121,8 +121,8 @@ addBarBtn.addEventListener("click",function(event){
 	deleteBtn.addEventListener("click",function(event){
 		let self = event.target;
 		self.parentElement.remove();
-	})
-}
+	});
+});
 
 editBtn.addEventListener("click",function(event){
 	let self = event.target;
