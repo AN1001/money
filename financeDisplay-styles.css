@@ -599,6 +599,20 @@ legend{
 	height: 25px;
 }
 
+#addBarDataBtn{
+	display: flex;
+	width: 344px;
+	height: 50px;
+	margin: auto;
+	border: 4px solid #eb765d;
+	background: url(plus.png), #fffcf7;
+	background-size: 40px;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 0.8em;
+	margin-top: 10px;
+}
+
 @media only screen and (min-width: 500px) and (max-width: 799px){
 	#confEditBtn{
 		transform: scale(1.3);
@@ -606,6 +620,10 @@ legend{
 	}
 	#graphMetaData{
 		margin: 70px auto 70px auto;
+		transform: scale(1.3);
+	}
+	#addBarDataBtn{
+		margin: 0 auto 70px auto;
 		transform: scale(1.3);
 	}
 }
@@ -634,6 +652,10 @@ legend{
 	#barDataDeleteBtn{
 		margin: 0;
 		margin-top: -3px;
+	}
+	
+	#addBarDataBtn{
+		width: 100%;
 	}
 	
 }
