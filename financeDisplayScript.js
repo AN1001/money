@@ -408,6 +408,8 @@ function convertFormToList(){
 		totalGraphData.push(tempData);
 	})
 	
+	let totalGraphDataCopy = totalGraphData;
+	totalGraphDataCopy.toString().split(",");
 	if(totalGraphData.includes(undefined) || totalGraphData.includes("")){
 		errorFound = true;
 	}
