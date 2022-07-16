@@ -15,6 +15,7 @@ const yearFilter = document.getElementById("yearFilter");
 const addDataBtn = document.getElementById("addDataBtn");
 const logOutBtn = document.getElementById("logOutBtn");
 const editBtn = document.getElementById("confEditBtn");
+const addBarBtn = document.getElementById("addBarDataBtn");
 var dataAddScreen = document.getElementById("dataAddScreen");
 var currentGraphDisplayed = "";
 var displayed = false;
@@ -108,6 +109,20 @@ addDataBtn.addEventListener("click",function(){
 		monthBtn.classList.remove("active");
 	})
 });
+
+addBarBtn.addEventListener("click",function(event){
+	let formNode = inputTemp.content.cloneNode(true);
+	let deleteBtn = formNode.getElementById("barDataDeleteBtn");
+	formNode.querySelector(".barEditDetails").textContent = "Details for new bar";
+	formNode.querySelector(".inputBarName").value = "New bar name";
+	formNode.querySelector(".inputBarValue").value = 0.01;
+	changeGraphArea.appendChild(formNode);
+
+	deleteBtn.addEventListener("click",function(event){
+		let self = event.target;
+		self.parentElement.remove();
+	})
+}
 
 editBtn.addEventListener("click",function(event){
 	let self = event.target;
@@ -277,10 +292,16 @@ function createBabyGraph(currentGraph){
 		
 		graphReference.forEach(function(bar){
 			let formNode = inputTemp.content.cloneNode(true);
+			let deleteBtn = formNode.getElementById("barDataDeleteBtn");
 			formNode.querySelector(".barEditDetails").textContent = "Details for bar "+bar[0];
 			formNode.querySelector(".inputBarName").value = bar[0];
 			formNode.querySelector(".inputBarValue").value = (formatter.format(bar[1])).slice(1);
 			changeGraphArea.appendChild(formNode);
+			
+			deleteBtn.addEventListener("click",function(event){
+				let self = event.target;
+				self.parentElement.remove();
+			})
 		})
 		
 	});
