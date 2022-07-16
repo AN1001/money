@@ -53,6 +53,7 @@ document.querySelectorAll(".monthBtn").forEach(function(btn){
 
 document.querySelectorAll(".yearBtn").forEach(function(yearBtn,index){
 	yearBtn.textContent = currentYearDisplayed-index;
+	yearBtn.id = currentYearDisplayed-index;
 })
 
 filterLeftBtn.addEventListener("click",function(){
