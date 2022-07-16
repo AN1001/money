@@ -42,6 +42,10 @@ var months = {
 
 var currentBtnsPressed = 0;
 document.querySelectorAll(".monthBtn").forEach(function(btn){
+	if(btn.classList.contains("active")){
+		currentBtnsPressed++;
+	}
+	
 	btn.addEventListener("click",function(event){
 		let self = event.target;
 		if(self.classList.contains("active")){
