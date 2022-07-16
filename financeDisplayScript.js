@@ -352,10 +352,10 @@ function updateCookieGraphData(name){
 	graphDataReference.forEach(function(graph,index){
 		if(graph[0] == name){
 			graphDataReference[index] = convertFormToList();
-		} else {
-			graphDataReference.push(convertFormToList());
+			return;
 		}
 	})
+	graphDataReference.push(convertFormToList());
 }
 
 function convertFormToList(){
