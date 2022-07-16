@@ -229,7 +229,12 @@ function createBabyGraph(currentGraph){
 			})
 		})
 		
-		editMode = true;
+		currentBtnsPressed = 0;
+		document.querySelectorAll(".monthBtn").forEach(function(btn){
+			if(btn.classList.contains("active")){
+				currentBtnsPressed++;
+			}
+		}
 		currentGraphDisplayed = graphName;
 		
 		graphReference.forEach(function(bar){
