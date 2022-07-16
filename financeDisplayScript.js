@@ -127,10 +127,12 @@ addBarBtn.addEventListener("click",function(event){
 editBtn.addEventListener("click",function(event){
 	let self = event.target;
 	updateCookieGraphData(currentGraphDisplayed);
+	
+	console.log(graphDataReference);
 	setCookie("graphData", graphDataReference, 5);
 	let data = [getCookie("username"),graphDataReference];
 	fetch("updateTables.php", { method: "POST", body: data })
-
+	
 	location.reload()
 });
 
@@ -296,7 +298,7 @@ function createBabyGraph(currentGraph){
 			let deleteBtn = formNode.getElementById("barDataDeleteBtn");
 			formNode.querySelector(".barEditDetails").textContent = "Details for bar "+bar[0];
 			formNode.querySelector(".inputBarName").value = bar[0];
-			formNode.querySelector(".inputBarValue").value = formatter.format(bar[1]);
+			formNode.querySelector(".inputBarValue").value = formatter.format(bar[1]).split(1);
 			changeGraphArea.appendChild(formNode);
 			
 			deleteBtn.addEventListener("click",function(event){
@@ -381,7 +383,7 @@ function convertFormToList(){
 			year = yearBtn.id; 
 		}
 	})
-	
+
 	if(graphDurationMonth.length > 1){
 	  totalDuration = graphDurationMonth[0]+year+"-"+graphDurationMonth[1]+year;
 	} else{
@@ -398,9 +400,7 @@ function convertFormToList(){
 		tempData.push(parseFloat(barStats.querySelector(".inputBarValue").value.split(1)));
 		totalGraphData.push(tempData);
 	})
-
 	return totalGraphData;
-
 }
 
 function createGraph(currentGraphData){
