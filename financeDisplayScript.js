@@ -333,7 +333,7 @@ function createBabyGraphAdd(){
 		editBtn.textContent = "Create Graph";
 		changeGraphDataParent.style.display = "";
 		dataAddScreen.style.display = "none";
-		graphMeta.getElementById("inputGraphName").value = "New graph name";
+		document.getElementById("inputGraphName").value = "New graph name";
 		
 		document.querySelectorAll(".yearBtn").forEach(function(yearBtn){
 			yearBtn.classList.remove("active");
