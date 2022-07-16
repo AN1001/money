@@ -77,10 +77,12 @@ addDataBtn.addEventListener("click",function(){
 	yearFilter.style.display = "none";
 	appendZone.style.display = "none";
 	dataAddScreen.style.display = "";
+	changeGraphDataParent.style.display = "none";
 });
 
 editBtn.addEventListener("click",function(event){
 	let self = event.target;
+	console.log(currentGraphDisplayed);
 	
 	//setCookie("graphData", graphDataReference, 5);
 	//let data = [getCookie("username"),graphDataReference];
@@ -93,7 +95,7 @@ logOutBtn.addEventListener("click",function(){
 		yearFilter.style.display = "";
 		appendZone.style.display = "";
 		dataAddScreen.style.display = "none";
-		changeGraphDataParent.style.display = "none"
+		changeGraphDataParent.style.display = "none";
 		
 		let graphChildrenArray = [].slice.call(changeGraphArea.children);
 		graphChildrenArray.forEach(function(barStats){
