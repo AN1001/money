@@ -266,6 +266,44 @@ function createBabyGraphAdd(){
 	applyZone.appendChild(newBabyGraph);
 }
 
+function convertFormToList(){
+	let graphName = document.getElementById("inputGraphName").value;
+	let totalGraphData = [];
+	let graphDurationMonth = [];
+	let year = currentYearDisplayed;
+	let totalDuration = "";
+
+	document.querySelectorAll(".monthBtn").forEach(function(monthBtn){
+		if (monthBtn.classList.contains("active")){
+			graphDurationMonth.push(monthBtn.id);
+		}
+	})
+
+	document.querySelectorAll(".yearBtn").forEach(function(yearBtn){
+		if (yearBtn.classList.contains("active")){
+			year = yearBtn.id; 
+		}
+	})
+
+	if(graphDurationMonth.length > 1){
+	  totalDuration = graphDurationMonth[0]+year+"-"+graphDurationMonth[1]+year;
+	} else{
+	  totalDuration = graphDurationMonth[0]+year;
+	}
+
+	totalGraphData.push(graphName);
+	totalGraphData.push(totalDuration);
+
+	let graphChildrenArray = [].slice.call(changeGraphArea.children);
+	graphChildrenArray.forEach(function(barStats){
+		let tempData = [];
+		tempData.push(barStats.querySelector(".inputBarName").value);
+		tempData.push(barStats.querySelector(".inputBarValue").value);
+		totalGraphData.push(tempData);
+	})
+	return totalGraphData;
+}
+
 function createGraph(currentGraphData){
 	var graphDataSum = (currentGraphData.slice(2).map(TakeSecondElement)).reduce(add, 0);
 	var graphDataAvg = graphDataSum / (currentGraphData.length - 2);
