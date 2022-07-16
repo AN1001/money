@@ -125,17 +125,13 @@ addBarBtn.addEventListener("click",function(event){
 });
 
 editBtn.addEventListener("click",function(event){
-	if(convertFormToList != "ERROR"){
-		let self = event.target;
-		updateCookieGraphData(currentGraphDisplayed);
-		setCookie("graphData", graphDataReference, 5);
-		let data = [getCookie("username"),graphDataReference];
-		fetch("updateTables.php", { method: "POST", body: data })
+	let self = event.target;
+	updateCookieGraphData(currentGraphDisplayed);
+	setCookie("graphData", graphDataReference, 5);
+	let data = [getCookie("username"),graphDataReference];
+	fetch("updateTables.php", { method: "POST", body: data })
 
-		location.reload()
-	} else {
-		console.log("error")
-	}
+	location.reload()
 });
 
 logOutBtn.addEventListener("click",function(){
@@ -373,7 +369,6 @@ function convertFormToList(){
 	let graphDurationMonth = [];
 	let year = currentYearDisplayed;
 	let totalDuration = "";
-	let errorFound = false; 
 
 	document.querySelectorAll(".monthBtn").forEach(function(monthBtn){
 		if (monthBtn.classList.contains("active")){
@@ -386,10 +381,6 @@ function convertFormToList(){
 			year = yearBtn.id; 
 		}
 	})
-
-	if(year == ""){
-		errorFound = true;
-	}
 	
 	if(graphDurationMonth.length > 1){
 	  totalDuration = graphDurationMonth[0]+year+"-"+graphDurationMonth[1]+year;
@@ -407,19 +398,9 @@ function convertFormToList(){
 		tempData.push(parseFloat(barStats.querySelector(".inputBarValue").value.split(1)));
 		totalGraphData.push(tempData);
 	})
-	
-	let totalGraphDataCopy = totalGraphData;
-	totalGraphDataCopy.toString().split(",");
-	console.log(totalGraphDataCopy);
-	if(totalGraphData.includes(undefined) || totalGraphData.includes("")){
-		errorFound = true;
-	}
-	
-	if(errorFound){
-		return "ERROR";
-	}else{
-		return totalGraphData;
-	}
+
+	return totalGraphData;
+
 }
 
 function createGraph(currentGraphData){
