@@ -143,6 +143,7 @@ editBtn.addEventListener("click",function(event){
 		BABYGRAPH.remove();
 	})
 	
+	graphDataFiltered = graphDataReference;
 	for (let i = 0; i < graphDataFiltered.length; i++) {
 		createGraph(graphDataFiltered[i]);
 	}
@@ -157,7 +158,11 @@ editBtn.addEventListener("click",function(event){
 	dataAddScreen.style.display = "none";
 
 	filterGraphs(currentYearDisplayed);
-	
+	displayed = false;
+	yearFilter.style.display = "";
+	appendZone.style.display = "";
+	dataAddScreen.style.display = "none";
+	changeGraphDataParent.style.display = "none";
 });
 
 logOutBtn.addEventListener("click",function(){
