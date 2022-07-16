@@ -125,15 +125,17 @@ addBarBtn.addEventListener("click",function(event){
 });
 
 editBtn.addEventListener("click",function(event){
-	let self = event.target;
-	updateCookieGraphData(currentGraphDisplayed);
-	
-	console.log(graphDataReference);
-	setCookie("graphData", graphDataReference, 5);
-	let data = [getCookie("username"),graphDataReference];
-	fetch("updateTables.php", { method: "POST", body: data })
-	
-	location.reload()
+	if(convertFormToList != "ERROR"){
+		let self = event.target;
+		updateCookieGraphData(currentGraphDisplayed);
+		setCookie("graphData", graphDataReference, 5);
+		let data = [getCookie("username"),graphDataReference];
+		fetch("updateTables.php", { method: "POST", body: data })
+
+		location.reload()
+	} else {
+		console.log("error")
+	}
 });
 
 logOutBtn.addEventListener("click",function(){
@@ -385,6 +387,10 @@ function convertFormToList(){
 		}
 	})
 
+	if(year == ""){
+		errorFound = true;
+	}
+	
 	if(graphDurationMonth.length > 1){
 	  totalDuration = graphDurationMonth[0]+year+"-"+graphDurationMonth[1]+year;
 	} else{
@@ -401,7 +407,16 @@ function convertFormToList(){
 		tempData.push(parseFloat(barStats.querySelector(".inputBarValue").value.replace(/[^a-z0-9]/gi,'')));
 		totalGraphData.push(tempData);
 	})
-	return totalGraphData;
+	
+	if(totalGraphData.includes(undefined) || totalGraphData.includes("")){
+		errorFound = true;
+	}
+	
+	if(errorFound){
+		return "ERROR";
+	}else{
+		return totalGraphData;
+	}
 }
 
 function createGraph(currentGraphData){
