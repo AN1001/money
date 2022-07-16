@@ -327,9 +327,11 @@ function createBabyGraphAdd(){
 	
 	mainGraphArea.addEventListener("click",function(event){
 		let self = event.target;
+		let graphMeta = document.getElementById("graphMetaData");
 		editBtn.textContent = "Create Graph";
 		changeGraphDataParent.style.display = "";
 		dataAddScreen.style.display = "none";
+		graphMeta.getElementById(".inputGraphName").value = "New graph name";
 		
 		document.querySelectorAll(".yearBtn").forEach(function(yearBtn){
 			yearBtn.classList.remove("active");
@@ -349,13 +351,16 @@ function createBabyGraphAdd(){
 }
 
 function updateCookieGraphData(name){
+	var done = false;
 	graphDataReference.forEach(function(graph,index){
 		if(graph[0] == name){
 			graphDataReference[index] = convertFormToList();
-			return;
+			done = true;
 		}
 	})
-	graphDataReference.push(convertFormToList());
+	if(!done){
+		graphDataReference.push(convertFormToList());
+	}
 }
 
 function convertFormToList(){
