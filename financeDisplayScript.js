@@ -129,9 +129,35 @@ editBtn.addEventListener("click",function(event){
 	updateCookieGraphData(currentGraphDisplayed);
 	
 	console.log(graphDataReference);
-	//setCookie("graphData", graphDataReference, 5);
-	//let data = [getCookie("username"),graphDataReference];
-	//fetch("updateTables.php", { method: "POST", body: data })
+	setCookie("graphData", graphDataReference, 5);
+	let data = [getCookie("username"),graphDataReference];
+	fetch("updateTables.php", { method: "POST", body: data })
+	
+	let DISPLAYEDGRAPHS = [].slice.call(appendZone.children);
+	DISPLAYEDGRAPHS.forEach(function(GRAPH){
+		GRAPH.remove();
+	})
+	
+	let DISPLAYEDBABYGRAPHS = [].slice.call(dataAddScreen.children);
+	DISPLAYEDBABYGRAPHS.forEach(function(BABYGRAPH){
+		BABYGRAPH.remove();
+	})
+	
+	for (let i = 0; i < graphDataFiltered.length; i++) {
+		createGraph(graphDataFiltered[i]);
+	}
+
+	for (let i = 0; i < graphDataFiltered.length; i++) {
+		createBabyGraph(graphDataFiltered[i]);
+	}
+	
+	createBabyGraphAdd();
+
+	changeGraphDataParent.style.display = "none";
+	dataAddScreen.style.display = "none";
+
+	filterGraphs(currentYearDisplayed);
+	
 });
 
 logOutBtn.addEventListener("click",function(){
