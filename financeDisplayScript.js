@@ -56,6 +56,23 @@ document.querySelectorAll(".monthBtn").forEach(function(btn){
 	});
 })
 
+var currentYearBtnsPressed = 0;
+document.querySelectorAll(".YearBtn").forEach(function(btn){
+	if(btn.classList.contains("active")){
+		currentYearBtnsPressed++;
+	}
+	
+	btn.addEventListener("click",function(event){
+		let self = event.target;
+		if(self.classList.contains("active")){
+			currentYearBtnsPressed--;
+			self.classList.remove("active");
+		} else if(currentYearBtnsPressed < 1){
+			self.classList.add("active");
+			currentYearBtnsPressed++;
+		}	
+	});
+})
 
 document.querySelectorAll(".yearBtn").forEach(function(yearBtn,index){
 	yearBtn.textContent = currentYearDisplayed-index;
@@ -83,8 +100,12 @@ addDataBtn.addEventListener("click",function(){
 	graphChildrenArray.forEach(function(barStats){
 		barStats.remove();
 	})
+	
 	document.querySelectorAll(".yearBtn").forEach(function(yearBtn){
 		yearBtn.classList.remove("active");
+	})
+	document.querySelectorAll(".monthBtn").forEach(function(monthBtn){
+		monthBtn.classList.remove("active");
 	})
 });
 
@@ -108,6 +129,10 @@ logOutBtn.addEventListener("click",function(){
 		let graphChildrenArray = [].slice.call(changeGraphArea.children);
 		graphChildrenArray.forEach(function(barStats){
   			barStats.remove();
+		})
+		
+		document.querySelectorAll(".monthBtn").forEach(function(monthBtn){
+			monthBtn.classList.remove("active");
 		})
 		document.querySelectorAll(".yearBtn").forEach(function(yearBtn){
 			yearBtn.classList.remove("active");
@@ -241,6 +266,13 @@ function createBabyGraph(currentGraph){
 				currentBtnsPressed++;
 			}
 		})
+		currentYearBtnsPressed = 0;
+		document.querySelectorAll(".YearBtn").forEach(function(btn){
+			if(btn.classList.contains("active")){
+				currentYearBtnsPressed++;
+			}
+		})
+		
 		currentGraphDisplayed = graphName;
 		
 		graphReference.forEach(function(bar){
