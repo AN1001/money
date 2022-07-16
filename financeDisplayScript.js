@@ -78,6 +78,11 @@ addDataBtn.addEventListener("click",function(){
 	appendZone.style.display = "none";
 	dataAddScreen.style.display = "";
 	changeGraphDataParent.style.display = "none";
+	
+	let graphChildrenArray = [].slice.call(changeGraphArea.children);
+	graphChildrenArray.forEach(function(barStats){
+		barStats.remove();
+	})
 });
 
 editBtn.addEventListener("click",function(event){
