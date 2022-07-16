@@ -189,12 +189,16 @@ function createBabyGraph(currentGraph){
 		document.querySelectorAll(".yearBtn").forEach(function(yearBtn){
 			if(yearBtn.id == year){
 				yearBtn.classList.add("active");
+			} else {
+				yearBtn.classList.remove("active");
 			}
 		})
 		document.querySelectorAll(".monthBtn").forEach(function(monthBtn){
 			months.forEach(function(month){
 				if(monthBtn.id == month){
 					monthBtn.classList.add("active");
+				} else {
+					monthBtn.classList.remove("active");
 				}
 			})
 		})
