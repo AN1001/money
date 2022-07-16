@@ -463,6 +463,7 @@ function createGraph(currentGraphData){
 	var barWidth = barsData.shift();
 	var graphName = currentGraphData[0];
 	
+	console.log(currentGraphData, graphName);
 	graphToAppend.querySelector(".graphHolder").classList.add(graphName+"-graphHolder");
 
 	if (numBars > 8) {
