@@ -80,8 +80,8 @@ logOutBtn.addEventListener("click",function(){
 		dataAddScreen.style.display = "none";
 		changeGraphDataParent.style.display = "none"
 		
-		let graphChildrenArray = [].slice.call(el.children);
-		changeGraphArea.forEach(function(barStats){
+		let graphChildrenArray = [].slice.call(changeGraphArea.children);
+		graphChildrenArray.forEach(function(barStats){
   			barStats.remove();
 		})
 	}
