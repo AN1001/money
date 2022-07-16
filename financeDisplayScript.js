@@ -371,6 +371,7 @@ function convertFormToList(){
 	let graphDurationMonth = [];
 	let year = currentYearDisplayed;
 	let totalDuration = "";
+	let errorFound = false; 
 
 	document.querySelectorAll(".monthBtn").forEach(function(monthBtn){
 		if (monthBtn.classList.contains("active")){
@@ -397,7 +398,7 @@ function convertFormToList(){
 	graphChildrenArray.forEach(function(barStats){
 		let tempData = [];
 		tempData.push(barStats.querySelector(".inputBarName").value);
-		tempData.push(parseFloat(barStats.querySelector(".inputBarValue").value.slice(1)));
+		tempData.push(parseFloat(barStats.querySelector(".inputBarValue").value.replace(/[^a-z0-9]/gi,'')));
 		totalGraphData.push(tempData);
 	})
 	return totalGraphData;
