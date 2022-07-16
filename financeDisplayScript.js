@@ -298,7 +298,7 @@ function createBabyGraph(currentGraph){
 			let deleteBtn = formNode.getElementById("barDataDeleteBtn");
 			formNode.querySelector(".barEditDetails").textContent = "Details for bar "+bar[0];
 			formNode.querySelector(".inputBarName").value = bar[0];
-			formNode.querySelector(".inputBarValue").value = formatter.format(bar[1]).split(1);
+			formNode.querySelector(".inputBarValue").value = formatter.format(bar[1]);
 			changeGraphArea.appendChild(formNode);
 			
 			deleteBtn.addEventListener("click",function(event){
@@ -397,7 +397,7 @@ function convertFormToList(){
 	graphChildrenArray.forEach(function(barStats){
 		let tempData = [];
 		tempData.push(barStats.querySelector(".inputBarName").value);
-		tempData.push(parseFloat(barStats.querySelector(".inputBarValue").value.split(1)));
+		tempData.push(parseFloat(barStats.querySelector(".inputBarValue").value.slice(1)));
 		totalGraphData.push(tempData);
 	})
 	return totalGraphData;
