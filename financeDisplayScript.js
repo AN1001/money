@@ -18,8 +18,6 @@ const editBtn = document.getElementById("confEditBtn");
 var dataAddScreen = document.getElementById("dataAddScreen");
 var currentGraphDisplayed = "";
 var displayed = false;
-var editMode = false;
-var createMode = false;
 var currentYearDisplayed = 2022;
 var formatter = new Intl.NumberFormat('en-US', {
 	style: 'currency',
@@ -83,17 +81,6 @@ addDataBtn.addEventListener("click",function(){
 
 editBtn.addEventListener("click",function(event){
 	let self = event.target;
-	if(editMode){
-		editMode = false;
-		editBtn.textContent = "Confirm Edit";
-		
-	}
-	
-	if(createMode){
-		createMode = false;
-		editBtn.textContent = "Create Graph";
-		
-	}
 	
 	//setCookie("graphData", graphDataReference, 5);
 	//let data = [getCookie("username"),graphDataReference];
@@ -187,6 +174,7 @@ function createBabyGraph(currentGraph){
 	mainGraphArea.addEventListener("click",function(event){
 		changeGraphDataParent.style.display = "";
 		dataAddScreen.style.display = "none";
+		editBtn.textContent = "Confirm Edit";
 		let self = event.target;
 		let graphName = self.id.split("-")[1];
 		let mainGraph = document.querySelector("."+graphName+"-graphHolder");
@@ -262,6 +250,11 @@ function createBabyGraphAdd(){
 	mainGraphArea.id = "addMainGraphArea";
 	deleteBtn.style.display = "none";
 	mainGraphAreaText.textContent = "Add Graph";
+	
+	mainGraphArea.addEventListener("click",function(event){
+		let self = event.target;
+		editBtn.textContent = "Create Graph";
+	})
 	
 	applyZone.appendChild(newBabyGraph);
 }
