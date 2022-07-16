@@ -577,6 +577,7 @@ legend{
 }
 
 #confEditBtn{
+	-webkit-appearance: none;
 	margin: 15px auto 0 215px;
 	border: 3px double #413428;
 	background: #fffcf7;
