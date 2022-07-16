@@ -404,7 +404,7 @@ function convertFormToList(){
 	graphChildrenArray.forEach(function(barStats){
 		let tempData = [];
 		tempData.push(barStats.querySelector(".inputBarName").value);
-		tempData.push(parseFloat(barStats.querySelector(".inputBarValue").value.replace(/[^a-z0-9]/gi,'')));
+		tempData.push(parseFloat(barStats.querySelector(".inputBarValue").value.replace(/^[a-zA-Z0-9.,]+$/,'')));
 		totalGraphData.push(tempData);
 	})
 	
