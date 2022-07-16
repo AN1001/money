@@ -348,13 +348,12 @@ function createBabyGraphAdd(){
 	applyZone.appendChild(newBabyGraph);
 }
 
-function updateCookieGraphData(arr){
-	let name = arr[0];
+function updateCookieGraphData(name){
 	graphDataReference.forEach(function(graph,index){
 		if(graph[0] == name){
-			graphDataReference[index] = arr;
+			graphDataReference[index] = convertFormToList();
 		} else {
-			graphDataReference.push(arr)
+			graphDataReference.push(convertFormToList());
 		}
 	})
 }
