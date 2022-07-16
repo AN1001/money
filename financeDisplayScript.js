@@ -14,8 +14,12 @@ const yearDisplay = document.getElementById("yearDisplay");
 const yearFilter = document.getElementById("yearFilter");
 const addDataBtn = document.getElementById("addDataBtn");
 const logOutBtn = document.getElementById("logOutBtn");
+const editBtn = document.getElementById("confEditBtn");
 var dataAddScreen = document.getElementById("dataAddScreen");
+var currentGraphDisplayed = "";
 var displayed = false;
+var editMode = false;
+var createMode = false;
 var currentYearDisplayed = 2022;
 var formatter = new Intl.NumberFormat('en-US', {
 	style: 'currency',
@@ -67,11 +71,30 @@ filterRightBtn.addEventListener("click",function(){
 });
 
 addDataBtn.addEventListener("click",function(){
-		displayed = true;
-		yearFilter.style.display = "none";
-		appendZone.style.display = "none";
-		dataAddScreen.style.display = "";
+	displayed = true;
+	yearFilter.style.display = "none";
+	appendZone.style.display = "none";
+	dataAddScreen.style.display = "";
 });
+
+editBtn.addEventListener("click",function(event){
+	let self = event.target;
+	if(editMode){
+		editMode = false;
+		editBtn.textContent = "Confirm Edit";
+		
+	}
+	
+	if(createMode){
+		createMode = false;
+		editBtn.textContent = "Create Graph";
+		
+	}
+	
+	//setCookie("graphData", graphDataReference, 5);
+	//let data = [getCookie("username"),graphDataReference];
+	//fetch("updateTables.php", { method: "POST", body: data })
+}
 
 logOutBtn.addEventListener("click",function(){
 	if(displayed){
@@ -194,6 +217,7 @@ function createBabyGraph(currentGraph){
 				yearBtn.classList.remove("active");
 			}
 		})
+		
 		document.querySelectorAll(".monthBtn").forEach(function(monthBtn){
 			months.forEach(function(month){
 				if(monthBtn.id == month){
@@ -204,6 +228,9 @@ function createBabyGraph(currentGraph){
 			})
 		})
 		
+		editMode = true;
+		currentGraphDisplayed = graphName;
+		
 		graphReference.forEach(function(bar){
 			let formNode = inputTemp.content.cloneNode(true);
 			formNode.querySelector(".barEditDetails").textContent = "Details for bar "+bar[0];
@@ -211,11 +238,6 @@ function createBabyGraph(currentGraph){
 			formNode.querySelector(".inputBarValue").value = (formatter.format(bar[1])).slice(1);
 			changeGraphArea.appendChild(formNode);
 		})
-		
-		
-		//setCookie("graphData", graphDataReference, 5);
-		//let data = [getCookie("username"),graphDataReference];
-		//fetch("updateTables.php", { method: "POST", body: data })
 		
 	});
 	
