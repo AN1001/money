@@ -126,8 +126,9 @@ addBarBtn.addEventListener("click",function(event){
 
 editBtn.addEventListener("click",function(event){
 	let self = event.target;
-	console.log(currentGraphDisplayed);
+	updateCookieGraphData(currentGraphDisplayed);
 	
+	console.log(graphDataReference);
 	//setCookie("graphData", graphDataReference, 5);
 	//let data = [getCookie("username"),graphDataReference];
 	//fetch("updateTables.php", { method: "POST", body: data })
@@ -327,9 +328,35 @@ function createBabyGraphAdd(){
 	mainGraphArea.addEventListener("click",function(event){
 		let self = event.target;
 		editBtn.textContent = "Create Graph";
+		changeGraphDataParent.style.display = "";
+		dataAddScreen.style.display = "none";
+		
+		document.querySelectorAll(".yearBtn").forEach(function(yearBtn){
+			yearBtn.classList.remove("active");
+		})
+
+		document.querySelectorAll(".monthBtn").forEach(function(monthBtn){
+			monthBtn.classList.remove("active");
+		})
+		currentBtnsPressed = 0;
+		currentYearBtnsPressed = 0;
+		
+		
 	})
 	
+	
 	applyZone.appendChild(newBabyGraph);
+}
+
+function updateCookieGraphData(arr){
+	let name = arr[0];
+	graphDataReference.forEach(function(graph,index){
+		if(graph[0] == name){
+			graphDataReference[index] = arr;
+		} else {
+			graphDataReference.push(arr)
+		}
+	})
 }
 
 function convertFormToList(){
