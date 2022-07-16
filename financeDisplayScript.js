@@ -57,7 +57,7 @@ document.querySelectorAll(".monthBtn").forEach(function(btn){
 })
 
 var currentYearBtnsPressed = 0;
-document.querySelectorAll(".YearBtn").forEach(function(btn){
+document.querySelectorAll(".yearBtn").forEach(function(btn){
 	if(btn.classList.contains("active")){
 		currentYearBtnsPressed++;
 	}
