@@ -217,11 +217,13 @@ function createBabyGraph(currentGraph){
 			}
 		})
 		
-		document.querySelectorAll(".monthBtn").forEach(function(monthBtn){
-			months.forEach(function(month){
+		var alreadyPassed = false;
+		months.forEach(function(month){
+  			document.querySelectorAll(".monthBtn").forEach(function(monthBtn){
 				if(monthBtn.id == month){
 					monthBtn.classList.add("active");
-				} else {
+					alreadyPassed = true;
+				} else if(!alreadyPassed){
 					monthBtn.classList.remove("active");
 				}
 			})
