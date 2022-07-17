@@ -376,9 +376,12 @@ function convertFormToList(){
 	document.querySelectorAll(".monthBtn").forEach(function(monthBtn){
 		if (monthBtn.classList.contains("active")){
 			monthFromBtn = monthBtn.id;
+			graphDurationMonth.push(monthFromBtn);
 		}
 	})
-	graphDurationMonth.push(monthFromBtn);
+	if(graphDurationMonth.length == 0){
+		graphDurationMonth.push(monthFromBtn);
+	}
 	
 	document.querySelectorAll(".yearBtn").forEach(function(yearBtn){
 		if (yearBtn.classList.contains("active")){
