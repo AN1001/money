@@ -37,11 +37,20 @@ html, body{
 
 #homeBar{
 	display: flex;
-  	width: 100%;
+	width: 100%;
 	height: 90px;
-	background-color: #fffcf7;
+	background: url("https://raw.githubusercontent.com/AN1001/money/main/siteTitle.png"), #fffcf7;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 270px;
 	margin-bottom: 15px;
 	border-radius: 1em;
+}
+
+@media only screen and (max-width: 460px){
+	#homeBar{
+		background-size: 200px;
+	}
 }
 
 #logOutBtn{
