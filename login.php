@@ -42,7 +42,7 @@ if(isset($_POST["submit"]) && !empty($_POST['Iusername']) && !empty($_POST['Ipas
       echo pg_last_error($conn);
       echo $dbGraphData;
 
-      setcookie("graphData", $dbGraphData, time()+10, '/');
+      setcookie("graphData", $dbGraphData, time()+600, '/');
       echo "user logged in";
 
       header("location: financeDisplay.html");
