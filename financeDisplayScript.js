@@ -1,6 +1,6 @@
-const graphDataRaw;
-const graphDataFiltered;
-const graphDataReference;
+var graphDataRaw;
+var graphDataFiltered;
+var graphDataReference;
 const homeBar = document.getElementById("homeBar");
 if(getCookie("graphData") != "NOT_FOUND"){
 	graphDataRaw = getCookie("graphData");
