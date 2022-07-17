@@ -686,6 +686,12 @@ function calcHeight(rawData, pixelsPerPound) {
 	return rawData;
 }
 
+function displayInfo(){
+	if (window.confirm('Created by Arnav Nagpure\nCode on GitHub, go to source code?')){
+   		window.open('https://github.com/AN1001/money', '_blank');
+   	};
+}
+
 function getCookie(name) {
 	const value = (document.cookie).replace(/\s+/g, '');
 	var cookies = value.split(";");
