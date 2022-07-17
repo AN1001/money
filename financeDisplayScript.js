@@ -1,14 +1,15 @@
+const homeBar = document.getElementById("homeBar");
 if(getCookie("graphData") != "NOT_FOUND"){
 	const graphDataRaw = getCookie("graphData");
 	const graphDataFiltered = eval(graphDataRaw);
 	const graphDataReference = eval(graphDataRaw);
 } else {
+	homeBar.style.marginBottom = '10000px';
 	window.location.replace("https://moneymoney.herokuapp.com/");
 }
 const temp = document.getElementById("temp1");
 const babyTemp = document.getElementById("temp2");
 const inputTemp = document.getElementById("temp3");
-const homeBar = document.getElementById("homeBar");
 const appendZone = document.getElementById("allGraphs");
 const changeGraphArea = document.getElementById("changeGraphData"); 
 const changeGraphDataParent =  document.getElementById("changeGraphDataParent"); 
