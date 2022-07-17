@@ -1,8 +1,11 @@
+const graphDataRaw;
+const graphDataFiltered;
+const graphDataReference;
 const homeBar = document.getElementById("homeBar");
 if(getCookie("graphData") != "NOT_FOUND"){
-	const graphDataRaw = getCookie("graphData");
-	const graphDataFiltered = eval(graphDataRaw);
-	const graphDataReference = eval(graphDataRaw);
+	graphDataRaw = getCookie("graphData");
+	graphDataFiltered = eval(graphDataRaw);
+	graphDataReference = eval(graphDataRaw);
 } else {
 	homeBar.style.marginBottom = '10000px';
 	window.location.replace("https://moneymoney.herokuapp.com/");
