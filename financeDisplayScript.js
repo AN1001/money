@@ -367,6 +367,9 @@ function updateCookieGraphData(name){
 
 function convertFormToList(){
 	let graphName = document.getElementById("inputGraphName").value;
+	if(graphName == ""){
+		graphName = "NewGraph"
+	}
 	let totalGraphData = [];
 	let graphDurationMonth = [];
 	let year = currentYearDisplayed;
