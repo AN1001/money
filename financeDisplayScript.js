@@ -1,6 +1,10 @@
-const graphDataRaw = getCookie("graphData");
-const graphDataFiltered = eval(graphDataRaw);
-const graphDataReference = eval(graphDataRaw);
+if(getCookie("graphData") != "NOT_FOUND"){
+	const graphDataRaw = getCookie("graphData");
+	const graphDataFiltered = eval(graphDataRaw);
+	const graphDataReference = eval(graphDataRaw);
+} else {
+	window.location.replace("https://moneymoney.herokuapp.com/");
+}
 const temp = document.getElementById("temp1");
 const babyTemp = document.getElementById("temp2");
 const inputTemp = document.getElementById("temp3");
