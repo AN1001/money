@@ -717,7 +717,7 @@ function setCookie(name,value,mins) {
     var expires = "";
     if (mins) {
         var date = new Date();
-        date.setTime(date.getTime() + (mins*120*1000));
+        date.setTime(date.getTime() + (mins*1200*1000));
         expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + (cleanValue || "")  + expires + "; path=/";
